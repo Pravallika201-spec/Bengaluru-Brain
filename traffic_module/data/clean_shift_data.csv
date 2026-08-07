@@ -1,0 +1,53 @@
+  Shift Data     24 parks ,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24,Unnamed: 25,Unnamed: 26
+"Dropdowns available on Shift Type, Days Active, Cab Provided, Confidence, Validated.  Green row = High conf.  Yellow = Medium.  Pink = Low.  Gold = New park.",,,,,,,,,,,,,,,,,,,,,,,,,,
+A — Park Identity,,,,B — Shift Timing,,,,,,,C — Traffic Impact,,,,,,,,,,,D — Data Quality,,,,
+Park ID,Park Name,Corridor,Ward No.,Shift Type,Shift Start,Shift End,Workforce %,Days Active,Flex (min),WFH Fraction,Arrival Start,Arrival End,Dep. Start,Dep. End,Cab?,Shuttle Times,Peak Roads,Commute km,Cab %,Personal %,BMTC %,Data Source,Confidence,Survey Resp.,Validated?,Notes
+e.g. P01,From Park Master,N/S/E/W/Central,GBA ward no.,Dropdown ↓,HH:MM,HH:MM,% on this shift,Dropdown ↓,Login flexibility,0.0 to 1.0,HH:MM,HH:MM,HH:MM,HH:MM,Dropdown ↓,e.g. 18:30|19:00,Main roads impacted,Avg distance,% using company cab,% own vehicle,% public transport,e.g. Glassdoor|Maps,Dropdown ↓,No. of responses,Dropdown ↓,Any remarks
+P01,Electronic City Phase 1,South,186,General,09:00,18:30,45,Mon-Fri,30,0.25,08:00,09:30,18:30,19:45,No,e.g. 18:30|19:00,Hosur Road|EC Expressway,21,20,55,25,Glassdoor|Google Maps,High,0,Yes,Flex login 9–11am common
+P01,Electronic City Phase 1,South,186,US Shift,18:00,03:30,30,Mon-Fri,15,0.2,17:00,18:15,03:30,04:30,Yes,17:30|18:00|18:30,Hosur Road|EC Expressway,21,70,25,5,Glassdoor|LinkedIn,High,0,Yes,Cab mandatory
+P01,Electronic City Phase 1,South,186,Morning,07:00,16:00,15,Mon-Fri,0,0.15,06:00,07:00,16:00,17:00,Yes,06:30|07:00,Hosur Road,21,65,30,5,AmbitionBox,Medium,0,No,Cab mandatory
+P01,Electronic City Phase 1,South,186,Night,22:00,07:00,10,Mon-Sun,0,0.1,21:00,22:00,07:00,07:45,Yes,21:30|22:00,Hosur Road,21,80,15,5,AmbitionBox,Low,0,No,Estimated
+P02,Electronic City Phase 2,South,187,General,09:30,18:30,50,Mon-Fri,30,0.25,08:30,10:00,18:30,19:45,No,21:30|22:00,Hosur Road|NICE Road,19,15,60,25,Glassdoor,High,0,Yes,Estimated
+P02,Electronic City Phase 2,South,187,US Shift,19:00,04:00,30,Mon-Fri,15,0.2,18:00,19:15,04:00,05:00,Yes,18:30|19:00,Hosur Road,19,75,20,5,LinkedIn,High,0,Yes,Estimated
+P02,Electronic City Phase 2,South,187,Morning,07:00,16:00,15,Mon-Fri,0,0.15,06:00,07:00,16:00,17:00,Yes,06:30,Hosur Road,19,65,30,5,AmbitionBox,Low,0,No,Verify on Glassdoor
+P03,Electronic City Phase 3,South,188,General,09:00,18:00,55,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,06:30,Hosur Road|Bannerghatta Road,18,10,65,25,Google Maps,Medium,0,Yes,Smaller park
+P03,Electronic City Phase 3,South,188,US Shift,18:30,03:30,30,Mon-Fri,15,0.2,17:30,18:45,03:30,04:30,Yes,18:00|18:30,Hosur Road,18,70,25,5,Glassdoor,Medium,0,No,Smaller park
+P04,Velankani Tech Park,South,186,General,09:00,18:00,60,Mon-Fri,30,0.25,08:00,09:30,18:00,19:00,No,18:00|18:30,Hosur Road,18,10,65,25,Google Maps,Medium,0,Yes,Shares Hosur Rd corridor with EC Ph1
+P04,Velankani Tech Park,South,186,US Shift,18:00,03:00,30,Mon-Fri,15,0.2,17:00,18:15,03:00,04:00,Yes,17:30|18:00,Hosur Road,18,65,30,5,Glassdoor,Low,0,No,Verify on AmbitionBox
+P05,Whitefield ITPB,East,149,General,09:00,18:00,40,Mon-Fri,45,0.3,07:45,09:45,18:00,19:30,No,17:30|18:00,ITPL Road|Whitefield Main Road,24,10,65,25,Glassdoor|Survey,High,12,Yes,High flex — arrivals spread 8–11am
+P05,Whitefield ITPB,East,149,UK Shift,13:00,22:00,25,Mon-Fri,15,0.25,12:00,13:15,22:00,23:00,Yes,12:30|13:00,ITPL Road,24,60,35,5,LinkedIn,High,0,Yes,High flex — arrivals spread 8–11am
+P05,Whitefield ITPB,East,149,US Shift,18:30,03:30,25,Mon-Fri,15,0.2,17:30,18:45,03:30,04:30,Yes,18:00|18:30,ITPL Road,24,70,25,5,Glassdoor,High,0,Yes,High flex — arrivals spread 8–11am
+P05,Whitefield ITPB,East,149,Australian,05:00,14:00,10,Mon-Fri,0,0.1,04:00,05:00,14:00,15:00,Yes,04:30|05:00,ITPL Road,24,75,20,5,AmbitionBox,Low,0,No,Small team
+P06,Kalyani Platina Tech Park,East,149,General,09:00,18:00,65,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,04:30|05:00,Whitefield Main Road,22,10,70,20,Google Maps,Medium,0,Yes,Smaller — shares Whitefield corridor
+P06,Kalyani Platina Tech Park,East,149,US Shift,18:30,03:30,25,Mon-Fri,15,0.2,17:30,18:45,03:30,04:30,Yes,18:00,Whitefield Main Road,22,65,30,5,LinkedIn,Low,0,No,Smaller — shares Whitefield corridor
+P07,Sigma Soft Tech Park,East,150,General,09:00,18:00,70,Mon-Fri,30,0.25,08:00,09:30,18:00,19:00,No,18:00,Varthur Road|Whitefield Road,20,5,75,20,Google Maps,Low,0,No,Verify via Glassdoor
+P08,RMZ Ecoworld,East,198,General,09:00,18:30,50,Mon-Fri,30,0.3,08:00,09:30,18:30,19:45,No,18:00,Sarjapur Road|ORR,22,10,70,20,Google Maps|LinkedIn,High,0,Yes,Verify via Glassdoor
+P08,RMZ Ecoworld,East,198,UK Shift,13:00,22:00,30,Mon-Fri,15,0.25,12:00,13:15,22:00,23:00,Yes,12:30|13:00,Sarjapur Road,22,60,35,5,LinkedIn,Medium,0,No,Verify via Glassdoor
+P09,Divyasree Technopolis,East,80,General,09:00,18:00,55,Mon-Fri,30,0.3,08:00,09:30,18:00,19:15,No,12:30|13:00,HAL Airport Road|Old Airport Road,15,10,70,20,Google Maps,Medium,0,Yes,Inner city — impacts Indiranagar corridor
+P09,Divyasree Technopolis,East,80,US Shift,18:00,03:00,30,Mon-Fri,15,0.25,17:00,18:15,03:00,04:00,Yes,17:30|18:00,HAL Airport Road,15,65,30,5,Glassdoor,Low,0,No,Inner city — impacts Indiranagar corridor
+P10,Manyata Tech Park,North,58,General,09:30,18:30,45,Mon-Fri,30,0.28,08:30,10:00,18:30,19:45,No,17:30|18:00,Bellary Road|Outer Ring Road,17,15,60,25,Glassdoor|Survey,High,18,Yes,Inner city — impacts Indiranagar corridor
+P10,Manyata Tech Park,North,58,US Shift,18:00,03:00,30,Mon-Fri,15,0.22,17:00,18:15,03:00,04:00,Yes,17:30|18:00|18:30,Bellary Road,17,72,23,5,Glassdoor,High,0,Yes,Inner city — impacts Indiranagar corridor
+P10,Manyata Tech Park,North,58,UK Shift,13:00,22:00,20,Mon-Fri,15,0.2,12:00,13:15,22:00,23:00,Yes,12:30|13:00,Bellary Road,17,60,35,5,LinkedIn,Medium,0,No,Inner city — impacts Indiranagar corridor
+P11,RMZ Infinity,North,77,General,09:00,18:00,55,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,12:30|13:00,Old Madras Road,14,10,65,25,Google Maps,Medium,0,Yes,Inner city — impacts Indiranagar corridor
+P11,RMZ Infinity,North,77,US Shift,18:00,03:00,30,Mon-Fri,15,0.2,17:00,18:15,03:00,04:00,Yes,17:30|18:00,Old Madras Road,14,65,30,5,LinkedIn,Low,0,No,Inner city — impacts Indiranagar corridor
+P12,RMZ NXT,North,147,General,09:00,18:00,60,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,17:30|18:00,Mahadevapura Road|ORR,16,10,70,20,Google Maps,Low,0,No,Verify via Glassdoor
+P13,RMZ Ecospace,Central,198,General,09:00,18:00,50,Mon-Fri,30,0.3,08:00,09:30,18:00,19:15,No,17:30|18:00,Outer Ring Road|Sarjapur Road,20,10,70,20,Google Maps,High,0,Yes,ORR very congested 6–8pm
+P13,RMZ Ecospace,Central,198,UK Shift,14:00,23:00,30,Mon-Fri,15,0.25,13:00,14:15,23:00,00:00,Yes,13:30|14:00,Outer Ring Road,20,65,30,5,LinkedIn,Medium,0,No,ORR very congested 6–8pm
+P14,Embassy TechVillage,Central,198,General,09:00,18:30,60,Mon-Fri,30,0.28,08:00,09:30,18:30,19:45,No,13:30|14:00,Outer Ring Road,20,10,72,18,Google Maps|Glassdoor,High,0,Yes,ORR very congested 6–8pm
+P14,Embassy TechVillage,Central,198,US Shift,18:30,03:30,25,Mon-Fri,15,0.22,17:30,18:45,03:30,04:30,Yes,18:00|18:30,Outer Ring Road,20,70,25,5,Glassdoor,Medium,0,No,ORR very congested 6–8pm
+P15,Prestige Cessna Business Park,Central,198,General,09:00,18:00,55,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,18:00|18:30,Sarjapur-Marathahalli ORR,18,10,70,20,Google Maps,High,0,Yes,On ORR — Kadubeesanahalli
+P15,Prestige Cessna Business Park,Central,198,US Shift,18:30,03:30,30,Mon-Fri,15,0.2,17:30,18:45,03:30,04:30,Yes,18:00|18:30,Sarjapur-Marathahalli ORR,18,65,30,5,Glassdoor,Medium,0,No,On ORR — Kadubeesanahalli
+P16,Bagmane Tech Park,Central,77,General,09:00,18:00,55,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,18:00|18:30,Old Madras Road,14,10,65,25,Survey,Medium,8,Yes,On ORR — Kadubeesanahalli
+P16,Bagmane Tech Park,Central,77,US Shift,18:30,03:30,30,Mon-Fri,15,0.2,17:30,18:45,03:30,04:30,Yes,18:00,Old Madras Road,14,65,30,5,LinkedIn,Low,0,No,On ORR — Kadubeesanahalli
+P17,Bagmane Constellation,Central,77,General,09:00,18:00,60,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,18:00,Old Madras Road,14,10,65,25,Google Maps,Low,0,Yes,Same corridor as Bagmane Tech Park
+P18,Prestige Tech Park,Central,199,General,09:00,18:30,60,Mon-Fri,30,0.28,08:00,09:30,18:30,19:45,No,18:00,Marathahalli Bridge|ORR,20,10,70,20,Google Maps|Glassdoor,High,0,Yes,Same corridor as Bagmane Tech Park
+P18,Prestige Tech Park,Central,199,US Shift,18:30,03:30,25,Mon-Fri,15,0.22,17:30,18:45,03:30,04:30,Yes,18:00,Marathahalli Bridge,20,65,30,5,Glassdoor,Medium,0,No,Same corridor as Bagmane Tech Park
+P19,Embassy Golf Links (EGL),Inner,112,General,09:00,18:00,55,Mon-Fri,30,0.3,08:00,09:30,18:00,19:00,No,18:00,Inner Ring Road|Domlur Flyover,12,10,70,20,Google Maps,High,0,Yes,Inner city — impacts Domlur + Indiranagar
+P19,Embassy Golf Links (EGL),Inner,112,US Shift,18:00,03:00,30,Mon-Fri,15,0.25,17:00,18:15,03:00,04:00,Yes,17:30|18:00,Inner Ring Road,12,70,25,5,Glassdoor,Medium,0,No,Inner city — impacts Domlur + Indiranagar
+P20,IBC Knowledge Park,Inner,166,General,09:00,18:00,55,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,17:30|18:00,Bannerghatta Road|Dairy Circle,10,5,60,35,Google Maps,High,0,Yes,Metro accessible — Dairy Circle stn
+P20,IBC Knowledge Park,Inner,166,US Shift,18:00,03:00,25,Mon-Fri,15,0.2,17:00,18:15,03:00,04:00,Yes,17:30|18:00,Bannerghatta Road,10,65,30,5,Glassdoor,Medium,0,No,Metro accessible — Dairy Circle stn
+P21,Global Village Tech Park,West,201,General,09:00,18:00,60,Mon-Fri,30,0.25,08:00,09:30,18:00,19:15,No,17:30|18:00,Mysore Road|NICE Road,20,10,65,25,Google Maps,High,0,Yes,Mysore Road corridor
+P21,Global Village Tech Park,West,201,US Shift,18:00,03:00,25,Mon-Fri,15,0.2,17:00,18:15,03:00,04:00,Yes,17:30,Mysore Road,20,65,30,5,Glassdoor,Medium,0,No,Mysore Road corridor
+P22,Karle Town Centre,North,40,General,09:00,18:30,60,Mon-Fri,30,0.25,08:00,09:30,18:30,19:30,No,17:30,Bellary Road|Hebbal Flyover,18,10,70,20,Google Maps,Medium,0,Yes,Near Hebbal flyover — bottleneck
+P23,IBC Knowledge Park South,South,166,General,09:00,18:00,65,Mon-Fri,30,0.25,08:00,09:30,18:00,19:00,No,17:30,Bannerghatta Road,10,5,60,35,Google Maps,Low,0,No,Verify separately from P20
+P24,UB City Commercial Tower,Central,73,General,09:30,18:30,75,Mon-Fri,30,0.3,08:30,09:30,18:30,19:30,No,17:30,MG Road|Vittal Mallya Road,8,0,50,50,Google Maps,Low,0,No,Near MG Road metro — high modal split

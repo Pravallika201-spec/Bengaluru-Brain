@@ -1,0 +1,28 @@
+  IT Parks —   24 Bangalore IT Parks,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13
+IDENTITY,,,,LOCATION,,,,WORKFORCE,,,METRO ACCESS,,PRIORITY
+Park ID,Park Name,Locality,Corridor,Ward No.,Ward Name,Gate Lat,Gate Lon,Approx Employees,Major Companies,Park Area sqkm,Nearest Metro,Metro Dist km,Priority Tier
+e.g. P01,Full name,Area,North/South/East/West/Central,GBA ward,Official name,Decimal,Decimal,Total headcount,Pipe-separated,Approx,Station name,Walking,1=Must/2=High/3=Optional
+P01,Electronic City Phase 1,Electronic City,South,186,Electronic City,12.8399,77.677,80000,Infosys|Wipro|TCS|Mindtree,3.2,Electronic City,0.4,1
+P02,Electronic City Phase 2,Electronic City,South,187,EC Phase 2,12.8456,77.6632,60000,Infosys EC2|HCL|Mphasis,2.8,Electronic City,0.6,1
+P03,Electronic City Phase 3,Electronic City,South,188,EC Phase 3,12.8312,77.6751,35000,Wipro|Accenture|Capgemini,1.9,Electronic City,0.8,1
+P04,Velankani Tech Park,Electronic City,South,186,Electronic City,12.845,77.674,8000,Deutsche Bank|Mahindra Comviva|Microland,0.6,Electronic City,0.5,2
+P05,Whitefield ITPB,Whitefield,East,149,Whitefield,12.9784,77.748,120000,IBM|Accenture|SAP|KPIT|Bosch,5.1,Whitefield,0.2,1
+P06,Kalyani Platina Tech Park,Whitefield,East,149,Whitefield,12.981,77.739,15000,Kalyani Group tenants|Mindtree,1.1,Whitefield,0.8,3
+P07,Sigma Soft Tech Park,Whitefield,East,150,Varthur,12.974,77.735,10000,Sigma tenants|Mid-size IT firms,0.8,Whitefield,1.2,3
+P08,RMZ Ecoworld,Sarjapur Road,East,198,Bellandur,12.9181,77.681,35000,Honeywell|Shell|Morgan Stanley|Accenture,2.4,Silk Board,2.2,2
+P09,Divyasree Technopolis,HAL Airport Road,East,80,Kodihalli,12.959,77.648,20000,Thomson Reuters|Deloitte|Fiserv,1.5,HAL,1,2
+P10,Manyata Tech Park,Thanisandra,North,58,Manyata,13.0469,77.62,110000,Microsoft|Cognizant|Cisco|Biocon|Tata,4.5,Nagawara,1.2,1
+P11,RMZ Infinity,CV Raman Nagar,North,77,CV Raman Nagar,12.995,77.66,18000,JP Morgan|Concentrix|KPMG,1.2,Baiyappanahalli,1.8,2
+P12,RMZ NXT,Mahadevapura,North,147,Mahadevapura,12.997,77.7,12000,RMZ NXT tenants|IT firms,0.9,KR Puram,2.5,2
+P13,RMZ Ecospace,Bellandur,Central,198,Bellandur,12.9279,77.6724,50000,Oracle|Dell|Societe Generale|Philips,2.1,Marathahalli,2.1,1
+P14,Embassy TechVillage,Bellandur,Central,198,ORR Bellandur,12.9279,77.69,70000,Flipkart|Rolls-Royce|ABB|Bechtel,3.6,Marathahalli,1.8,1
+P15,Prestige Cessna Business Park,Kadubeesanahalli,Central,198,Kadubeesanahalli,12.933,77.689,25000,Cisco|HCL|Walmart|Cargill|AT&T,2.2,Marathahalli,1.5,2
+P16,Bagmane Tech Park,CV Raman Nagar,Central,77,CV Raman Nagar,12.9897,77.6523,40000,HP|NTT|Bosch|Huawei|Fujitsu,1.8,Baiyappanahalli,1.5,1
+P17,Bagmane Constellation,CV Raman Nagar,Central,77,CV Raman Nagar,12.992,77.655,15000,Bagmane Constellation tenants|IT firms,0.9,Baiyappanahalli,1.2,2
+P18,Prestige Tech Park,Marathahalli,Central,199,Marathahalli,12.9121,77.6773,30000,Honeywell|Target|JP Morgan|Fidelity,1.6,Silk Board,2.5,1
+P19,Embassy Golf Links (EGL),Domlur,Inner,112,Domlur,12.953,77.641,30000,Dell|Goldman Sachs|IBM|KPMG|Mimecast,2.8,Indiranagar,1.2,2
+P20,IBC Knowledge Park,Bannerghatta Road,Inner,166,S.G. Palya,12.9104,77.5985,22000,Accenture|TCS|IBM|HCL|Oracle|HSBC|BYJU's,1.6,Dairy Circle,1,2
+P21,Global Village Tech Park,Mysore Road,West,201,Kengeri,12.9582,77.4969,25000,Tech Mahindra|Sapient|Zensar|Infosys BPO,2,Kengeri,1.8,1
+P22,Karle Town Centre,Hebbal,North,40,Hebbal,13.045,77.5955,20000,Karle tenants|Wipro|IT firms,1.4,Hebbal,0.8,2
+P23,IBC Knowledge Park South (Bannerghatta),Bannerghatta Road,South,166,Bannerghatta,12.9104,77.5985,12000,Accenture|Deloitte|Conduent,0.8,Dairy Circle,1,3
+P24,UB City Commercial Tower,MG Road,Central,73,Shivajinagar,12.9731,77.597,8000,Luxury brands|Consulting firms|MNCs,0.3,MG Road,0.2,3
