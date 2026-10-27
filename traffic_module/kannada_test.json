@@ -1,0 +1,8 @@
+{
+  "english": "Moderate traffic. Slight delays possible.",
+  "kannada": "ಮಧ್ಯಮ ಟ್ರಾಫಿಕ್. ಸ್ವಲ್ಪ ವಿಳಂಬಗಳು ಸಾಧ್ಯ.",
+  "traffic_status": "MODERATE",
+  "has_incident": false,
+  "weather_impact": false,
+  "reroute_recommended": false
+}

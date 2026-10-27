@@ -13,3 +13,5 @@ python-dotenv==1.0.0
 python-dateutil==2.8.2
 aiofiles==23.2.1
 geopy==2.4.1
+openrouteservice==2.3.3
+polyline==2.0.2

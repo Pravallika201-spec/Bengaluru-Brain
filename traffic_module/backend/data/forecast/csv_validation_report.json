@@ -1,0 +1,22 @@
+{
+  "source_file": "bengaluru_traffic_history.csv",
+  "total_data_rows": 946,
+  "valid_rows": 930,
+  "repaired_rows": 3,
+  "rejected_rows": 13,
+  "reject_reasons": {
+    "field count mismatch (expected 23, got 24), cannot safely determine column alignment": 13
+  },
+  "repair_reasons": {
+    "ERROR row: stray exception-text field beyond http_status; nulled unmeasured traffic fields": 3
+  },
+  "unique_timestamps": 120,
+  "unique_osm_edges": 369,
+  "unique_tomtom_segment_ids": 169,
+  "status_counts": {
+    "OK": 930,
+    "ERROR": 3
+  },
+  "time_span_start": "2026-09-08 17:56:09",
+  "time_span_end": "2026-09-09 17:49:09"
+}

@@ -1,0 +1,109 @@
+{
+  "model_type": "PRELIMINARY \u2014 RandomForestRegressor (scikit-learn), NOT the final 7-day model",
+  "trained_at": "2026-09-11T14:50:14.755915",
+  "data_source": "backend/forecasting/data/forecast_segments_pairs_t120.json",
+  "total_genuine_pairs": 1114,
+  "unique_segments": 8,
+  "segment_labels": [
+    "343459489_1483859318_0",
+    "426403819_11886298793_0",
+    "6226329981_248677965_0",
+    "6562185321_343322993_0",
+    "8239947030_12040966310_0",
+    "11846694183_335648021_0",
+    "11919389037_13633447127_0",
+    "12553535777_332955193_0"
+  ],
+  "split": {
+    "method": "strict chronological (earliest 70% train / next 15% validation / latest 15% test)",
+    "train_count": 779,
+    "validation_count": 167,
+    "test_count": 168
+  },
+  "leakage_check": {
+    "train_max_timestamp": "2026-09-10T20:14:43",
+    "val_min_timestamp": "2026-09-10T20:14:43",
+    "val_max_timestamp": "2026-09-11T10:02:57",
+    "test_min_timestamp": "2026-09-11T10:08:07",
+    "train_before_val": true,
+    "val_before_test": true,
+    "no_row_overlap_between_splits": true,
+    "leakage_detected": false
+  },
+  "input_features": [
+    "current_speed_kmh",
+    "free_flow_speed_kmh",
+    "speed_ratio",
+    "delay_percent",
+    "current_travel_time_sec",
+    "free_flow_travel_time_sec",
+    "confidence",
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "segment_index"
+  ],
+  "target": "target_current_speed_kmh",
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 8,
+    "random_state": 42
+  },
+  "metrics": {
+    "train": {
+      "n": 779,
+      "mae": 1.143,
+      "rmse": 1.572,
+      "r2": 0.9684
+    },
+    "validation": {
+      "n": 167,
+      "mae": 2.421,
+      "rmse": 3.148,
+      "r2": 0.8664
+    },
+    "test": {
+      "n": 168,
+      "mae": 2.901,
+      "rmse": 3.674,
+      "r2": 0.8384
+    }
+  },
+  "persistence_baseline_metrics": {
+    "train": {
+      "n": 779,
+      "mae": 2.845,
+      "rmse": 3.775,
+      "r2": 0.8175
+    },
+    "validation": {
+      "n": 167,
+      "mae": 2.401,
+      "rmse": 3.297,
+      "r2": 0.8535
+    },
+    "test": {
+      "n": 168,
+      "mae": 2.738,
+      "rmse": 3.695,
+      "r2": 0.8364
+    }
+  },
+  "test_period_covered": {
+    "earliest_test_input_timestamp": "2026-09-11 10:08:07",
+    "latest_test_input_timestamp": "2026-09-11 11:51:26",
+    "latest_test_target_timestamp": "2026-09-11 13:39:27"
+  },
+  "limitations": [
+    "Trained on ~27.7 hours of real data from only 8 segments \u2014 a preliminary/development model, not the eventual 7-day model.",
+    "Small test set (see split.test_count) \u2014 metrics are real but not statistically robust yet.",
+    "Not integrated into any API or dashboard \u2014 evaluation only."
+  ],
+  "baseline_comparison": {
+    "beats_baseline_mae": false,
+    "beats_baseline_rmse": true,
+    "beats_baseline_r2": true,
+    "beats_baseline_overall": false,
+    "summary": "Model does NOT clearly beat the persistence baseline on the current test set (reported honestly -- metrics are not adjusted to look favorable)."
+  }
+}

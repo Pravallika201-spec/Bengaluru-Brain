@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Bengaluru Waste Intelligence Dashboard
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            padding: 22px 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header p {
+            margin: 6px 0 0;
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 25px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow:
+                0 2px 8px
+                rgba(0,0,0,0.08);
+        }
+
+        .card-title {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .card-value {
+            font-size: 27px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns:
+                2fr 1fr;
+
+            gap: 20px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow:
+                0 2px 8px
+                rgba(0,0,0,0.08);
+        }
+
+        .panel h2 {
+            margin-top: 0;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 650px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .priority-row {
+            display: flex;
+            justify-content:
+                space-between;
+
+            padding: 12px;
+            margin-bottom: 8px;
+
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+
+        .truck-table {
+            margin-top: 25px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse:
+                collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom:
+                1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f9fafb;
+        }
+
+        .footer {
+            margin-top: 25px;
+            padding: 20px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        @media(max-width: 900px) {
+
+            .cards {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>
+            Bengaluru Waste Intelligence Dashboard
+        </h1>
+
+        <p>
+            Urban Predictive Intelligence System
+            • Predictive Waste Management
+            • Dynamic Collection Routing
+        </p>
+
+    </div>
+
+
+    <div class="container">
+
+        <!-- =================================================
+             KPI CARDS
+             ================================================= -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-title">
+                    Priority Collection Locations
+                </div>
+
+                <div class="card-value">
+                    {{ total_locations }}
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-title">
+                    Predicted Waste
+                </div>
+
+                <div class="card-value">
+                    {{ "%.2f"|format(total_waste) }} kg
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-title">
+                    Collection Trucks
+                </div>
+
+                <div class="card-value">
+                    {{ total_trucks }}
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-title">
+                    Estimated Route Distance
+                </div>
+
+                <div class="card-value">
+                    {{ "%.2f"|format(total_distance) }} km
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             MAP + PRIORITY
+             ================================================= -->
+
+        <div class="main-grid">
+
+
+            <div class="panel">
+
+                <h2>
+                    Bengaluru Collection Intelligence Map
+                </h2>
+
+                <div class="map-container">
+
+                    {{ map_html | safe }}
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <h2>
+                    Collection Priority
+                </h2>
+
+
+                {% for priority, count
+                   in priority_counts.items() %}
+
+                <div class="priority-row">
+
+                    <span>
+                        {{ priority }}
+                    </span>
+
+                    <strong>
+                        {{ count }}
+                    </strong>
+
+                </div>
+
+                {% endfor %}
+
+
+                <br>
+
+
+                <h2>
+                    System Overview
+                </h2>
+
+                <p>
+                    The system divides Bengaluru into
+                    predictive grid cells and identifies
+                    locations requiring prioritized waste
+                    collection.
+                </p>
+
+                <p>
+                    Collection priorities are generated
+                    using predicted waste generation and
+                    operational risk indicators.
+                </p>
+
+                <p>
+                    Trucks are dynamically assigned to
+                    high-priority locations and routes
+                    are sequenced to reduce unnecessary
+                    travel.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TRUCK TABLE
+             ================================================= -->
+
+        <div class="panel truck-table">
+
+            <h2>
+                Dynamic Truck Allocation
+            </h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Truck
+                        </th>
+
+                        <th>
+                            Collection Points
+                        </th>
+
+                        <th>
+                            Waste (kg)
+                        </th>
+
+                        <th>
+                            Distance (km)
+                        </th>
+
+                        <th>
+                            Utilization
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for truck in truck_summary %}
+
+                    <tr>
+
+                        <td>
+                            {{ truck.truck_id }}
+                        </td>
+
+                        <td>
+                            {{ truck.collection_points }}
+                        </td>
+
+                        <td>
+                            {{ "%.2f"|format(
+                                truck.total_waste_kg
+                            ) }}
+                        </td>
+
+                        <td>
+                            {{ "%.2f"|format(
+                                truck.total_distance_km
+                            ) }}
+                        </td>
+
+                        <td>
+                            {{ "%.2f"|format(
+                                truck.utilization_percent
+                            ) }}%
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        Urban Predictive Intelligence System
+        |
+        Bengaluru Smart Waste Management
+
+    </div>
+
+</body>
+
+</html>

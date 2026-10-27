@@ -1,0 +1,27 @@
+{
+  "train": {
+    "MAE": 3.9116175174713135,
+    "RMSE": 5.968076229095459,
+    "R2": 0.6949626216650946,
+    "n": 1229
+  },
+  "val": {
+    "MAE": 6.236727237701416,
+    "RMSE": 8.397894859313965,
+    "R2": 0.6366852651756828,
+    "n": 107
+  },
+  "spatial_test": {
+    "MAE": 5.9246344566345215,
+    "RMSE": 7.684685707092285,
+    "R2": 0.6223673998007265,
+    "n": 125
+  },
+  "temporal_test": {
+    "MAE": 3.01877498626709,
+    "RMSE": 4.63935661315918,
+    "R2": 0.7407270730170987,
+    "n": 185
+  },
+  "provenance": "Trained on 760 real TomTom-observed OSM edges (single spatial snapshot, 2026-08-27) + 13 real TomTom-monitored road segments polled repeatedly over ~3 days (2026-08-26 onward). NOT a citywide model: covers ~0.2% of the 393,090-edge Bengaluru OSM graph with real labels; other edges have no ground truth and must be treated as graph-propagated estimates, not measurements. See traffic_module/models/prepare_real_traffic_dataset.py for exact source files and mapping methodology."
+}

@@ -1,0 +1,15 @@
+{
+  "horizon_minutes": 120,
+  "tolerance_minutes": 15,
+  "total_valid_observations": 930,
+  "unique_edges": 369,
+  "edges_with_2plus_observations": 361,
+  "median_revisit_gap_minutes": 353.6,
+  "min_revisit_gap_minutes": 336.9,
+  "max_revisit_gap_minutes": 952.9,
+  "candidate_pairs_within_tolerance": 0,
+  "edges_with_at_least_one_pair": 0,
+  "time_span_start": "2026-09-08 17:56:09",
+  "time_span_end": "2026-09-09 17:49:09",
+  "verdict": "INSUFFICIENT: zero T+120min pairs available. The per-edge revisit interval in this dataset is currently ~353.6 minutes (median), driven by the collector's 369-ward batch-rotation schedule \u2014 every edge is revisited roughly once per full rotation, not every ~120 minutes. No amount of preprocessing can create a 120-minute pair when no two real observations of the same edge exist that close together. A trained model would be fabricated."
+}

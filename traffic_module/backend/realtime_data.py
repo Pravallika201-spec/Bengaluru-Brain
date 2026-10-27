@@ -1,3 +1,4 @@
+import os
 import requests
 from datetime import datetime
 import json
@@ -5,8 +6,10 @@ import json
 # ── WEATHER (OpenWeatherMap free API) ──────────────
 # Get your FREE API key at: https://openweathermap.org/api
 # Free tier: 1,000 calls/day (plenty for demo)
-# Replace "your_free_key_from_openweathermap.org" with your actual key
-OWM_API_KEY = "REDACTED-ROTATED-KEY-SEE-SECURITY-NOTES"
+# Set the OPENWEATHER_API_KEY (or OWM_API_KEY) environment variable — no key
+# is committed here. Falls back to a value that intentionally always fails
+# the "real key" check in get_weather_context() until a real key is set.
+OWM_API_KEY = os.getenv("OPENWEATHER_API_KEY") or os.getenv("OWM_API_KEY") or "your_free_key_from_openweathermap.org"
 BENGALURU_LAT = 12.9716
 BENGALURU_LON = 77.5946
 

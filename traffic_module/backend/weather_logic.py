@@ -7,10 +7,39 @@ import requests
 from datetime import datetime
 import os
 
-# OpenWeatherMap API configuration
-OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY", "your_key_here")
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+    load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"))
+except Exception:
+    pass
+
 BENGALURU_LAT = 12.9716
 BENGALURU_LON = 77.5946
+_PLACEHOLDER_KEYS = {
+    "",
+    "your_key_here",
+    "your_free_key_from_openweathermap.org",
+}
+
+
+def _resolve_openweather_key():
+    """Use env keys first, then the existing project key in realtime_data.py."""
+    for env_name in ("OPENWEATHER_API_KEY", "OWM_API_KEY"):
+        value = os.getenv(env_name)
+        if value and value not in _PLACEHOLDER_KEYS:
+            return value, env_name
+    try:
+        from realtime_data import OWM_API_KEY as project_key
+        if project_key and project_key not in _PLACEHOLDER_KEYS:
+            return project_key, "realtime_data.OWM_API_KEY"
+    except Exception:
+        pass
+    return None, None
+
+
+OPENWEATHER_API_KEY, OPENWEATHER_KEY_SOURCE = _resolve_openweather_key()
+OPENWEATHER_API_KEY = OPENWEATHER_API_KEY or "your_key_here"
 
 # Weather multipliers
 WEATHER_MULTIPLIERS = {
@@ -53,56 +82,60 @@ def get_weather_multiplier(weather_condition):
     else:
         return 1.0  # Default to clear weather
 
+def _fallback_weather(reason):
+    return {
+        "condition": "clear",
+        "temperature": 28,
+        "humidity": 65,
+        "description": "clear sky (fallback)",
+        "visibility": 10,
+        "source": "FALLBACK",
+        "fallback_reason": reason,
+    }
+
+
 def get_live_weather():
     """
-    Fetch live weather data from OpenWeatherMap API
-    Returns weather info or None if API call fails
+    Fetch live weather data from OpenWeatherMap API.
+    Fallback values are explicitly labeled; they are not live observations.
     """
-    if OPENWEATHER_API_KEY == "your_key_here":
-        # Return mock data for demo if no API key
-        return {
-            "condition": "clear",
-            "temperature": 28,
-            "humidity": 65,
-            "description": "clear sky"
-        }
+    api_key, key_source = _resolve_openweather_key()
+    if not api_key:
+        return _fallback_weather("OPENWEATHER_API_KEY not configured")
     
     try:
-        url = f"https://api.openweathermap.org/data/2.5/weather"
+        url = "https://api.openweathermap.org/data/2.5/weather"
         params = {
             "lat": BENGALURU_LAT,
             "lon": BENGALURU_LON,
-            "appid": OPENWEATHER_API_KEY,
+            "appid": api_key,
             "units": "metric"
         }
         
         response = requests.get(url, params=params, timeout=5)
-        response.raise_for_status()
+        if response.status_code != 200:
+            return _fallback_weather(f"OpenWeatherMap HTTP {response.status_code}")
         
         data = response.json()
         
-        # Extract relevant weather information
         weather_info = {
             "condition": data["weather"][0]["main"].lower(),
             "description": data["weather"][0]["description"],
             "temperature": data["main"]["temp"],
             "humidity": data["main"]["humidity"],
             "wind_speed": data.get("wind", {}).get("speed", 0),
-            "visibility": data.get("visibility", 10000) / 1000,  # Convert to km
-            "timestamp": datetime.now().isoformat()
+            "visibility": data.get("visibility", 10000) / 1000,
+            "timestamp": datetime.now().isoformat(),
+            "source": "LIVE",
+            "provider": "OpenWeatherMap",
+            "key_source": key_source,
         }
         
         return weather_info
         
     except requests.exceptions.RequestException as e:
         print(f"Weather API error: {e}")
-        # Return mock data on error
-        return {
-            "condition": "clear",
-            "temperature": 28,
-            "humidity": 65,
-            "description": "clear sky"
-        }
+        return _fallback_weather(str(e))
 
 def get_weather_impact(weather_condition=None):
     """

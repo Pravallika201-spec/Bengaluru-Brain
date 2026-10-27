@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, AlertTriangle, Building } from 'lucide-react';
 
+// Same /api/shift-timers data and logic as before -- only the visual
+// system changed (migrated from the old legacy CSS classes onto the
+// shared cc- Control Center classes used elsewhere in the app).
 const ITShiftTimer = () => {
   const [shiftTimers, setShiftTimers] = useState([]);
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -34,131 +37,81 @@ const ITShiftTimer = () => {
     return `${hours}h ${mins}m`;
   };
 
-  const getTimerColor = (status) => {
-    switch (status) {
-      case 'APPROACHING':
-        return 'traffic-critical';
-      case 'UPCOMING':
-        return 'traffic-high';
-      default:
-        return 'traffic-medium';
-    }
-  };
-
-  const getStatusIcon = (status) => {
-    switch (status) {
-      case 'APPROACHING':
-        return '🚨';
-      case 'UPCOMING':
-        return '⏰';
-      default:
-        return '📅';
-    }
-  };
-
-  const isShiftChangeWarning = () => {
-    return shiftTimers.some(timer => timer.status === 'APPROACHING');
-  };
+  const STATUS_COLOR = { APPROACHING: 'var(--cc-red)', UPCOMING: 'var(--cc-orange)' };
+  const getStatusIcon = (status) => (status === 'APPROACHING' ? '🚨' : status === 'UPCOMING' ? '⏰' : '📅');
+  const isShiftChangeWarning = () => shiftTimers.some((timer) => timer.status === 'APPROACHING');
 
   return (
-    <div className="it-shift-timer">
-      <div className="timer-header">
-        <div className="header-title">
-          <Building size={20} />
-          <h3>🏢 IT Shift Timers</h3>
-        </div>
-        
+    <div className="cc-panel">
+      <div className="cc-panel-head">
+        <p className="cc-panel-title"><Building size={13} className="cc-icon" /> IT Shift Timers</p>
         {isShiftChangeWarning() && (
-          <div className="warning-badge">
-            <AlertTriangle size={16} />
-            <span>Shift Change</span>
-          </div>
+          <span className="cc-pill critical"><AlertTriangle size={11} style={{ verticalAlign: 'middle', marginRight: 3 }} />Shift Change</span>
         )}
       </div>
 
-      {/* Warning Banner */}
       {isShiftChangeWarning() && (
-        <div className="shift-warning-banner">
-          <AlertTriangle size={20} />
-          <div className="warning-content">
-            <div className="warning-title">IT Shift Change Imminent</div>
-            <div className="warning-message">
-              Heavy traffic expected during shift change hours
-            </div>
+        <div className="cc-metric-tile" style={{ borderLeft: '3px solid var(--cc-red)', marginBottom: '0.7rem', display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}>
+          <AlertTriangle size={16} style={{ color: 'var(--cc-red)', flexShrink: 0, marginTop: 2 }} />
+          <div>
+            <div style={{ fontWeight: 700, color: 'var(--cc-text)', fontSize: '0.82rem' }}>IT Shift Change Imminent</div>
+            <div style={{ fontSize: '0.76rem', color: 'var(--cc-text-dim)', marginTop: '0.15rem' }}>Heavy traffic expected during shift change hours</div>
           </div>
         </div>
       )}
 
-      <div className="timers-list">
-        {shiftTimers.length === 0 ? (
-          <div className="no-timers">
-            <Clock size={32} />
-            <p>No upcoming shift changes</p>
-            <small>Next shift change in 2+ hours</small>
-          </div>
-        ) : (
-          shiftTimers.map((timer, index) => (
-            <div key={index} className={`timer-card ${getTimerColor(timer[2])}`}>
-              <div className="timer-header">
-                <div className="timer-location">
-                  <Building size={16} />
-                  <span>{timer[0]}</span>
-                </div>
-                <div className="timer-status">
-                  {getStatusIcon(timer[2])}
-                  <span>{timer[2]}</span>
-                </div>
+      {shiftTimers.length === 0 ? (
+        <div className="cc-empty">No upcoming shift changes — next shift change in 2+ hours</div>
+      ) : (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {shiftTimers.map((timer, index) => (
+            <div className="cc-metric-tile" key={index} style={{ borderLeft: `3px solid ${STATUS_COLOR[timer.status] || 'var(--cc-border-strong)'}` }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.82rem', fontWeight: 700, color: 'var(--cc-text)' }}>
+                  <Building size={13} /> {timer.park}
+                </span>
+                <span style={{ fontSize: '0.72rem', color: 'var(--cc-text-dim)' }}>{getStatusIcon(timer.status)} {timer.status}</span>
               </div>
-              
-              <div className="timer-countdown">
-                <div className={`countdown-time ${getTimerColor(timer[2])}`}>
-                  {formatTime(timer[1])}
-                </div>
-                <div className="countdown-label">
-                  {timer[2] === 'APPROACHING' ? 'until shift change' : 'until shift'}
-                </div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem' }}>
+                <span style={{ fontFamily: 'var(--cc-font-display)', fontSize: '1.3rem', fontWeight: 700, color: STATUS_COLOR[timer.status] || 'var(--cc-text)' }}>
+                  {formatTime(timer.minutes_until)}
+                </span>
+                <span style={{ fontSize: '0.72rem', color: 'var(--cc-text-faint)' }}>
+                  {timer.status === 'APPROACHING' ? 'until shift change' : 'until shift'}
+                </span>
               </div>
-              
-              {timer[2] === 'APPROACHING' && (
-                <div className="timer-alert">
-                  <AlertTriangle size={14} />
-                  <span>Expect heavy traffic</span>
-                </div>
+              {timer.status === 'APPROACHING' && (
+                <div style={{ fontSize: '0.74rem', color: 'var(--cc-red)', marginTop: '0.3rem' }}>⚠ Expect heavy traffic</div>
               )}
             </div>
-          ))
-        )}
+          ))}
+        </div>
+      )}
+
+      <div style={{ marginTop: '0.8rem', paddingTop: '0.7rem', borderTop: '1px solid var(--cc-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+        <span style={{ fontSize: '0.72rem', color: 'var(--cc-text-faint)' }}>Current time</span>
+        <span style={{ fontFamily: 'var(--cc-font-display)', fontWeight: 700, color: 'var(--cc-text)' }}>{currentTime.toLocaleTimeString()}</span>
       </div>
 
-      {/* Current Time Display */}
-      <div className="current-time-display">
-        <div className="time-label">Current Time</div>
-        <div className="time-value">
-          {currentTime.toLocaleTimeString()}
-        </div>
-        <div className="time-date">
-          {currentTime.toLocaleDateString()}
-        </div>
-      </div>
-
-      {/* Shift Schedule Info */}
-      <div className="shift-schedule">
-        <h4>📅 Typical IT Shift Hours</h4>
-        <div className="schedule-grid">
-          <div className="schedule-item">
-            <div className="schedule-park">Manyata Tech Park</div>
-            <div className="schedule-times">8-9 AM, 5-7 PM</div>
+      <details className="cc-details" style={{ marginTop: '0.7rem' }}>
+        <summary style={{ cursor: 'pointer', fontSize: '0.74rem', color: 'var(--cc-accent)', fontWeight: 700 }}>
+          Typical IT shift hours
+        </summary>
+        <div className="cc-metric-grid" style={{ marginTop: '0.5rem' }}>
+          <div className="cc-metric-tile">
+            <div className="cc-mt-label">Manyata Tech Park</div>
+            <div className="cc-mt-value sm">8-9 AM, 5-7 PM</div>
           </div>
-          <div className="schedule-item">
-            <div className="schedule-park">Electronic City</div>
-            <div className="schedule-times">8-9 AM, 6-8 PM</div>
+          <div className="cc-metric-tile">
+            <div className="cc-mt-label">Electronic City</div>
+            <div className="cc-mt-value sm">8-9 AM, 6-8 PM</div>
           </div>
-          <div className="schedule-item">
-            <div className="schedule-park">Whitefield</div>
-            <div className="schedule-times">9-10 AM, 6-8 PM</div>
+          <div className="cc-metric-tile">
+            <div className="cc-mt-label">Whitefield</div>
+            <div className="cc-mt-value sm">9-10 AM, 6-8 PM</div>
           </div>
         </div>
-      </div>
+      </details>
     </div>
   );
 };

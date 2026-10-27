@@ -1,0 +1,18 @@
+{
+  "source_file": "forecasting/data/forecast_segments_history.csv",
+  "total_data_rows": 1432,
+  "valid_rows": 1432,
+  "repaired_rows": 0,
+  "rejected_rows": 0,
+  "reject_reasons": {},
+  "repair_reasons": {},
+  "unique_timestamps": 179,
+  "unique_osm_edges": 8,
+  "unique_tomtom_segment_ids": 8,
+  "status_counts": {
+    "OK": 1410,
+    "ERROR": 22
+  },
+  "time_span_start": "2026-09-10T09:56:14+05:30",
+  "time_span_end": "2026-09-11T13:39:27+05:30"
+}

@@ -1,0 +1,70 @@
+# Core Data Processing
+pandas
+numpy
+scipy
+
+# GIS and Spatial
+geopandas
+shapely
+geopy
+folium
+
+# Machine Learning
+scikit-learn
+xgboost
+lightgbm
+statsmodels
+joblib
+dill
+
+# Web and API
+flask
+requests
+python-dotenv
+fastapi
+uvicorn[standard]
+pydantic
+
+# Visualization
+matplotlib
+plotly
+seaborn
+
+# Text Processing
+textblob
+
+# Dashboard
+streamlit
+streamlit-folium
+
+# Utilities
+python-dateutil
+pytz
+networkx
+click
+
+# Optional - Social Media (requires API keys)
+# tweepy
+# praw
+# python-telegram-bot
+
+# Optional - Prophet (may require specific Python version)
+# prophet
+
+# Optional - Deep Learning (large downloads)
+# tensorflow
+# torch
+
+# Optional - Satellite Processing (requires GDAL)
+# satpy
+# rasterio
+# rioxarray
+
+# Optional - Weather APIs
+# pyowm
+
+# Optional - Database (for production)
+# sqlalchemy
+# psycopg2-binary
+# redis
+# celery

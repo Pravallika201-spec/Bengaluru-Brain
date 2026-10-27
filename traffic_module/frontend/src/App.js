@@ -1,542 +1,356 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import React, { useState, useEffect, useRef } from 'react';
+import PredictionForm from './components/PredictionForm';
+import RouteMap from './components/RouteMap';
+import TrafficForecastAndIncidents from './components/TrafficForecastAndIncidents';
+import TrafficPredictionPanel from './components/TrafficPredictionPanel';
+import WardTrafficStressMonitor from './components/WardTrafficStressMonitor';
+import IncidentsPanel from './components/IncidentsPanel';
+import ITShiftTimer from './components/ITShiftTimer';
+import PeakHoursChart from './components/PeakHoursChart';
+import SMSPreview from './components/SMSPreview';
+import ModuleStatusBar from './components/ModuleStatusBar';
+import OverviewPanel from './components/OverviewPanel';
+import WastePanel from './components/WastePanel';
+import UsiPanel from './components/UsiPanel';
+import AlertsPanel from './components/AlertsPanel';
+import './App.css';
+import './components.css';
+import './dashboard.css';
+import './theme.css';
 
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  Polyline,
-  useMap
-} from "react-leaflet";
-
-import L from "leaflet";
-
-import "leaflet/dist/leaflet.css";
-
-// Fix default marker icon issue
-
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
-});
-
-// Auto-fit map bounds
-
-function RouteBounds({ routeCoords, sourceCoords, destCoords }) {
-
-  const map = useMap();
-
-  useEffect(() => {
-
-    if (routeCoords && routeCoords.length > 0) {
-
-      const bounds = L.latLngBounds(routeCoords);
-
-      map.fitBounds(bounds, {
-        padding: [50, 50],
-        maxZoom: 15,
-        animate: true,
-        duration: 0.5
-      });
-
-    } else if (sourceCoords && destCoords) {
-
-      const bounds = L.latLngBounds([
-        sourceCoords,
-        destCoords
-      ]);
-
-      map.fitBounds(bounds, {
-        padding: [50, 50],
-        maxZoom: 14,
-        animate: true,
-        duration: 0.5
-      });
-    }
-
-  }, [routeCoords, sourceCoords, destCoords, map]);
-
-  return null;
-}
+const TABS = [
+  { id: 'overview', label: 'Overview', icon: '🏠' },
+  { id: 'traffic', label: 'Traffic', icon: '🚦' },
+  { id: 'waste', label: 'Waste', icon: '🗑️' },
+  { id: 'usi', label: 'USI', icon: '📊' },
+  { id: 'alerts', label: 'Alerts', icon: '🔔' },
+];
 
 function App() {
-
-  const [source, setSource] = useState("");
-  const [destination, setDestination] = useState("");
-
-  const [result, setResult] = useState(null);
-
+  const [activeTab, setActiveTab] = useState('overview');
+  const [selectedUsiArea, setSelectedUsiArea] = useState(null);
+  const [prediction, setPrediction] = useState(null);
+  const [locations, setLocations] = useState([]);
+  const [wardStress, setWardStress] = useState([]);
+  const [incidents, setIncidents] = useState([]);
+  const [weather, setWeather] = useState(null);
+  const [currentTime, setCurrentTime] = useState(new Date());
   const [loading, setLoading] = useState(false);
+  const [predictError, setPredictError] = useState(null);
+  // Guards against a real, verified race condition: if an OLDER prediction
+  // request's network response resolves AFTER a NEWER one (plausible —
+  // different routes hit OSRM/GNN/weather with different real latency),
+  // the older response must NOT be allowed to overwrite the already-shown
+  // newer result. Each call gets a monotonically increasing id; only the
+  // response matching the CURRENT latest id is ever applied.
+  const requestIdRef = useRef(0);
 
-  const bengaluruCenter = [12.9716, 77.5946];
+  // Fetch initial data
+  useEffect(() => {
+    fetchLocations();
+    fetchWardStress();
+    fetchIncidents();
+    fetchWeather();
 
-  // Predict traffic
+    // Update time every second
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
 
-  const predictTraffic = async () => {
+    return () => clearInterval(timer);
+  }, []);
 
-    if (!source || !destination) {
+  // Refresh data periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchWardStress();
+      fetchIncidents();
+      fetchWeather();
+    }, 60000); // Refresh every minute
 
-      alert("Enter source and destination");
+    return () => clearInterval(interval);
+  }, []);
 
-      return;
-    }
-
-    setLoading(true);
-
+  const fetchLocations = async () => {
     try {
+      const response = await fetch('/api/locations');
+      const data = await response.json();
+      setLocations(data);
+    } catch (error) {
+      console.error('Failed to fetch locations:', error);
+    }
+  };
 
-      const response = await fetch(
-        "http://127.0.0.1:8000/predict-route",
-        {
-          method: "POST",
+  const fetchWardStress = async () => {
+    try {
+      // NOTE: /api/ward-stress is SIMULATED data (see backend/ward_stress.py) —
+      // there is no live sensor feed behind these numbers yet.
+      const response = await fetch('/api/ward-stress');
+      const data = await response.json();
+      setWardStress(data.wards || []);
+    } catch (error) {
+      console.error('Failed to fetch ward stress:', error);
+    }
+  };
 
-          headers: {
-            "Content-Type": "application/json"
-          },
+  const fetchIncidents = async () => {
+    try {
+      const response = await fetch('/api/incident/list');
+      const data = await response.json();
+      setIncidents(data.success ? data.incidents : []);
+    } catch (error) {
+      console.error('Failed to fetch incidents:', error);
+    }
+  };
 
-          body: JSON.stringify({
-            source,
-            destination
-          })
-        }
-      );
+  const fetchWeather = async () => {
+    try {
+      const response = await fetch('/api/weather');
+      const data = await response.json();
+      setWeather(data.weather);
+    } catch (error) {
+      console.error('Failed to fetch weather:', error);
+    }
+  };
+
+  const handlePredict = async (predictionData) => {
+    const thisRequestId = ++requestIdRef.current;
+    setLoading(true);
+    setPredictError(null);
+    // Clear the previous result immediately rather than leaving a stale
+    // route's numbers on screen while the new request is in flight — the
+    // exact "does not update correctly" symptom is indistinguishable from
+    // "still showing the old route" if we don't do this.
+    setPrediction(null);
+    try {
+      // Use enhanced endpoint for real-time traffic intelligence
+      const response = await fetch('/api/predict-enhanced', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(predictionData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Prediction failed');
+      }
 
       const data = await response.json();
 
-      console.log(data);
+      // Ignore this response if a newer request has since been fired —
+      // prevents an out-of-order (slower) older response from clobbering
+      // an already-displayed newer result.
+      if (thisRequestId !== requestIdRef.current) return;
 
-      setResult(data);
+      // The backend's exception path (e.g. the source/destination text
+      // couldn't be geocoded at all — a real "location not found", not a
+      // bug) falls back to a degraded response with no source/destination
+      // fields at all and status "Unable to predict". Found via testing an
+      // address the forward geocoder genuinely can't resolve: this shape
+      // previously slipped past the mismatch check below because a MISSING
+      // data.source was treated as "trivially matches" rather than a
+      // failure signal — fixed by checking for this shape explicitly.
+      const looksLikeGeocodeFailure = data.status === 'Unable to predict'
+        || (data.distance_km === 0 && !data.source && !data.destination);
+      if (looksLikeGeocodeFailure) {
+        setPredictError(
+          `Could not find a route for "${predictionData.source}" → "${predictionData.destination}" — one of these locations could not be geocoded. Try a more specific or different location name.`
+        );
+        return;
+      }
 
+      // Defense in depth: the backend was verified this session to never
+      // mix up routes across requests, but assert it anyway rather than
+      // silently trusting it — if it ever did, showing a mismatched result
+      // would be worse than showing an explicit error.
+      const sourceMatches = !data.source || data.source.toLowerCase() === predictionData.source.toLowerCase();
+      const destMatches = !data.destination || data.destination.toLowerCase() === predictionData.destination.toLowerCase();
+      if (!sourceMatches || !destMatches) {
+        setPredictError(
+          `Backend returned a result for "${data.source} → ${data.destination}" but "${predictionData.source} → ${predictionData.destination}" was requested — discarding rather than showing a mismatched route.`
+        );
+        return;
+      }
+
+      setPrediction(data);
     } catch (error) {
-
-      console.log(error);
-
-      alert("Backend connection failed");
-    }
-
-    setLoading(false);
-  };
-
-  // Traffic colors
-
-  const getTrafficColor = (traffic) => {
-
-    switch (traffic) {
-
-      case "CRITICAL":
-        return "#FF3131";
-
-      case "HIGH":
-        return "#FF6B35";
-
-      case "MODERATE":
-        return "#FFD700";
-
-      case "LOW":
-        return "#00FF00";
-
-      default:
-        return "#00D4FF";
+      if (thisRequestId !== requestIdRef.current) return;
+      console.error('Prediction error:', error);
+      setPredictError(error.message || 'Prediction failed — please try again.');
+    } finally {
+      if (thisRequestId === requestIdRef.current) {
+        setLoading(false);
+      }
     }
   };
-
-  // Coordinates
-
-  const sourceCoords =
-    result?.source_coords || bengaluruCenter;
-
-  const destCoords =
-    result?.destination_coords || bengaluruCenter;
-
-  const routeCoords =
-    result?.route_coords || [];
 
   return (
-
-    <div className="app-container">
-
-      {/* HEADER */}
-
-      <div className="header">
-
-        <h1 className="title">
-          Bengaluru Brain 🚦
-        </h1>
-
-      </div>
-
-      {/* INPUT CARD */}
-
-      <div className="input-card">
-
-        <div className="input-group">
-
-          <label>
-            📍 Source Location
-          </label>
-
-          <input
-            type="text"
-            placeholder="e.g., Hebbal"
-            value={source}
-            onChange={(e) => setSource(e.target.value)}
-          />
-
-        </div>
-
-        <div className="input-group">
-
-          <label>
-            🎯 Destination Location
-          </label>
-
-          <input
-            type="text"
-            placeholder="e.g., Marathahalli"
-            value={destination}
-            onChange={(e) => setDestination(e.target.value)}
-          />
-
-        </div>
-
-        <button
-          onClick={predictTraffic}
-          className="predict-button"
-          disabled={loading}
-        >
-
-          {loading
-            ? "🔄 Predicting..."
-            : "🚀 Predict Traffic"}
-
-        </button>
-
-      </div>
-
-      {/* LOADING */}
-
-      {loading && (
-
-        <div className="loading-overlay">
-
-          <div className="spinner"></div>
-
-          <p>
-            Analyzing traffic patterns...
-          </p>
-
-        </div>
-
-      )}
-
-      {/* RESULTS */}
-
-      {result && (
-
-        <div className="results-container">
-
-          {/* PREDICTION CARD */}
-
-          <div className="prediction-card">
-
-            <div className="route-header">
-
-              <h2>
-                {source} → {destination}
-              </h2>
-
-              <div
-                className={`traffic-badge ${(result?.traffic || "").toLowerCase()}`}
-              >
-
-                {result?.traffic || "LOW"}
-
-              </div>
-
-            </div>
-
-            {/* METRICS */}
-
-            <div className="metrics-grid">
-
-              <div className="metric-item">
-                <div className="metric-label">Travel Time</div>
-                <div className="metric-value">
-                  {Math.round(result.travel_time)} mins
-                </div>
-              </div>
-
-              <div className="metric-item">
-                <div className="metric-label">Base Time</div>
-                <div className="metric-value">
-                  {Math.round(result.base_duration_mins)} mins
-                </div>
-              </div>
-
-              <div className="metric-item">
-                <div className="metric-label">Delay</div>
-                <div className="metric-value delay">
-                  +{Math.round(result.delay)} mins
-                </div>
-              </div>
-
-              <div className="metric-item">
-                <div className="metric-label">Distance</div>
-                <div className="metric-value">
-                  {result.distance_km.toFixed(1)} km
-                </div>
-              </div>
-
-            </div>
-
-            <div className="metrics-grid">
-
-              <div className="metric-item">
-                <div className="metric-label">Avg Speed</div>
-                <div className="metric-value">
-                  {result.avg_speed.toFixed(1)} km/h
-                </div>
-              </div>
-
-              <div className="metric-item">
-                <div className="metric-label">Route Type</div>
-                <div className="metric-value">
-                  {result.route_type.toUpperCase()}
-                </div>
-              </div>
-
-            </div>
-
-            {/* DAY INFO */}
-
-            <div className="day-info-section">
-
-              <div className="day-info-item">
-
-                <span className="day-info-label">
-                  📅 Day:
-                </span>
-
-                <span className="day-info-value">
-                  {result?.day_name || "Unknown"} ({result?.day_type || "Unknown"})
-                </span>
-
-              </div>
-
-              <div className="day-info-item">
-
-                <span className="day-info-label">
-                  🛣 Route:
-                </span>
-
-                <span className="day-info-value">
-                  {result?.route_type?.toUpperCase() || "NORMAL"}
-                </span>
-
-              </div>
-
-              <div className="day-info-item">
-
-                <span className="day-info-label">
-                  🚗 Speed:
-                </span>
-
-                <span className="day-info-value">
-                  {result?.current_speed_kmh || 0} km/h
-                </span>
-
-              </div>
-
-            </div>
-
-            {/* FACTORS */}
-
-            <div className="factors-section">
-
-              <h3>
-                📊 Contributing Factors
-              </h3>
-
-              <div className="factors-list">
-
-                {result?.factors &&
-                result.factors.length > 0 ? (
-
-                  result.factors.map((factor, index) => (
-
-                    <span
-                      key={index}
-                      className="factor-tag"
-                    >
-                      {factor}
-                    </span>
-
-                  ))
-
-                ) : (
-
-                  <span className="no-factors">
-                    Normal traffic conditions
-                  </span>
-
-                )}
-
-              </div>
-
-            </div>
-
-            {/* CONTEXT */}
-
-            <div className="context-section">
-
-              <div className="context-item">
-
-                <span className="context-label">
-                  🌦️ Weather:
-                </span>
-
-                <span className="context-value">
-                  {result?.weather || "clear"}
-                </span>
-
-              </div>
-
-              <div className="context-item">
-
-                <span className="context-label">
-                  🎭 Event:
-                </span>
-
-                <span className="context-value">
-                  {result?.event || "No Event"}
-                </span>
-
-              </div>
-
-              <div className="context-item">
-
-                <span className="context-label">
-                  🎯 Confidence:
-                </span>
-
-                <span className="context-value">
-                  {Math.round((result?.confidence || 0) * 100)}%
-                </span>
-
-              </div>
-
-            </div>
-
-            {/* STATUS */}
-
-            <div className="status-section">
-
-              <div className="status-message">
-                {result?.status || "No status"}
-              </div>
-
-            </div>
-
+    <div className="app">
+      {/* Top bar + navigation are wrapped in one sticky group so the nav
+          always sits directly below the header regardless of the header's
+          actual rendered height (fixes a real bug: the header can wrap to
+          two lines on narrower widths, and the nav previously used a
+          hardcoded `top: 54px` sticky offset that no longer matched,
+          causing the taller header to visually cover the nav once
+          scrolled — found via live browser testing). */}
+      <div className="cc-header-group">
+      <header className="cc-topbar">
+        <div className="cc-brand">
+          <div className="cc-brand-icon">🧠</div>
+          <div className="cc-brand-text">
+            <h1>BENGALURU BRAIN</h1>
+            <p>Namma Flow — Civic Intelligence Platform</p>
           </div>
+        </div>
 
-          {/* MAP */}
+        <div className="cc-topbar-right">
+          {/* FINAL VISUAL THEME FIX: header badge requested in the theme
+              brief -- static label, no new data/endpoint/logic. */}
+          <span className="cc-pill info cc-ward-badge">369 WARDS</span>
 
-          <div className="map-card">
+          <div className="cc-chip"><strong>{currentTime.toLocaleTimeString()}</strong></div>
 
-            <MapContainer
-              center={bengaluruCenter}
-              zoom={10}
-              style={{
-                height: "500px",
-                width: "100%",
-                borderRadius: "16px"
-              }}
-            >
+          {weather && (
+            <div className="cc-chip">
+              <span>
+                {weather.condition === 'clear' ? '☀️' :
+                 weather.condition === 'clouds' ? '☁️' :
+                 weather.condition.includes('rain') ? '🌧️' : '🌫️'}
+              </span>
+              <strong>{weather.temperature}°C</strong>
+            </div>
+          )}
 
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; OpenStreetMap contributors'
-              />
+          <div className="cc-chip live">
+            <span className="cc-dot"></span>
+            <span>LIVE</span>
+          </div>
+        </div>
+      </header>
 
-              <RouteBounds
-                routeCoords={routeCoords}
-                sourceCoords={sourceCoords}
-                destCoords={destCoords}
-              />
+      {/* Navigation */}
+      <nav className="cc-nav">
+        {TABS.map((tab) => (
+          <button
+            key={tab.id}
+            className={`cc-navlink ${activeTab === tab.id ? 'active' : ''}`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            <span>{tab.icon}</span>
+            <span>{tab.label}</span>
+          </button>
+        ))}
+      </nav>
+      </div>
 
-              {/* SOURCE */}
+      <div className="cc-page">
+        {activeTab === 'overview' && <OverviewPanel />}
 
-              <Marker position={sourceCoords}>
+        {activeTab === 'traffic' && (
+          <>
+            <div className="cc-hero">
+              <div>
+                <h2>🚦 Traffic Intelligence</h2>
+                <p>
+                  Real-world route prediction using GNN + OSRM — powered by real, TomTom-labeled road
+                  segments where coverage exists, otherwise a clearly-labeled static estimate.
+                </p>
+              </div>
+            </div>
 
-                <Popup>
+            {/* ================================================================
+                GROUP A — PREDICT A ROUTE
+                source/destination -> current condition -> 2-hour forecast ->
+                route map. Underlying calls/props are UNCHANGED: PredictionForm
+                still calls handlePredict -> /api/predict-enhanced; the result
+                still flows into TrafficPredictionPanel (T+120 forecast) and
+                RouteMap exactly as before. Only the surrounding grouping/
+                visual hierarchy changed.
+                ================================================================ */}
+            <div className="cc-section-heading"><span>Predict a Route</span></div>
 
-                  <div className="marker-popup">
+            <PredictionForm
+              locations={locations}
+              onPredict={handlePredict}
+              loading={loading}
+            />
 
-                    <strong>
-                      🚩 Source
-                    </strong>
+            {predictError && (
+              <div className="cc-panel" style={{ borderColor: 'var(--cc-red)', color: '#ff8a8a' }}>
+                ⚠️ {predictError}
+              </div>
+            )}
 
-                    <br />
+            {loading && (
+              <div className="cc-panel cc-empty">
+                Predicting… (this route's real routing/GNN lookup is in progress)
+              </div>
+            )}
 
-                    {source}
+            {/* FIXED order within Group A — do not reorder, and do not make
+                either conditional on anything beyond what's already here. */}
+            {!loading && prediction && <TrafficPredictionPanel prediction={prediction} />}
 
-                  </div>
+            {!loading && prediction && <RouteMap prediction={prediction} />}
 
-                </Popup>
+            {/* ================================================================
+                GROUP B — CITY TRAFFIC CONDITIONS
+                Replaces the old citywide point-map (WardMap, always zoomed to
+                a near-empty world view) with a Ward Traffic Stress Monitor
+                driven by the SAME wardStress data (same /api/ward-stress
+                fetch above) -- no new endpoint, no new/random values. WardMap
+                and the old card-grid WardStressGrid are no longer rendered on
+                this page (components preserved, unused, see backup folder);
+                the real Traffic prediction route map above is untouched.
+                ================================================================ */}
+            <div className="cc-section-heading"><span>City Traffic Conditions</span></div>
 
-              </Marker>
+            <WardTrafficStressMonitor wardStress={wardStress} />
 
-              {/* DESTINATION */}
+            {/* ================================================================
+                GROUP C — INCIDENTS & PATTERNS
+                Same components, same data/endpoints as before, grouped and
+                re-themed together. IncidentsPanel's demo-only controls
+                (+ Demo Incident / Clear All / Auto ON toggle) have been
+                removed from this citizen-facing view; see IncidentsPanel.jsx.
+                ================================================================ */}
+            <div className="cc-section-heading"><span>Incidents &amp; Patterns</span></div>
 
-              <Marker position={destCoords}>
+            <TrafficForecastAndIncidents
+              source={prediction?.source}
+              destination={prediction?.destination}
+              destinationCoords={prediction?.destination_coords}
+            />
 
-                <Popup>
+            <div className="cc-2col">
+              <IncidentsPanel incidents={incidents} />
+              <ITShiftTimer />
+            </div>
 
-                  <div className="marker-popup">
-
-                    <strong>
-                      🏁 Destination
-                    </strong>
-
-                    <br />
-
-                    {destination}
-
-                  </div>
-
-                </Popup>
-
-              </Marker>
-
-              {/* ROUTE */}
-
-              {routeCoords &&
-              routeCoords.length > 0 && (
-
-                <Polyline
-                  positions={routeCoords}
-                  pathOptions={{
-                    color: getTrafficColor(result?.traffic || "LOW"),
-                    weight: 6,
-                    opacity: 0.8,
-                    lineCap: "round",
-                    lineJoin: "round"
-                  }}
-                />
-
+            <div className="cc-2col">
+              <PeakHoursChart />
+              {prediction && (prediction.traffic === 'SEVERE' || prediction.traffic === 'HIGH') && (
+                <SMSPreview prediction={prediction} />
               )}
+            </div>
+          </>
+        )}
 
-            </MapContainer>
+        {activeTab === 'waste' && <WastePanel />}
 
-          </div>
+        {activeTab === 'usi' && (
+          <UsiPanel selectedArea={selectedUsiArea} onSelectArea={setSelectedUsiArea} />
+        )}
 
-        </div>
-      )}
+        {activeTab === 'alerts' && (
+          <AlertsPanel selectedArea={selectedUsiArea} onSelectArea={setSelectedUsiArea} />
+        )}
 
+      </div>
+
+      {/* Module Status Bar */}
+      <ModuleStatusBar />
     </div>
   );
 }

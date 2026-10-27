@@ -1,6 +1,19 @@
 """
 Bengaluru Brain - NAMMA FLOW Traffic Prediction API
 Main FastAPI application with all endpoints
+
+*** DEPRECATED — DO NOT RUN THIS FILE ***
+app.py is now the single canonical backend. This file's /api/ward-stress,
+/api/incidents and /api/shift-timers endpoints reference an undefined
+`predictor` object and would 500 if ever started — that bug predates this
+notice (verified during the Phase 1 audit); it's left unfixed here because
+the working replacements now live in app.py:
+  - /api/locations, /api/ward-stress, /api/shift-timers, /api/weather,
+    /api/city-summary, /api/health  -> ported into app.py (fixed).
+  - /api/incidents                  -> use app.py's /api/incident/list
+    instead (backed by incident_service.py, not the broken `predictor`).
+Kept in the repo for reference only, per the project rule against deleting
+existing code without cause.
 """
 
 from fastapi import FastAPI, HTTPException
@@ -86,7 +99,7 @@ class Incident(BaseModel):
 async def root():
     """Root endpoint - API status"""
     return {
-        "message": "🧠 BENGALURU BRAIN - NAMMA FLOW API",
+        "message": "BENGALURU BRAIN - NAMMA FLOW API",
         "status": "ACTIVE",
         "version": "2.0.0",
         "description": "Traffic Intelligence System for Bengaluru",
@@ -248,16 +261,30 @@ async def health_check():
 
 # Legacy endpoints for backward compatibility
 @app.post("/predict-route")
-async def legacy_predict_route(source: str, destination: str):
+async def legacy_predict_route(req: PredictRequest):
     """
-    Legacy route prediction endpoint (backward compatibility)
+    Frontend-compatible route prediction endpoint.
+    Accepts JSON:
+    {
+        "source": "Hebbal",
+        "destination": "Marathahalli"
+    }
     """
-    try:
-        prediction = predictor.predict_route(source=source, destination=destination)
-        return prediction
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
 
+    try:
+        result = predict_route(
+            req.source,
+            req.destination,
+            req.weather
+        )
+
+        return result
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Prediction failed: {str(e)}"
+        )
 @app.get("/locations")
 async def legacy_get_locations():
     """
@@ -270,7 +297,7 @@ async def legacy_get_locations():
 
 if __name__ == "__main__":
     import uvicorn
-    print("🧠 Starting Bengaluru Brain - NAMMA FLOW API...")
+    print("Starting Bengaluru Brain - NAMMA FLOW API...")
     print("📍 Available endpoints:")
     print("   • POST /api/predict - Main prediction endpoint")
     print("   • GET /api/locations - All locations")

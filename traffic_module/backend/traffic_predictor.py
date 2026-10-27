@@ -1,156 +1,89 @@
-import networkx as nx
+import os
 from datetime import datetime
-from graph_builder import build_bengaluru_graph, get_nearest_node
-from gnn_model import run_gnn
+
 
 WEATHER_CODES = {
     "clear": 0,
     "light_rain": 1,
     "heavy_rain": 2,
     "storm": 3,
-    "fog": 4
+    "fog": 4,
 }
 
-def predict_route(source: str, destination: str,
-                  weather: str = "clear"):
 
-    # 1. Load Bengaluru OSMnx graph
-    G = build_bengaluru_graph()
+def predict_route(source: str, destination: str, weather: str = "clear"):
+    from app import get_route_details, get_weather_for_route, TomTomTrafficProvider, build_model_prediction, _build_traffic_points, classify_congestion_ratio, MODEL_CACHE
 
-    # 2. Geocode source and destination to graph nodes
-    src_node, src_lat, src_lon = get_nearest_node(G, source)
-    dst_node, dst_lat, dst_lon = get_nearest_node(G, destination)
+    route = get_route_details(source, destination)
+    source_coords = route["source_coords"]
+    destination_coords = route["destination_coords"]
+    route_coords = route["route_coords"]
+    distance_km = float(route["distance_km"])
+    base_time_min = max(1.0, float(route["duration_min"]))
+    weather_info = get_weather_for_route((source_coords[0] + destination_coords[0]) / 2.0, (source_coords[1] + destination_coords[1]) / 2.0)
 
-    # 3. Current time context
-    now = datetime.now()
-    hour = now.hour
-    is_weekday = now.weekday() < 5
-    weather_code = WEATHER_CODES.get(weather, 0)
+    traffic_data = TomTomTrafficProvider().get_live_traffic({"route_coords": route_coords}) if os.getenv("TOMTOM_API_KEY") else None
+    traffic_source = "LIVE" if traffic_data else "MODEL/HISTORICAL"
+    if traffic_data:
+        current_speed = float(traffic_data["current_speed_kmh"])
+        free_flow_speed = float(traffic_data["free_flow_speed_kmh"]) if traffic_data.get("free_flow_speed_kmh") else max(current_speed, 40.0)
+        current_time = max(1.0, (distance_km / max(current_speed, 1.0)) * 60.0)
+        congestion_ratio = max(0.0, min(1.0, 1.0 - current_speed / max(free_flow_speed, 1.0)))
+        traffic_status = classify_congestion_ratio(congestion_ratio)
+        predicted_speed, model_score = build_model_prediction(distance_km, current_speed, weather_info)
+        predicted_time = max(1.0, (distance_km / max(predicted_speed, 1.0)) * 60.0)
+    else:
+        current_speed = max(15.0, min(65.0, (distance_km / max(base_time_min, 1.0)) * 60.0))
+        predicted_speed, model_score = build_model_prediction(distance_km, current_speed, weather_info)
+        current_time = max(1.0, (distance_km / max(current_speed, 1.0)) * 60.0)
+        predicted_time = max(1.0, (distance_km / max(predicted_speed, 1.0)) * 60.0)
+        congestion_ratio = max(0.0, min(1.0, 1.0 - current_speed / 50.0))
+        traffic_status = classify_congestion_ratio(congestion_ratio)
+        traffic_source = "MODEL/HISTORICAL"
 
-    # 4. Run GNN — get congestion score per node
-    congestion = run_gnn(G, hour, is_weekday, weather_code)
+    if traffic_source == "LIVE":
+        traffic_points = traffic_data.get("traffic_points", [])
+    else:
+        traffic_points = _build_traffic_points(route_coords, traffic_data={"traffic_points": []}, traffic_source=traffic_source)
 
-    # 5. Apply congestion weights to edges
-    import copy
-    G_weighted = copy.deepcopy(G)
-    for u, v, key, data in G_weighted.edges(keys=True, data=True):
-        base_time = data.get("travel_time", 60)
-        score = (congestion.get(u, 0.3) + congestion.get(v, 0.3)) / 2
-        multiplier = 1.0 + (score * 2.5)
-        G_weighted[u][v][key]["congested_time"] = base_time * multiplier
+    delay_min = max(0.0, predicted_time - base_time_min)
+    confidence = 0.92 if traffic_source == "LIVE" else 0.62 if MODEL_CACHE else 0.51
+    if MODEL_CACHE is not None:
+        confidence = max(0.35, min(0.9, float(model_score)))
 
-    # 6. Shortest path using congestion weights
-    try:
-        path = nx.shortest_path(
-            G_weighted, src_node, dst_node,
-            weight="congested_time"
-        )
-    except nx.NetworkXNoPath:
-        raise Exception(
-            f"No route found from {source} to {destination}"
-        )
-
-    # 7. Compute totals along path
-    total_congested = 0
-    total_free = 0
-    total_distance = 0
-    road_names = []
-
-    for i in range(len(path) - 1):
-        u, v = path[i], path[i + 1]
-        edges = G_weighted[u][v]
-        best = min(edges.values(),
-                   key=lambda d: d.get("congested_time", 9999))
-
-        total_congested += best.get("congested_time", 60)
-        total_free += best.get("travel_time", 60)
-        total_distance += best.get("length", 100)
-
-        name = best.get("name", "")
-        if isinstance(name, list):
-            name = name[0]
-        if name and name not in road_names:
-            road_names.append(str(name))
-
-    congested_mins = max(1, round(total_congested / 60))
-    free_mins = max(1, round(total_free / 60))
-    delay_mins = max(0, congested_mins - free_mins)
-    distance_km = round(total_distance / 1000, 1)
-
-    # 8. Average congestion score on route
-    path_scores = [congestion.get(n, 0.3) for n in path]
-    avg_score = sum(path_scores) / len(path_scores)
-
-    # 9. Speed
-    avg_speed = round((distance_km / congested_mins) * 60, 1)
-
-    # 10. Status
-    status = score_to_status(avg_score)
-
-    # 11. Via text
-    via = " → ".join(road_names[:3]) if road_names else "Bengaluru roads"
-
-    # 12. 2-hour forecast
-    future_hour = (hour + 2) % 24
-    future_congestion = run_gnn(G, future_hour, is_weekday, weather_code)
-    future_scores = [future_congestion.get(n, 0.3) for n in path]
-    future_avg = sum(future_scores) / len(future_scores)
-    future_multiplier = 1.0 + (future_avg * 2.5)
-    future_mins = max(1, round(free_mins * future_multiplier))
-
-    # 13. Path coordinates for map
-    path_coords = [
-        {"lat": G.nodes[n]["y"], "lon": G.nodes[n]["x"]}
-        for n in path[::max(1, len(path)//50)]  # sample 50 points
-    ]
-
-    return {
+    result = {
         "source": source,
         "destination": destination,
-        "distance_km": distance_km,
-        "free_flow_mins": free_mins,
-        "predicted_mins": congested_mins,
-        "delay_mins": delay_mins,
-        "avg_speed_kmh": avg_speed,
-        "congestion_score": round(avg_score, 2),
-        "status": status,
-        "via": via,
-        "path_coords": path_coords,
-        "src_coords": {"lat": src_lat, "lon": src_lon},
-        "dst_coords": {"lat": dst_lat, "lon": dst_lon},
-        "forecast_2hr": {
-            "predicted_mins": future_mins,
-            "delay_mins": max(0, future_mins - free_mins),
-            "status": score_to_status(future_avg)
+        "distance_km": round(distance_km, 2),
+        "predicted_travel_time_min": round(predicted_time, 1),
+        "base_travel_time_min": round(base_time_min, 1),
+        "current_travel_time_min": round(current_time, 1),
+        "delay_min": round(delay_min, 1),
+        "current_speed": round(current_speed, 1),
+        "predicted_speed": round(predicted_speed, 1),
+        "confidence": round(confidence, 3),
+        "traffic": traffic_status,
+        "traffic_source": traffic_source,
+        "weather": {
+            "condition": weather_info["condition"],
+            "temperature_c": weather_info["temperature_c"],
+            "humidity": weather_info["humidity"],
+            "rain": weather_info["rain"],
+            "wind_speed": weather_info["wind_speed"],
         },
-        "kannada_alert": make_kannada_alert(
-            source, destination,
-            congested_mins, delay_mins, status
-        ),
-        "model_info": f"GNN (GAT) on OSMnx Bengaluru graph | "
-                      f"{len(G.nodes):,} nodes | "
-                      f"{len(G.edges):,} edges",
-        "predicted_at": now.strftime("%I:%M %p, %d %b %Y")
+        "source_coords": source_coords,
+        "destination_coords": destination_coords,
+        "route_coords": route_coords,
+        "traffic_points": traffic_points,
+        "road_names": route.get("road_names", []),
+        "forecast_2hr": {
+            "predicted_travel_time_min": round(predicted_time * 1.08, 1),
+            "delay_min": round(max(0.0, predicted_time * 1.08 - base_time_min), 1),
+            "status": traffic_status,
+        },
+        "model_info": "traffic_model_v2.pth loaded" if MODEL_CACHE else "GNN unavailable; using historical model fallback",
+        "predicted_at": datetime.now().isoformat(),
+        "status": traffic_status,
+        "avg_speed_kmh": round(current_speed, 1),
     }
-
-
-def score_to_status(score):
-    if score >= 0.75:   return "CRITICAL"
-    elif score >= 0.60: return "HIGH"
-    elif score >= 0.40: return "MODERATE"
-    elif score >= 0.25: return "LOW"
-    else:               return "CLEAR"
-
-
-def make_kannada_alert(src, dst, mins, delay, status):
-    label = {
-        "CRITICAL": "ತೀವ್ರ ದಟ್ಟಣೆ ⚠️",
-        "HIGH":     "ಹೆಚ್ಚಿನ ದಟ್ಟಣೆ 🟠",
-        "MODERATE": "ಮಧ್ಯಮ ದಟ್ಟಣೆ 🟡",
-        "LOW":      "ಕಡಿಮೆ ದಟ್ಟಣೆ 🟢",
-        "CLEAR":    "ರಸ್ತೆ ಸ್ಪಷ್ಟ ✅"
-    }.get(status, status)
-    return (
-        f"ಬೆಂಗಳೂರು ಮೆದುಳು | {src} → {dst} | "
-        f"{label} | {mins} ನಿಮಿಷ | +{delay} ನಿಮಿಷ ವಿಳಂಬ"
-    )
+    return result

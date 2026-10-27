@@ -3,7 +3,16 @@
 venv/
 __pycache__/
 *.pyc
+.pytest_cache/
+
+# Secrets — never commit these
 .env
+.env.*
+*.env
+**/credentials.json
+**/secrets.json
+**/*_credentials.*
+**/*_secret*.json
 
 # Node
 node_modules/
@@ -18,3 +27,100 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# --- Full pre-history-rewrite backup bundle (contains the OLD exposed key
+# in its original commit blob — must never be committed, kept only as a
+# local disaster-recovery copy of history before the 2026-09-03 scrub).
+_security_backups/
+
+# --- Backups: kept on disk per project rules, NEVER committed. Their
+# realtime_data.py copies previously held a hardcoded OpenWeatherMap key
+# (the same one exposed in the initial commit — since rotated) and have
+# been sanitized to read from the environment like the canonical copy.
+# Keep these two lines regardless — backups must never be tracked.
+traffic_module_backup/
+traffic_module_backup - Copy/
+
+# --- Large generated/regenerable artifacts (OSM extracts, geocoding caches,
+# heavy intermediate pickles) — not hand-authored, not small enough to
+# belong in git history. Trained model checkpoints (*.pth) are intentionally
+# NOT listed here — they're small (tens of KB) and are real deliverables.
+*.graphml
+*.joblib
+traffic_module/backend/data/*.pkl
+traffic_module/backend/cache/
+traffic_module/models/cache/
+waste_module/**/cache/
+
+# --- Logs (regenerated at runtime)
+logs/
+**/logs/
+
+# --- Known-unused large duplicate/orphaned data artifacts (see
+# FINAL_PROJECT_AUDIT.md §6-7) — kept on disk, excluded from version control.
+bengaluru_traffic_segments_pilot_backup.csv
+traffic_coverage_analysis.csv
+latest_graph_traffic.csv
+app_backup.txt
+traffic_module/api_response_test_*.json
+traffic_module/backend/hebbal_response.json
+
+# Orphaned root-level node experiment (unrelated to traffic_module/frontend)
+/package.json
+/package-lock.json
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets
+.env
+.env.*
+*.env
+!.env.example
+**/credentials.json
+**/secrets.json
+
+# Node
+node_modules/
+
+# Logs and temporary files
+*.log
+scratch_tmp/
+_security_backups/
+_pre_*/
+**/_pre_*/
+*_backup/
+*.bak
+
+# Generated model files
+*.pt
+*.pth
+*.pkl
+*.joblib
+
+# Cache
+cache/
+**/cache/
+
+# Generated output
+traffic_module/output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large GIS data files
+*.gpkg
+*.osm.pbf
+
+
+# Private citizen data and runtime state
+**/citizen_report_photos/
+**/citizen_reports.json
+**/citizen_alerts.sqlite
+integration/alert_state.json
+_locator.b64
+

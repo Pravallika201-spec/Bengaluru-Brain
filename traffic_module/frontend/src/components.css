@@ -608,15 +608,24 @@
 }
 
 .grid-header {
+  /* Real bug fix: this was `display:flex` with no flex-direction, which
+     defaults to row — but it wraps 3 stacked pieces of content (title bar,
+     description paragraph, filter-button row), so they were fighting for
+     horizontal space and visually overlapping/garbling at any width narrow
+     enough to force wrapping (found via live browser testing). These three
+     pieces are meant to be vertically stacked rows, not a horizontal row. */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
 }
 
 .header-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .header-title h3 {
@@ -630,11 +639,14 @@
 .filter-controls {
   display: flex;
   align-items: center;
+  min-width: 0;
 }
 
 .filter-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  min-width: 0;
 }
 
 .filter-btn {
@@ -1491,6 +1503,8 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  min-width: 0;
   font-family: 'Rajdhani', sans-serif;
   font-weight: 700;
   color: #00D4FF;

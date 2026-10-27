@@ -1,0 +1,15 @@
+{
+  "horizon_minutes": 120,
+  "tolerance_minutes": 15,
+  "total_valid_observations": 1410,
+  "unique_edges": 8,
+  "edges_with_2plus_observations": 8,
+  "median_revisit_gap_minutes": 5.2,
+  "min_revisit_gap_minutes": 4.7,
+  "max_revisit_gap_minutes": 586.7,
+  "candidate_pairs_within_tolerance": 1114,
+  "edges_with_at_least_one_pair": 8,
+  "time_span_start": "2026-09-10 09:56:14",
+  "time_span_end": "2026-09-11 13:39:27",
+  "verdict": "SUFFICIENT for a first exploratory model: 1114 pairs across 8 edges."
+}

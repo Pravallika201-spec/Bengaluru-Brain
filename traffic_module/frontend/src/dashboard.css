@@ -1,0 +1,303 @@
+/* Unified dashboard shell (Phase 5) — tab navigation + new panels.
+   Reuses the existing dark navy / cyan theme from App.css & components.css
+   so this reads as one system, not a bolted-on debug page. */
+
+.tab-nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid #475569;
+  border-radius: 12px;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  flex: 1 1 auto;
+  min-width: 120px;
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab-btn:hover {
+  background: rgba(0, 212, 255, 0.08);
+  color: #e2e8f0;
+}
+
+.tab-btn.active {
+  background: linear-gradient(90deg, #00D4FF33, #00FF0022);
+  color: #00D4FF;
+  box-shadow: inset 0 0 0 1px #00D4FF55;
+}
+
+.panel-card {
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid #475569;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.panel-card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #00D4FF;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.stat-tile {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-tile .stat-number {
+  font-size: 1.9rem;
+  font-weight: 700;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.stat-tile .stat-caption {
+  color: #94A3B8;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.coverage-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  color: #FFD700;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.source-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.source-tag.real { background: rgba(0,255,0,0.15); color: #00FF00; border: 1px solid #00FF0055; }
+.source-tag.heuristic { background: rgba(0,212,255,0.15); color: #00D4FF; border: 1px solid #00D4FF55; }
+.source-tag.simulated { background: rgba(255,215,0,0.15); color: #FFD700; border: 1px solid #FFD70055; }
+.source-tag.unavailable { background: rgba(148,163,184,0.15); color: #94A3B8; border: 1px solid #94A3B855; }
+
+.area-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.area-chip {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #475569;
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.area-chip.active {
+  background: #00D4FF22;
+  border-color: #00D4FF;
+  color: #00D4FF;
+}
+
+.band-badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem;
+}
+
+.band-badge.Green { background: rgba(0,255,0,0.15); color: #00FF00; border: 1px solid #00FF0055; }
+.band-badge.Yellow { background: rgba(255,215,0,0.15); color: #FFD700; border: 1px solid #FFD70055; }
+.band-badge.Orange { background: rgba(255,107,53,0.15); color: #FF6B35; border: 1px solid #FF6B3555; }
+.band-badge.Red { background: rgba(255,49,49,0.15); color: #FF3131; border: 1px solid #FF313155; }
+.band-badge.Unknown { background: rgba(148,163,184,0.15); color: #94A3B8; border: 1px solid #94A3B855; }
+
+.usi-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.usi-component {
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 1rem;
+  border-left: 4px solid #475569;
+}
+
+.usi-component.traffic { border-left-color: #00D4FF; }
+.usi-component.waste { border-left-color: #FFD700; }
+
+.reason-box {
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.sms-bubble {
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.sms-bubble .sms-lang-label {
+  color: #94A3B8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.simulated-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,49,49,0.1);
+  color: #FF6B6B;
+  border: 1px solid rgba(255,49,49,0.35);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.risk-table th, .risk-table td {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.risk-table th {
+  color: #94A3B8;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.vehicle-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.utilization-bar-track {
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  height: 8px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0.3rem;
+}
+
+.utilization-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00D4FF, #00FF00);
+}
+
+.streamlit-cta {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: linear-gradient(90deg, #FFD700, #FF6B35);
+  color: #0A0F1E;
+  font-weight: 700;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.control-center-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .control-center-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.overview-hero {
+  text-align: center;
+  padding: 1rem 0 1.5rem;
+}
+
+.overview-hero .flow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94A3B8;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.overview-hero .flow span.step {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  color: #e2e8f0;
+}

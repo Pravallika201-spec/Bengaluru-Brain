@@ -38,9 +38,14 @@ A comprehensive traffic prediction system powered by Graph Neural Networks, desi
 ```bash
 cd traffic_module/backend
 pip install -r requirements.txt
-python main.py
+python -m uvicorn app:app --host 127.0.0.1 --port 8000
 ```
 *Backend runs on: `http://localhost:8000`*
+
+> **Note:** `main.py` in this folder is deprecated (see the docstring at the
+> top of that file) — its ward-stress/incidents/shift-timer endpoints
+> reference an undefined object and will 500 if run. `app.py` is the single
+> canonical backend; all of its endpoints have been ported/fixed there.
 
 ### **Step 2: Frontend Setup**  
 ```bash

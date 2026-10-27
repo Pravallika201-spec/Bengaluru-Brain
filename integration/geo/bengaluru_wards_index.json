@@ -1,0 +1,2216 @@
+{
+  "19883245": {
+    "ward_name": "R.T Nagar",
+    "centroid_lat": 13.026883576138726,
+    "centroid_lon": 77.59638963910277,
+    "has_geometry": true
+  },
+  "19883246": {
+    "ward_name": "Doddabommasandra",
+    "centroid_lat": 13.055534441984097,
+    "centroid_lon": 77.56028783280856,
+    "has_geometry": true
+  },
+  "19883247": {
+    "ward_name": "Kuvempunagara",
+    "centroid_lat": 13.068015821157287,
+    "centroid_lon": 77.54272705993097,
+    "has_geometry": true
+  },
+  "19883248": {
+    "ward_name": "A Adugodi",
+    "centroid_lat": 12.943067894587362,
+    "centroid_lon": 77.61354095267048,
+    "has_geometry": true
+  },
+  "19883249": {
+    "ward_name": "Jakkur",
+    "centroid_lat": 13.068809883863246,
+    "centroid_lon": 77.61433656227663,
+    "has_geometry": true
+  },
+  "19883250": {
+    "ward_name": "Thanisandra",
+    "centroid_lat": 13.052826630723107,
+    "centroid_lon": 77.63212279705357,
+    "has_geometry": true
+  },
+  "19883251": {
+    "ward_name": "Vignananagara",
+    "centroid_lat": 12.970720493885256,
+    "centroid_lon": 77.67620223979218,
+    "has_geometry": true
+  },
+  "19883252": {
+    "ward_name": "Vijinapura",
+    "centroid_lat": 13.004336966953396,
+    "centroid_lon": 77.6738954406338,
+    "has_geometry": true
+  },
+  "19883253": {
+    "ward_name": "K Chennasandra",
+    "centroid_lat": 13.032471975047484,
+    "centroid_lon": 77.68185609935446,
+    "has_geometry": true
+  },
+  "19883254": {
+    "ward_name": "Da.Ra. Bendre Ward",
+    "centroid_lat": 12.983503230788513,
+    "centroid_lon": 77.55847531130671,
+    "has_geometry": true
+  },
+  "19883255": {
+    "ward_name": "Sadashiva Nagara",
+    "centroid_lat": 13.017670175582907,
+    "centroid_lon": 77.5738534898502,
+    "has_geometry": true
+  },
+  "19883256": {
+    "ward_name": "Hegganahalli",
+    "centroid_lat": 13.003424991882675,
+    "centroid_lon": 77.5105837123491,
+    "has_geometry": true
+  },
+  "19883257": {
+    "ward_name": "Kalkere",
+    "centroid_lat": 13.035357400895613,
+    "centroid_lon": 77.67442176736283,
+    "has_geometry": true
+  },
+  "19883258": {
+    "ward_name": "Jaya Chamarajendra Nagara",
+    "centroid_lat": 13.015117478998429,
+    "centroid_lon": 77.59560846148915,
+    "has_geometry": true
+  },
+  "19883259": {
+    "ward_name": "Panathur",
+    "centroid_lat": 12.934553914238167,
+    "centroid_lon": 77.70806615639258,
+    "has_geometry": true
+  },
+  "19883260": {
+    "ward_name": "Manorayanapalya",
+    "centroid_lat": 13.030375299430611,
+    "centroid_lon": 77.60407786381175,
+    "has_geometry": true
+  },
+  "19883261": {
+    "ward_name": "Ashoka Nagara",
+    "centroid_lat": 12.938808192537827,
+    "centroid_lon": 77.55639306580072,
+    "has_geometry": true
+  },
+  "19883262": {
+    "ward_name": "Vrishabhavathi Nagar",
+    "centroid_lat": 12.988071779545795,
+    "centroid_lon": 77.5253971664225,
+    "has_geometry": true
+  },
+  "19883263": {
+    "ward_name": "Kamalanagara",
+    "centroid_lat": 12.992944022418108,
+    "centroid_lon": 77.5262742829866,
+    "has_geometry": true
+  },
+  "19883264": {
+    "ward_name": "Belathur",
+    "centroid_lat": 12.998913223820045,
+    "centroid_lon": 77.74379762501671,
+    "has_geometry": true
+  },
+  "19883265": {
+    "ward_name": "J.P Nagar",
+    "centroid_lat": 12.911618941953932,
+    "centroid_lon": 77.59918627869723,
+    "has_geometry": true
+  },
+  "19883266": {
+    "ward_name": "HMT Ward",
+    "centroid_lat": 13.043948001994329,
+    "centroid_lon": 77.54348291525079,
+    "has_geometry": true
+  },
+  "19883267": {
+    "ward_name": "Bommanahalli",
+    "centroid_lat": 12.903482756079665,
+    "centroid_lon": 77.6242833531132,
+    "has_geometry": true
+  },
+  "19883268": {
+    "ward_name": "JJR Nagara",
+    "centroid_lat": 12.960207965815739,
+    "centroid_lon": 77.5521353505175,
+    "has_geometry": true
+  },
+  "19883269": {
+    "ward_name": "Hongasandra",
+    "centroid_lat": 12.897490639681873,
+    "centroid_lon": 77.62729813620001,
+    "has_geometry": true
+  },
+  "19883270": {
+    "ward_name": "IPD Salappa Ward",
+    "centroid_lat": 12.963790574332592,
+    "centroid_lon": 77.56119759411459,
+    "has_geometry": true
+  },
+  "19883271": {
+    "ward_name": "Bilekahalli",
+    "centroid_lat": 12.903515972053466,
+    "centroid_lon": 77.60954082848525,
+    "has_geometry": true
+  },
+  "19883272": {
+    "ward_name": "Jai Maruthi Nagar",
+    "centroid_lat": 13.010448693119725,
+    "centroid_lon": 77.53468157686275,
+    "has_geometry": true
+  },
+  "19883273": {
+    "ward_name": "Binnypete",
+    "centroid_lat": 12.968323724370565,
+    "centroid_lon": 77.56076363439236,
+    "has_geometry": true
+  },
+  "19883274": {
+    "ward_name": "Cottonpete",
+    "centroid_lat": 12.972804751794365,
+    "centroid_lon": 77.56974322432023,
+    "has_geometry": true
+  },
+  "19883275": {
+    "ward_name": "Gopalpura",
+    "centroid_lat": 12.978166441822534,
+    "centroid_lon": 77.56392628210938,
+    "has_geometry": true
+  },
+  "19883276": {
+    "ward_name": "Basaveshwara Nagara",
+    "centroid_lat": 12.991257308408711,
+    "centroid_lon": 77.53975192832097,
+    "has_geometry": true
+  },
+  "19883277": {
+    "ward_name": "Rama Mandira",
+    "centroid_lat": 12.984788050015306,
+    "centroid_lon": 77.5550410727592,
+    "has_geometry": true
+  },
+  "19883278": {
+    "ward_name": "Attur",
+    "centroid_lat": 13.093125781455848,
+    "centroid_lon": 77.5576276215622,
+    "has_geometry": true
+  },
+  "19883279": {
+    "ward_name": "Shettihalli",
+    "centroid_lat": 13.060324279948206,
+    "centroid_lon": 77.52133115306013,
+    "has_geometry": true
+  },
+  "19883280": {
+    "ward_name": "Kanakanapalya",
+    "centroid_lat": 12.94068670963581,
+    "centroid_lon": 77.58857465857523,
+    "has_geometry": true
+  },
+  "19883281": {
+    "ward_name": "Jakkasandra",
+    "centroid_lat": 12.919897149087312,
+    "centroid_lon": 77.63401138728535,
+    "has_geometry": true
+  },
+  "19883282": {
+    "ward_name": "Kodi Chikkanahalli",
+    "centroid_lat": 12.903692600380706,
+    "centroid_lon": 77.61850199847635,
+    "has_geometry": true
+  },
+  "19883283": {
+    "ward_name": "Chikkathoguru",
+    "centroid_lat": 12.86348915967382,
+    "centroid_lon": 77.6464045751611,
+    "has_geometry": true
+  },
+  "19883284": {
+    "ward_name": "Swatantra Palya Ward",
+    "centroid_lat": 12.988501677953307,
+    "centroid_lon": 77.56929003819603,
+    "has_geometry": true
+  },
+  "19883285": {
+    "ward_name": "HSR Layout",
+    "centroid_lat": 12.913926133806093,
+    "centroid_lon": 77.63573476698203,
+    "has_geometry": true
+  },
+  "19883286": {
+    "ward_name": "Azad Nagar",
+    "centroid_lat": 12.956944631734428,
+    "centroid_lon": 77.55696590968324,
+    "has_geometry": true
+  },
+  "19883287": {
+    "ward_name": "Chellakere",
+    "centroid_lat": 13.031514895991863,
+    "centroid_lon": 77.64414293835148,
+    "has_geometry": true
+  },
+  "19883288": {
+    "ward_name": "Ashwath Nagar",
+    "centroid_lat": 12.960466104872742,
+    "centroid_lon": 77.69584458808082,
+    "has_geometry": true
+  },
+  "19883289": {
+    "ward_name": "Kasturbha Nagar",
+    "centroid_lat": 12.954311765715154,
+    "centroid_lon": 77.55219347385552,
+    "has_geometry": true
+  },
+  "19883290": {
+    "ward_name": "Vannarpet",
+    "centroid_lat": 12.956607091693689,
+    "centroid_lon": 77.61961207324141,
+    "has_geometry": true
+  },
+  "19883291": {
+    "ward_name": "Kasturi Nagar",
+    "centroid_lat": 13.001730206635928,
+    "centroid_lon": 77.6512894207871,
+    "has_geometry": true
+  },
+  "19883292": {
+    "ward_name": "Jayanagar East",
+    "centroid_lat": 12.920624246900235,
+    "centroid_lon": 77.60038303552237,
+    "has_geometry": true
+  },
+  "19883293": {
+    "ward_name": "Chikka Devasandra",
+    "centroid_lat": 13.00129506969846,
+    "centroid_lon": 77.70101975273913,
+    "has_geometry": true
+  },
+  "19883294": {
+    "ward_name": "Old Baiyappanahalli",
+    "centroid_lat": 12.991338278878825,
+    "centroid_lon": 77.64314459797818,
+    "has_geometry": true
+  },
+  "19883295": {
+    "ward_name": "Ejipura",
+    "centroid_lat": 12.946878575009807,
+    "centroid_lon": 77.62575994622289,
+    "has_geometry": true
+  },
+  "19883296": {
+    "ward_name": "Malleshwaram",
+    "centroid_lat": 13.007296959846082,
+    "centroid_lon": 77.56475005760988,
+    "has_geometry": true
+  },
+  "19883297": {
+    "ward_name": "Padarayanapura",
+    "centroid_lat": 12.964576753641895,
+    "centroid_lon": 77.55113615211567,
+    "has_geometry": true
+  },
+  "19883298": {
+    "ward_name": "Adi Chunchanagiri Ward",
+    "centroid_lat": 12.968297820321208,
+    "centroid_lon": 77.54527273690256,
+    "has_geometry": true
+  },
+  "19883299": {
+    "ward_name": "Naganathapura",
+    "centroid_lat": 12.876491883447942,
+    "centroid_lon": 77.66568741538548,
+    "has_geometry": true
+  },
+  "19883300": {
+    "ward_name": "Rayapuram",
+    "centroid_lat": 12.966303503241827,
+    "centroid_lon": 77.5550456296451,
+    "has_geometry": true
+  },
+  "19883301": {
+    "ward_name": "Jagadish Nagar",
+    "centroid_lat": 12.965798746331203,
+    "centroid_lon": 77.6643696215434,
+    "has_geometry": true
+  },
+  "19883302": {
+    "ward_name": "Nehru Nagar",
+    "centroid_lat": 12.981627842283773,
+    "centroid_lon": 77.57591448187118,
+    "has_geometry": true
+  },
+  "19883303": {
+    "ward_name": "Hosapalya",
+    "centroid_lat": 12.896642668106889,
+    "centroid_lon": 77.64742572270988,
+    "has_geometry": true
+  },
+  "19883304": {
+    "ward_name": "Vishwapriya Nagara",
+    "centroid_lat": 12.879818395819338,
+    "centroid_lon": 77.63290719661461,
+    "has_geometry": true
+  },
+  "19883305": {
+    "ward_name": "Neelasandra",
+    "centroid_lat": 12.95229860840321,
+    "centroid_lon": 77.61481639997322,
+    "has_geometry": true
+  },
+  "19883306": {
+    "ward_name": "Jayamahal",
+    "centroid_lat": 12.996755644550866,
+    "centroid_lon": 77.60018515074896,
+    "has_geometry": true
+  },
+  "19883307": {
+    "ward_name": "Dr. Puneeth Rajkumar Ward",
+    "centroid_lat": 13.01738858819046,
+    "centroid_lon": 77.53773597764749,
+    "has_geometry": true
+  },
+  "19883308": {
+    "ward_name": "Nalwadi Krishnaraja Wadiyar Ward",
+    "centroid_lat": 13.017658952394875,
+    "centroid_lon": 77.54712941226586,
+    "has_geometry": true
+  },
+  "19883309": {
+    "ward_name": "Vasanth Nagar",
+    "centroid_lat": 12.98980472120426,
+    "centroid_lon": 77.59272538224663,
+    "has_geometry": true
+  },
+  "19883310": {
+    "ward_name": "Bhattarahalli",
+    "centroid_lat": 13.025058729725364,
+    "centroid_lon": 77.70985066893633,
+    "has_geometry": true
+  },
+  "19883311": {
+    "ward_name": "Dodda Nekkundi",
+    "centroid_lat": 12.97352172340985,
+    "centroid_lon": 77.69568088993962,
+    "has_geometry": true
+  },
+  "19883312": {
+    "ward_name": "Old Guddadahalli",
+    "centroid_lat": 12.96253129325614,
+    "centroid_lon": 77.54735642561165,
+    "has_geometry": true
+  },
+  "19883313": {
+    "ward_name": "Bharath Aikya Ward",
+    "centroid_lat": 12.976920714504642,
+    "centroid_lon": 77.71030954652421,
+    "has_geometry": true
+  },
+  "19883314": {
+    "ward_name": "Shankar Mutt",
+    "centroid_lat": 12.997947635385604,
+    "centroid_lon": 77.53203601469143,
+    "has_geometry": true
+  },
+  "19883315": {
+    "ward_name": "Raja Mayura Varma Ward",
+    "centroid_lat": 13.002537153953021,
+    "centroid_lon": 77.5321391339852,
+    "has_geometry": true
+  },
+  "19883316": {
+    "ward_name": "New Thippasandra",
+    "centroid_lat": 12.976615906088805,
+    "centroid_lon": 77.65889521807605,
+    "has_geometry": true
+  },
+  "19883317": {
+    "ward_name": "Chickpete",
+    "centroid_lat": 12.970539612818737,
+    "centroid_lon": 77.57827734646241,
+    "has_geometry": true
+  },
+  "19883318": {
+    "ward_name": "Shivapura",
+    "centroid_lat": 13.016656285465048,
+    "centroid_lon": 77.504589021504,
+    "has_geometry": true
+  },
+  "19883319": {
+    "ward_name": "Konena Agrahara",
+    "centroid_lat": 12.954422663830927,
+    "centroid_lon": 77.65245908811823,
+    "has_geometry": true
+  },
+  "19883320": {
+    "ward_name": "Marenahalli West",
+    "centroid_lat": 12.97145317459289,
+    "centroid_lon": 77.52942734759814,
+    "has_geometry": true
+  },
+  "19883321": {
+    "ward_name": "Thindlu",
+    "centroid_lat": 13.078281415136813,
+    "centroid_lon": 77.5729970243354,
+    "has_geometry": true
+  },
+  "19883322": {
+    "ward_name": "Mangammana Palya",
+    "centroid_lat": 12.901469264863005,
+    "centroid_lon": 77.63902089328869,
+    "has_geometry": true
+  },
+  "19883323": {
+    "ward_name": "G.M Palya",
+    "centroid_lat": 12.9756692259442,
+    "centroid_lon": 77.67138738749227,
+    "has_geometry": true
+  },
+  "19883324": {
+    "ward_name": "Bandepalya",
+    "centroid_lat": 12.888279516405897,
+    "centroid_lon": 77.64341522678052,
+    "has_geometry": true
+  },
+  "19883325": {
+    "ward_name": "Abbigere",
+    "centroid_lat": 13.078473546276587,
+    "centroid_lon": 77.52019743945961,
+    "has_geometry": true
+  },
+  "19883326": {
+    "ward_name": "Kumaraswamy Layout",
+    "centroid_lat": 12.915284892689142,
+    "centroid_lon": 77.56761158867673,
+    "has_geometry": true
+  },
+  "19883327": {
+    "ward_name": "Sampigehalli",
+    "centroid_lat": 13.08383221335266,
+    "centroid_lon": 77.62590131777496,
+    "has_geometry": true
+  },
+  "19883328": {
+    "ward_name": "Jeevan Bhimanagar",
+    "centroid_lat": 12.96296897140886,
+    "centroid_lon": 77.65492548161183,
+    "has_geometry": true
+  },
+  "19883329": {
+    "ward_name": "Shakambarinagara",
+    "centroid_lat": 12.910986667207693,
+    "centroid_lon": 77.58395085453057,
+    "has_geometry": true
+  },
+  "19883330": {
+    "ward_name": "Sarakki",
+    "centroid_lat": 12.908713013175225,
+    "centroid_lon": 77.5772036929289,
+    "has_geometry": true
+  },
+  "19883331": {
+    "ward_name": "Varalakshmi Nagar",
+    "centroid_lat": 13.014596677748033,
+    "centroid_lon": 77.60278889364062,
+    "has_geometry": true
+  },
+  "19883332": {
+    "ward_name": "Singasandra",
+    "centroid_lat": 12.876827202508542,
+    "centroid_lon": 77.64543385272226,
+    "has_geometry": true
+  },
+  "19883333": {
+    "ward_name": "Kempapura",
+    "centroid_lat": 13.047165180995881,
+    "centroid_lon": 77.61059768353633,
+    "has_geometry": true
+  },
+  "19883334": {
+    "ward_name": "Devasandra",
+    "centroid_lat": 13.00246793569791,
+    "centroid_lon": 77.69151542222365,
+    "has_geometry": true
+  },
+  "19883335": {
+    "ward_name": "Indiranagar",
+    "centroid_lat": 12.981529291228759,
+    "centroid_lon": 77.643174805828,
+    "has_geometry": true
+  },
+  "19883336": {
+    "ward_name": "Chowdeshwari Nagar",
+    "centroid_lat": 12.997704295288054,
+    "centroid_lon": 77.51546239536721,
+    "has_geometry": true
+  },
+  "19883337": {
+    "ward_name": "Vidyaranyapura",
+    "centroid_lat": 13.073115149612526,
+    "centroid_lon": 77.55924333129416,
+    "has_geometry": true
+  },
+  "19883338": {
+    "ward_name": "Doddakammanahalli",
+    "centroid_lat": 12.850168123880227,
+    "centroid_lon": 77.59453653334462,
+    "has_geometry": true
+  },
+  "19883339": {
+    "ward_name": "Deepanjali Nagara",
+    "centroid_lat": 12.944540351086397,
+    "centroid_lon": 77.5346336838763,
+    "has_geometry": true
+  },
+  "19883340": {
+    "ward_name": "Raja Kempegowda Ward",
+    "centroid_lat": 13.122537297269023,
+    "centroid_lon": 77.57926720687864,
+    "has_geometry": true
+  },
+  "19883341": {
+    "ward_name": "Hosahalli",
+    "centroid_lat": 12.967033463463254,
+    "centroid_lon": 77.5409475555988,
+    "has_geometry": true
+  },
+  "19883342": {
+    "ward_name": "Singapura",
+    "centroid_lat": 13.081288527909477,
+    "centroid_lon": 77.54609494297095,
+    "has_geometry": true
+  },
+  "19883343": {
+    "ward_name": "Nyayanga Badavane",
+    "centroid_lat": 13.087015414669471,
+    "centroid_lon": 77.58790979638928,
+    "has_geometry": true
+  },
+  "19883344": {
+    "ward_name": "Anubhava Nagara",
+    "centroid_lat": 12.965886026661249,
+    "centroid_lon": 77.52240821650817,
+    "has_geometry": true
+  },
+  "19883345": {
+    "ward_name": "Shakthi Ganapathi Nagara",
+    "centroid_lat": 12.994142870495205,
+    "centroid_lon": 77.53251991570795,
+    "has_geometry": true
+  },
+  "19883346": {
+    "ward_name": "Kaveripura",
+    "centroid_lat": 12.981757415441354,
+    "centroid_lon": 77.52455907153981,
+    "has_geometry": true
+  },
+  "19883347": {
+    "ward_name": "Nagasandra",
+    "centroid_lat": 13.03864733385446,
+    "centroid_lon": 77.50168084276639,
+    "has_geometry": true
+  },
+  "19883348": {
+    "ward_name": "Kethamaranahalli",
+    "centroid_lat": 13.002404254823597,
+    "centroid_lon": 77.54678720947358,
+    "has_geometry": true
+  },
+  "19883349": {
+    "ward_name": "Kempegowda Layout",
+    "centroid_lat": 13.004157032160151,
+    "centroid_lon": 77.52438760281552,
+    "has_geometry": true
+  },
+  "19883350": {
+    "ward_name": "Nagavara",
+    "centroid_lat": 13.037337658238187,
+    "centroid_lon": 77.61670535915866,
+    "has_geometry": true
+  },
+  "19883351": {
+    "ward_name": "Kormangala East",
+    "centroid_lat": 12.930383894621887,
+    "centroid_lon": 77.6310184922682,
+    "has_geometry": true
+  },
+  "19883352": {
+    "ward_name": "Gangenahalli",
+    "centroid_lat": 13.017735369126536,
+    "centroid_lon": 77.58881685664083,
+    "has_geometry": true
+  },
+  "19883353": {
+    "ward_name": "Ganganagar",
+    "centroid_lat": 13.026926049178781,
+    "centroid_lon": 77.59070789437101,
+    "has_geometry": true
+  },
+  "19883354": {
+    "ward_name": "Kacharakanahalli",
+    "centroid_lat": 13.022551508065373,
+    "centroid_lon": 77.63268504014971,
+    "has_geometry": true
+  },
+  "19883355": {
+    "ward_name": "Chamarajpet",
+    "centroid_lat": 12.957867599204432,
+    "centroid_lon": 77.56462086700851,
+    "has_geometry": true
+  },
+  "19883356": {
+    "ward_name": "Doddabettahalli",
+    "centroid_lat": 13.1041806533996,
+    "centroid_lon": 77.56180539284877,
+    "has_geometry": true
+  },
+  "19883357": {
+    "ward_name": "Hulimavu",
+    "centroid_lat": 12.877331507524179,
+    "centroid_lon": 77.60153213312593,
+    "has_geometry": true
+  },
+  "19883358": {
+    "ward_name": "Gunjur",
+    "centroid_lat": 12.919674401646997,
+    "centroid_lon": 77.72455276871732,
+    "has_geometry": true
+  },
+  "19883359": {
+    "ward_name": "HRBR Layout",
+    "centroid_lat": 13.013932688651018,
+    "centroid_lon": 77.6348514506023,
+    "has_geometry": true
+  },
+  "19883360": {
+    "ward_name": "Hennur",
+    "centroid_lat": 13.03800844830512,
+    "centroid_lon": 77.63191957991864,
+    "has_geometry": true
+  },
+  "19883361": {
+    "ward_name": "Lingarajpura",
+    "centroid_lat": 13.014214048449013,
+    "centroid_lon": 77.62561844892777,
+    "has_geometry": true
+  },
+  "19883362": {
+    "ward_name": "Vishwanatha Nagenahalli",
+    "centroid_lat": 13.037661375978324,
+    "centroid_lon": 77.60373132050445,
+    "has_geometry": true
+  },
+  "19883363": {
+    "ward_name": "SilverJubilee Park Ward",
+    "centroid_lat": 12.959605955385525,
+    "centroid_lon": 77.58808104833179,
+    "has_geometry": true
+  },
+  "19883364": {
+    "ward_name": "Whitefield",
+    "centroid_lat": 12.96569588179828,
+    "centroid_lon": 77.74531341792304,
+    "has_geometry": true
+  },
+  "19883365": {
+    "ward_name": "Hebbal",
+    "centroid_lat": 13.035332486058433,
+    "centroid_lon": 77.59233901231867,
+    "has_geometry": true
+  },
+  "19883366": {
+    "ward_name": "Doresanipalya",
+    "centroid_lat": 12.888844845835276,
+    "centroid_lon": 77.59334499003079,
+    "has_geometry": true
+  },
+  "19883367": {
+    "ward_name": "Mahalakshmipuram",
+    "centroid_lat": 13.008460980557993,
+    "centroid_lon": 77.54080893283476,
+    "has_geometry": true
+  },
+  "19883368": {
+    "ward_name": "Gali Anjaneya Temple Ward",
+    "centroid_lat": 12.954124733867209,
+    "centroid_lon": 77.53981401131121,
+    "has_geometry": true
+  },
+  "19883369": {
+    "ward_name": "Uday Nagar",
+    "centroid_lat": 12.99056219108098,
+    "centroid_lon": 77.67193900208274,
+    "has_geometry": true
+  },
+  "19883370": {
+    "ward_name": "Moodalapalya",
+    "centroid_lat": 12.972086274883113,
+    "centroid_lon": 77.52121316037935,
+    "has_geometry": true
+  },
+  "19883371": {
+    "ward_name": "Ganesh Mandira Ward",
+    "centroid_lat": 12.925448952404377,
+    "centroid_lon": 77.56365341115566,
+    "has_geometry": true
+  },
+  "19883372": {
+    "ward_name": "Devagiri Temple Ward",
+    "centroid_lat": 12.927968640325794,
+    "centroid_lon": 77.57494438787467,
+    "has_geometry": true
+  },
+  "19883373": {
+    "ward_name": "Sunkenahalli",
+    "centroid_lat": 12.947776649345126,
+    "centroid_lon": 77.57078881937875,
+    "has_geometry": true
+  },
+  "19883374": {
+    "ward_name": "Bhoopasandra",
+    "centroid_lat": 13.036537510346312,
+    "centroid_lon": 77.58230360878962,
+    "has_geometry": true
+  },
+  "19883375": {
+    "ward_name": "Shampura",
+    "centroid_lat": 13.028881211712678,
+    "centroid_lon": 77.61046724196399,
+    "has_geometry": true
+  },
+  "19883376": {
+    "ward_name": "Mahadevapura",
+    "centroid_lat": 12.987499523172394,
+    "centroid_lon": 77.68533136670655,
+    "has_geometry": true
+  },
+  "19883377": {
+    "ward_name": "Arakere",
+    "centroid_lat": 12.885329388767364,
+    "centroid_lon": 77.60301912988493,
+    "has_geometry": true
+  },
+  "19883378": {
+    "ward_name": "Dattatreya Ward",
+    "centroid_lat": 12.996623688908441,
+    "centroid_lon": 77.57173782674323,
+    "has_geometry": true
+  },
+  "19883379": {
+    "ward_name": "Chikkalasandra",
+    "centroid_lat": 12.920623862503293,
+    "centroid_lon": 77.54547841702235,
+    "has_geometry": true
+  },
+  "19883380": {
+    "ward_name": "Kamakya Layout",
+    "centroid_lat": 12.923902321129818,
+    "centroid_lon": 77.54816329916295,
+    "has_geometry": true
+  },
+  "19883381": {
+    "ward_name": "Ittamadu",
+    "centroid_lat": 12.92316571511309,
+    "centroid_lon": 77.54110262847601,
+    "has_geometry": true
+  },
+  "19883382": {
+    "ward_name": "Maruthi Seva Nagara",
+    "centroid_lat": 13.004298551980957,
+    "centroid_lon": 77.62576120611828,
+    "has_geometry": true
+  },
+  "19883383": {
+    "ward_name": "Yeshwanthpura",
+    "centroid_lat": 13.023543649446248,
+    "centroid_lon": 77.55461071262137,
+    "has_geometry": true
+  },
+  "19883384": {
+    "ward_name": "Ashokanagar",
+    "centroid_lat": 12.969861719688309,
+    "centroid_lon": 77.60684604099781,
+    "has_geometry": true
+  },
+  "19883385": {
+    "ward_name": "Kempambudhi Ward",
+    "centroid_lat": 12.94965595857892,
+    "centroid_lon": 77.55899875488093,
+    "has_geometry": true
+  },
+  "19883386": {
+    "ward_name": "Venkateshpuram",
+    "centroid_lat": 13.012657332135529,
+    "centroid_lon": 77.61904146726596,
+    "has_geometry": true
+  },
+  "19883387": {
+    "ward_name": "T.R Shamanna Nagar",
+    "centroid_lat": 12.945508131524303,
+    "centroid_lon": 77.55645562937424,
+    "has_geometry": true
+  },
+  "19883388": {
+    "ward_name": "Yediyuru",
+    "centroid_lat": 12.934771697190007,
+    "centroid_lon": 77.57676892725316,
+    "has_geometry": true
+  },
+  "19883389": {
+    "ward_name": "Thyagarajnagar",
+    "centroid_lat": 12.931823950395883,
+    "centroid_lon": 77.56079571223565,
+    "has_geometry": true
+  },
+  "19883390": {
+    "ward_name": "N.R Colony",
+    "centroid_lat": 12.937955377928775,
+    "centroid_lon": 77.56898239845393,
+    "has_geometry": true
+  },
+  "19883391": {
+    "ward_name": "Brundavana Nagara",
+    "centroid_lat": 13.032437458553927,
+    "centroid_lon": 77.55613586436647,
+    "has_geometry": true
+  },
+  "19883392": {
+    "ward_name": "Samadhana Nagar",
+    "centroid_lat": 13.023662638446982,
+    "centroid_lon": 77.61668503361315,
+    "has_geometry": true
+  },
+  "19883393": {
+    "ward_name": "Geddalahalli",
+    "centroid_lat": 13.037211549273156,
+    "centroid_lon": 77.57012694357772,
+    "has_geometry": true
+  },
+  "19883394": {
+    "ward_name": "Shanthinagar",
+    "centroid_lat": 12.957991781739409,
+    "centroid_lon": 77.59926192921438,
+    "has_geometry": true
+  },
+  "19883395": {
+    "ward_name": "Kammagondanahalli",
+    "centroid_lat": 13.068136134300957,
+    "centroid_lon": 77.529317248057,
+    "has_geometry": true
+  },
+  "19883396": {
+    "ward_name": "Doddanna Nagar",
+    "centroid_lat": 13.008268533499194,
+    "centroid_lon": 77.6090113183976,
+    "has_geometry": true
+  },
+  "19883397": {
+    "ward_name": "Dinnur",
+    "centroid_lat": 13.026189262224115,
+    "centroid_lon": 77.59834175447345,
+    "has_geometry": true
+  },
+  "19883398": {
+    "ward_name": "Venkat Reddy Nagara",
+    "centroid_lat": 12.945876920302082,
+    "centroid_lon": 77.59208035904305,
+    "has_geometry": true
+  },
+  "19883399": {
+    "ward_name": "Kaveri Nagara",
+    "centroid_lat": 12.988086192442454,
+    "centroid_lon": 77.716967171427,
+    "has_geometry": true
+  },
+  "19883400": {
+    "ward_name": "Vinayakanagar",
+    "centroid_lat": 12.956519633086183,
+    "centroid_lon": 77.60809328249132,
+    "has_geometry": true
+  },
+  "19883401": {
+    "ward_name": "Nagadevanahalli",
+    "centroid_lat": 12.940003412261346,
+    "centroid_lon": 77.4926568104732,
+    "has_geometry": true
+  },
+  "19883402": {
+    "ward_name": "Cox Town",
+    "centroid_lat": 12.992916852008326,
+    "centroid_lon": 77.62364288687519,
+    "has_geometry": true
+  },
+  "19883403": {
+    "ward_name": "Kathriguppe",
+    "centroid_lat": 12.929167823271474,
+    "centroid_lon": 77.55291891519433,
+    "has_geometry": true
+  },
+  "19883404": {
+    "ward_name": "D.V Gundappa Ward",
+    "centroid_lat": 12.959135333478839,
+    "centroid_lon": 77.5795042316603,
+    "has_geometry": true
+  },
+  "19883405": {
+    "ward_name": "Seshadripuram",
+    "centroid_lat": 12.995056857046231,
+    "centroid_lon": 77.57556103776908,
+    "has_geometry": true
+  },
+  "19883406": {
+    "ward_name": "Srinagar",
+    "centroid_lat": 12.948442570726328,
+    "centroid_lon": 77.55145128886939,
+    "has_geometry": true
+  },
+  "19883407": {
+    "ward_name": "Laggere",
+    "centroid_lat": 13.013269538371167,
+    "centroid_lon": 77.52339035889582,
+    "has_geometry": true
+  },
+  "19883408": {
+    "ward_name": "N.S Palya",
+    "centroid_lat": 12.908299390621403,
+    "centroid_lon": 77.60750595265456,
+    "has_geometry": true
+  },
+  "19883409": {
+    "ward_name": "Bharathi Nagar",
+    "centroid_lat": 12.990046886195671,
+    "centroid_lon": 77.60950903409135,
+    "has_geometry": true
+  },
+  "19883410": {
+    "ward_name": "S.K Garden",
+    "centroid_lat": 12.998389592298004,
+    "centroid_lon": 77.60542410375936,
+    "has_geometry": true
+  },
+  "19883411": {
+    "ward_name": "Domluru",
+    "centroid_lat": 12.960647558734408,
+    "centroid_lon": 77.63902384310188,
+    "has_geometry": true
+  },
+  "19883412": {
+    "ward_name": "Kothanur",
+    "centroid_lat": 12.869183269667358,
+    "centroid_lon": 77.57939792105076,
+    "has_geometry": true
+  },
+  "19883413": {
+    "ward_name": "J.P PARK",
+    "centroid_lat": 13.031699550981001,
+    "centroid_lon": 77.55125009240385,
+    "has_geometry": true
+  },
+  "19883414": {
+    "ward_name": "Hosakerehalli",
+    "centroid_lat": 12.930601097822237,
+    "centroid_lon": 77.53712277867831,
+    "has_geometry": true
+  },
+  "19883415": {
+    "ward_name": "K.R Market",
+    "centroid_lat": 12.963609665939837,
+    "centroid_lon": 77.572054901976,
+    "has_geometry": true
+  },
+  "19883416": {
+    "ward_name": "Dodda Bidarakallu",
+    "centroid_lat": 13.034169730193994,
+    "centroid_lon": 77.49108962590692,
+    "has_geometry": true
+  },
+  "19883417": {
+    "ward_name": "Pattegar Palya",
+    "centroid_lat": 12.977231739557217,
+    "centroid_lon": 77.524854263401,
+    "has_geometry": true
+  },
+  "19883418": {
+    "ward_name": "Kundalahalli",
+    "centroid_lat": 12.959946854466512,
+    "centroid_lon": 77.72426497760112,
+    "has_geometry": true
+  },
+  "19883419": {
+    "ward_name": "Rajeshwarinagar",
+    "centroid_lat": 13.013569294635204,
+    "centroid_lon": 77.5162731347253,
+    "has_geometry": true
+  },
+  "19883420": {
+    "ward_name": "Garudachar Palya",
+    "centroid_lat": 12.991273491453972,
+    "centroid_lon": 77.69770588472932,
+    "has_geometry": true
+  },
+  "19883421": {
+    "ward_name": "Freedom Fighter Ward",
+    "centroid_lat": 13.008131673148714,
+    "centroid_lon": 77.52361042046664,
+    "has_geometry": true
+  },
+  "19883422": {
+    "ward_name": "Chokkasandra",
+    "centroid_lat": 13.040160178053679,
+    "centroid_lon": 77.51115424822277,
+    "has_geometry": true
+  },
+  "19883423": {
+    "ward_name": "Rajiv Gandhi Nagar",
+    "centroid_lat": 13.052087815813092,
+    "centroid_lon": 77.58514979528367,
+    "has_geometry": true
+  },
+  "19883424": {
+    "ward_name": "Rajamahal",
+    "centroid_lat": 13.003173663525073,
+    "centroid_lon": 77.58696627777002,
+    "has_geometry": true
+  },
+  "19883425": {
+    "ward_name": "Yelenahalli",
+    "centroid_lat": 12.864334249773169,
+    "centroid_lon": 77.6057309590462,
+    "has_geometry": true
+  },
+  "19883426": {
+    "ward_name": "Yelachenahalli",
+    "centroid_lat": 12.899852202869345,
+    "centroid_lon": 77.56872680254767,
+    "has_geometry": true
+  },
+  "19883427": {
+    "ward_name": "Kalyanagar",
+    "centroid_lat": 13.015864140084272,
+    "centroid_lon": 77.64303596494256,
+    "has_geometry": true
+  },
+  "19883428": {
+    "ward_name": "Sunkadakatte",
+    "centroid_lat": 12.995168868107653,
+    "centroid_lon": 77.50154739147033,
+    "has_geometry": true
+  },
+  "19883429": {
+    "ward_name": "Chandranagara",
+    "centroid_lat": 12.901166753962912,
+    "centroid_lon": 77.56500140556629,
+    "has_geometry": true
+  },
+  "19883430": {
+    "ward_name": "Varthur",
+    "centroid_lat": 12.941271564206517,
+    "centroid_lon": 77.74500623409062,
+    "has_geometry": true
+  },
+  "19883431": {
+    "ward_name": "Agara",
+    "centroid_lat": 12.909416584880653,
+    "centroid_lon": 77.64628963537422,
+    "has_geometry": true
+  },
+  "19883432": {
+    "ward_name": "Kodandarampura",
+    "centroid_lat": 13.004196734156519,
+    "centroid_lon": 77.57498820797622,
+    "has_geometry": true
+  },
+  "19883433": {
+    "ward_name": "BHEL Ward",
+    "centroid_lat": 12.93377082561648,
+    "centroid_lon": 77.59667099449086,
+    "has_geometry": true
+  },
+  "19883434": {
+    "ward_name": "Munnenkolalu",
+    "centroid_lat": 12.948734735810854,
+    "centroid_lon": 77.7085983963911,
+    "has_geometry": true
+  },
+  "19883435": {
+    "ward_name": "Kasavanahalli",
+    "centroid_lat": 12.90536331293144,
+    "centroid_lon": 77.67140632238274,
+    "has_geometry": true
+  },
+  "19883436": {
+    "ward_name": "Nada prabhu Kempegowda Nagara",
+    "centroid_lat": 12.997369348821117,
+    "centroid_lon": 77.48435753846658,
+    "has_geometry": true
+  },
+  "19883437": {
+    "ward_name": "Garvebavi Palya",
+    "centroid_lat": 12.894236967429194,
+    "centroid_lon": 77.63336051518584,
+    "has_geometry": true
+  },
+  "19883438": {
+    "ward_name": "Byatarayanapura",
+    "centroid_lat": 13.068276885672137,
+    "centroid_lon": 77.59284447668206,
+    "has_geometry": true
+  },
+  "19883439": {
+    "ward_name": "Krishnadevaraya ward",
+    "centroid_lat": 12.959376240098788,
+    "centroid_lon": 77.53951720141313,
+    "has_geometry": true
+  },
+  "19883440": {
+    "ward_name": "Uttarahalli",
+    "centroid_lat": 12.898556321636386,
+    "centroid_lon": 77.54762631664612,
+    "has_geometry": true
+  },
+  "19883441": {
+    "ward_name": "Kadugodi",
+    "centroid_lat": 12.994275074999534,
+    "centroid_lon": 77.76474820422331,
+    "has_geometry": true
+  },
+  "19883442": {
+    "ward_name": "K.S. Nissar Ahmed Ward",
+    "centroid_lat": 12.997998415026363,
+    "centroid_lon": 77.66900713880594,
+    "has_geometry": true
+  },
+  "19883443": {
+    "ward_name": "Ashoka Pillar",
+    "centroid_lat": 12.947257412972071,
+    "centroid_lon": 77.58437822636627,
+    "has_geometry": true
+  },
+  "19883444": {
+    "ward_name": "Jalahalli",
+    "centroid_lat": 13.048336951877616,
+    "centroid_lon": 77.53655957779507,
+    "has_geometry": true
+  },
+  "19883445": {
+    "ward_name": "Channasandra",
+    "centroid_lat": 12.98166535443873,
+    "centroid_lon": 77.768414280109,
+    "has_geometry": true
+  },
+  "19883446": {
+    "ward_name": "Subramanyanagara",
+    "centroid_lat": 13.00766632160469,
+    "centroid_lon": 77.5568326484019,
+    "has_geometry": true
+  },
+  "19883447": {
+    "ward_name": "Gayathri Nagara",
+    "centroid_lat": 13.000268297105189,
+    "centroid_lon": 77.55788362157767,
+    "has_geometry": true
+  },
+  "19883448": {
+    "ward_name": "Kengal Hanumanthaiah West",
+    "centroid_lat": 12.924386284510181,
+    "centroid_lon": 77.47983593255805,
+    "has_geometry": true
+  },
+  "19883449": {
+    "ward_name": "Muneshwara Block",
+    "centroid_lat": 12.94982464887717,
+    "centroid_lon": 77.54709862355833,
+    "has_geometry": true
+  },
+  "19883450": {
+    "ward_name": "Lakshmi Devi Nagar",
+    "centroid_lat": 13.01656766673878,
+    "centroid_lon": 77.52776870268426,
+    "has_geometry": true
+  },
+  "19883451": {
+    "ward_name": "K Kamaraj Ward",
+    "centroid_lat": 12.981677149182769,
+    "centroid_lon": 77.61602944436744,
+    "has_geometry": true
+  },
+  "19883452": {
+    "ward_name": "Pattabhirama Nagara",
+    "centroid_lat": 12.919506352250433,
+    "centroid_lon": 77.58480187035353,
+    "has_geometry": true
+  },
+  "19883453": {
+    "ward_name": "Kengeri",
+    "centroid_lat": 12.926105619640708,
+    "centroid_lon": 77.48999562701378,
+    "has_geometry": true
+  },
+  "19883454": {
+    "ward_name": "Ambedkarnagar",
+    "centroid_lat": 12.950599167303686,
+    "centroid_lon": 77.6191874545194,
+    "has_geometry": true
+  },
+  "19883455": {
+    "ward_name": "HBR Layout",
+    "centroid_lat": 13.030336995551203,
+    "centroid_lon": 77.62999721071876,
+    "has_geometry": true
+  },
+  "19883456": {
+    "ward_name": "Jaraganahalli",
+    "centroid_lat": 12.898811201127854,
+    "centroid_lon": 77.57620749613912,
+    "has_geometry": true
+  },
+  "19883457": {
+    "ward_name": "Lakkasandra",
+    "centroid_lat": 12.93981213429835,
+    "centroid_lon": 77.60459539825486,
+    "has_geometry": true
+  },
+  "19883458": {
+    "ward_name": "Pulakeshi Nagar",
+    "centroid_lat": 12.995772817813512,
+    "centroid_lon": 77.61469788730116,
+    "has_geometry": true
+  },
+  "19883459": {
+    "ward_name": "Someshwara Nagara",
+    "centroid_lat": 12.943930770275498,
+    "centroid_lon": 77.59793422744649,
+    "has_geometry": true
+  },
+  "19883460": {
+    "ward_name": "Kamakshipalya",
+    "centroid_lat": 12.98546818684777,
+    "centroid_lon": 77.53342389834485,
+    "has_geometry": true
+  },
+  "19883461": {
+    "ward_name": "Sagayapuram",
+    "centroid_lat": 13.005626747108295,
+    "centroid_lon": 77.61692322604655,
+    "has_geometry": true
+  },
+  "19883462": {
+    "ward_name": "Mylasandra",
+    "centroid_lat": 12.915912901578169,
+    "centroid_lon": 77.49975634172206,
+    "has_geometry": true
+  },
+  "19883463": {
+    "ward_name": "Sangama Ward",
+    "centroid_lat": 12.966384293874007,
+    "centroid_lon": 77.68446192837587,
+    "has_geometry": true
+  },
+  "19883464": {
+    "ward_name": "S.G Palya",
+    "centroid_lat": 12.932940136877885,
+    "centroid_lon": 77.60496338968964,
+    "has_geometry": true
+  },
+  "19883465": {
+    "ward_name": "Andrahalli",
+    "centroid_lat": 13.017901283954401,
+    "centroid_lon": 77.48385132715111,
+    "has_geometry": true
+  },
+  "19883466": {
+    "ward_name": "Rajajinagara",
+    "centroid_lat": 12.990003542672666,
+    "centroid_lon": 77.55180008922379,
+    "has_geometry": true
+  },
+  "19883467": {
+    "ward_name": "Vasanthapura",
+    "centroid_lat": 12.890870624935465,
+    "centroid_lon": 77.55700010977148,
+    "has_geometry": true
+  },
+  "19883468": {
+    "ward_name": "Manjunatha Nagar",
+    "centroid_lat": 13.052319304587671,
+    "centroid_lon": 77.49978468682666,
+    "has_geometry": true
+  },
+  "19883469": {
+    "ward_name": "Mallasandra",
+    "centroid_lat": 13.05588976227627,
+    "centroid_lon": 77.51519930786881,
+    "has_geometry": true
+  },
+  "19883470": {
+    "ward_name": "Hampi Nagar",
+    "centroid_lat": 12.95902250214728,
+    "centroid_lon": 77.53323517133566,
+    "has_geometry": true
+  },
+  "19883471": {
+    "ward_name": "National Games Village",
+    "centroid_lat": 12.945183996235322,
+    "centroid_lon": 77.62185871309094,
+    "has_geometry": true
+  },
+  "19883472": {
+    "ward_name": "K.G.Halli",
+    "centroid_lat": 13.019632361260198,
+    "centroid_lon": 77.62105377411675,
+    "has_geometry": true
+  },
+  "19883473": {
+    "ward_name": "Kudlu",
+    "centroid_lat": 12.888821894408698,
+    "centroid_lon": 77.65865341816264,
+    "has_geometry": true
+  },
+  "19883474": {
+    "ward_name": "Swamy Vivekananda Ward",
+    "centroid_lat": 12.936859029057642,
+    "centroid_lon": 77.54486440540988,
+    "has_geometry": true
+  },
+  "19883475": {
+    "ward_name": "Priyadarshini Ward",
+    "centroid_lat": 12.961846374372763,
+    "centroid_lon": 77.7099791697028,
+    "has_geometry": true
+  },
+  "19883476": {
+    "ward_name": "Iblur",
+    "centroid_lat": 12.915786761888704,
+    "centroid_lon": 77.65638506378832,
+    "has_geometry": true
+  },
+  "19883477": {
+    "ward_name": "Hombegowda Nagara",
+    "centroid_lat": 12.951840895839899,
+    "centroid_lon": 77.59325370879463,
+    "has_geometry": true
+  },
+  "19883478": {
+    "ward_name": "Chandra Layout",
+    "centroid_lat": 12.955651404492286,
+    "centroid_lon": 77.52370041307869,
+    "has_geometry": true
+  },
+  "19883479": {
+    "ward_name": "Attigupe",
+    "centroid_lat": 12.95923311098276,
+    "centroid_lon": 77.52803250219502,
+    "has_geometry": true
+  },
+  "19883480": {
+    "ward_name": "Bandi Reddy Circle Ward",
+    "centroid_lat": 12.991763973917346,
+    "centroid_lon": 77.56122534664331,
+    "has_geometry": true
+  },
+  "19883481": {
+    "ward_name": "Herohalli",
+    "centroid_lat": 12.992216420211927,
+    "centroid_lon": 77.49311634506132,
+    "has_geometry": true
+  },
+  "19883482": {
+    "ward_name": "Banaswadi",
+    "centroid_lat": 13.014725746040442,
+    "centroid_lon": 77.6528453083412,
+    "has_geometry": true
+  },
+  "19883483": {
+    "ward_name": "Sarvabhouma Nagar",
+    "centroid_lat": 12.912582989001132,
+    "centroid_lon": 77.54705901197393,
+    "has_geometry": true
+  },
+  "19883484": {
+    "ward_name": "Aramane Nagara",
+    "centroid_lat": 13.030006685812545,
+    "centroid_lon": 77.56484575252564,
+    "has_geometry": true
+  },
+  "19883485": {
+    "ward_name": "Nagavarapalya",
+    "centroid_lat": 12.986790289135094,
+    "centroid_lon": 77.6582486204447,
+    "has_geometry": true
+  },
+  "19883486": {
+    "ward_name": "New Tavarekere",
+    "centroid_lat": 12.920462555767694,
+    "centroid_lon": 77.61101950979958,
+    "has_geometry": true
+  },
+  "19883487": {
+    "ward_name": "Dr Rajkumar Ward",
+    "centroid_lat": 12.979653054716083,
+    "centroid_lon": 77.54848025297925,
+    "has_geometry": true
+  },
+  "19883488": {
+    "ward_name": "Dharmaraya Swamy Temple Ward",
+    "centroid_lat": 12.964752582289014,
+    "centroid_lon": 77.58425998769772,
+    "has_geometry": true
+  },
+  "19883489": {
+    "ward_name": "Rajarajeshwari Nagara",
+    "centroid_lat": 12.920251621576616,
+    "centroid_lon": 77.51590762936185,
+    "has_geometry": true
+  },
+  "19883490": {
+    "ward_name": "Puttenahalli",
+    "centroid_lat": 12.89422810938442,
+    "centroid_lon": 77.58610583680024,
+    "has_geometry": true
+  },
+  "19883491": {
+    "ward_name": "Dayanand Nagara",
+    "centroid_lat": 12.990918046443776,
+    "centroid_lon": 77.56553893700939,
+    "has_geometry": true
+  },
+  "19883492": {
+    "ward_name": "Prakash Nagara",
+    "centroid_lat": 12.99499260706618,
+    "centroid_lon": 77.55668338444873,
+    "has_geometry": true
+  },
+  "19883493": {
+    "ward_name": "Hoodi",
+    "centroid_lat": 12.999692053836808,
+    "centroid_lon": 77.72134801095005,
+    "has_geometry": true
+  },
+  "19883494": {
+    "ward_name": "Dooravaninagar",
+    "centroid_lat": 13.007309466841077,
+    "centroid_lon": 77.66629912196092,
+    "has_geometry": true
+  },
+  "19883495": {
+    "ward_name": "Gowdanapalya",
+    "centroid_lat": 12.907994764133653,
+    "centroid_lon": 77.55749900766132,
+    "has_geometry": true
+  },
+  "19883496": {
+    "ward_name": "Byadarahalli",
+    "centroid_lat": 12.9788245785217,
+    "centroid_lon": 77.48413193040439,
+    "has_geometry": true
+  },
+  "19883497": {
+    "ward_name": "Parvathi Nagar",
+    "centroid_lat": 13.021164019406687,
+    "centroid_lon": 77.5181402856808,
+    "has_geometry": true
+  },
+  "19883498": {
+    "ward_name": "Medahalli",
+    "centroid_lat": 13.017100104020873,
+    "centroid_lon": 77.71714516792622,
+    "has_geometry": true
+  },
+  "19883499": {
+    "ward_name": "Nagarbhavi",
+    "centroid_lat": 12.950876802234088,
+    "centroid_lon": 77.51720260767186,
+    "has_geometry": true
+  },
+  "19883500": {
+    "ward_name": "Nagapura",
+    "centroid_lat": 13.003921228449316,
+    "centroid_lon": 77.54441190485629,
+    "has_geometry": true
+  },
+  "19883501": {
+    "ward_name": "Basavanapura",
+    "centroid_lat": 13.00808106590178,
+    "centroid_lon": 77.71191669550396,
+    "has_geometry": true
+  },
+  "19883502": {
+    "ward_name": "Bagalagunte",
+    "centroid_lat": 13.062786900814205,
+    "centroid_lon": 77.49991608487909,
+    "has_geometry": true
+  },
+  "19883503": {
+    "ward_name": "Mallathahalli",
+    "centroid_lat": 12.970114848323874,
+    "centroid_lon": 77.50065353995659,
+    "has_geometry": true
+  },
+  "19884504": {
+    "ward_name": "Bapuji Nagara",
+    "centroid_lat": 12.956991733042049,
+    "centroid_lon": 77.54437211040802,
+    "has_geometry": true
+  },
+  "19884505": {
+    "ward_name": "Halasuru",
+    "centroid_lat": 12.977190869250798,
+    "centroid_lon": 77.62337777810684,
+    "has_geometry": true
+  },
+  "19884506": {
+    "ward_name": "Sampangirama Nagar",
+    "centroid_lat": 12.979116378358345,
+    "centroid_lon": 77.58731834667752,
+    "has_geometry": true
+  },
+  "19884507": {
+    "ward_name": "Vidyaranyanagara",
+    "centroid_lat": 12.970126602397661,
+    "centroid_lon": 77.54966159463197,
+    "has_geometry": true
+  },
+  "19884508": {
+    "ward_name": "Padmanabhanagara",
+    "centroid_lat": 12.915494974066817,
+    "centroid_lon": 77.55600303897728,
+    "has_geometry": true
+  },
+  "19884509": {
+    "ward_name": "Amruthahalli",
+    "centroid_lat": 13.06509466064423,
+    "centroid_lon": 77.6013687997037,
+    "has_geometry": true
+  },
+  "19884510": {
+    "ward_name": "Srinivasa Nagara",
+    "centroid_lat": 12.935701860375236,
+    "centroid_lon": 77.55519410543965,
+    "has_geometry": true
+  },
+  "19884511": {
+    "ward_name": "Agrahara Dasarahalli",
+    "centroid_lat": 12.982699279060355,
+    "centroid_lon": 77.54016341867735,
+    "has_geometry": true
+  },
+  "19884512": {
+    "ward_name": "Dasarahalli",
+    "centroid_lat": 13.046150649658692,
+    "centroid_lon": 77.51661308201086,
+    "has_geometry": true
+  },
+  "19884513": {
+    "ward_name": "Byrathi",
+    "centroid_lat": 13.053909849047542,
+    "centroid_lon": 77.66709629163775,
+    "has_geometry": true
+  },
+  "19884514": {
+    "ward_name": "Ramaswamy Palya",
+    "centroid_lat": 13.006510351894738,
+    "centroid_lon": 77.59874452263631,
+    "has_geometry": true
+  },
+  "19884515": {
+    "ward_name": "RBI Layout",
+    "centroid_lat": 12.886252632629823,
+    "centroid_lon": 77.58270435877846,
+    "has_geometry": true
+  },
+  "19884516": {
+    "ward_name": "Bheereshwara Nagar",
+    "centroid_lat": 12.88886802702293,
+    "centroid_lon": 77.57343951521742,
+    "has_geometry": true
+  },
+  "19884517": {
+    "ward_name": "Kaggadasapura",
+    "centroid_lat": 12.98230141968722,
+    "centroid_lon": 77.67284793200143,
+    "has_geometry": true
+  },
+  "19884518": {
+    "ward_name": "Devarachikkanahalli",
+    "centroid_lat": 12.89249470319516,
+    "centroid_lon": 77.62179084882081,
+    "has_geometry": true
+  },
+  "19884519": {
+    "ward_name": "Shivanasamudra Ward",
+    "centroid_lat": 12.921481679913084,
+    "centroid_lon": 77.68445328297986,
+    "has_geometry": true
+  },
+  "19884520": {
+    "ward_name": "Abdul Kalam Nagar",
+    "centroid_lat": 12.922696503061648,
+    "centroid_lon": 77.60066351101945,
+    "has_geometry": true
+  },
+  "19884521": {
+    "ward_name": "Nayanda Halli",
+    "centroid_lat": 12.943778822396117,
+    "centroid_lon": 77.52242958661446,
+    "has_geometry": true
+  },
+  "19884522": {
+    "ward_name": "Govindapura",
+    "centroid_lat": 13.031233698111226,
+    "centroid_lon": 77.61683450418924,
+    "has_geometry": true
+  },
+  "19884523": {
+    "ward_name": "Srigandada Kaval",
+    "centroid_lat": 12.984092775243516,
+    "centroid_lon": 77.50407443230678,
+    "has_geometry": true
+  },
+  "19884524": {
+    "ward_name": "Dharmagiri Ward",
+    "centroid_lat": 12.920280822191362,
+    "centroid_lon": 77.5701896125611,
+    "has_geometry": true
+  },
+  "19884525": {
+    "ward_name": "Dr. Vishnuvardhan Ward",
+    "centroid_lat": 12.974568132705361,
+    "centroid_lon": 77.53345146470302,
+    "has_geometry": true
+  },
+  "19884526": {
+    "ward_name": "Kuvempu Ward",
+    "centroid_lat": 12.996792909229567,
+    "centroid_lon": 77.56321097629116,
+    "has_geometry": true
+  },
+  "19884527": {
+    "ward_name": "Yelahanka Satellite Town",
+    "centroid_lat": 13.097884538160244,
+    "centroid_lon": 77.5800107797957,
+    "has_geometry": true
+  },
+  "19884528": {
+    "ward_name": "Bangarappa Nagara",
+    "centroid_lat": 12.920450809338131,
+    "centroid_lon": 77.52609672897506,
+    "has_geometry": true
+  },
+  "19884529": {
+    "ward_name": "Nandini Layout",
+    "centroid_lat": 13.014158276733827,
+    "centroid_lon": 77.53371509106915,
+    "has_geometry": true
+  },
+  "19884530": {
+    "ward_name": "Austin Town",
+    "centroid_lat": 12.957591260123097,
+    "centroid_lon": 77.61439527744072,
+    "has_geometry": true
+  },
+  "19884531": {
+    "ward_name": "Kushal Nagar",
+    "centroid_lat": 13.010986034288578,
+    "centroid_lon": 77.61463200890515,
+    "has_geometry": true
+  },
+  "19884532": {
+    "ward_name": "Nelagadaranahalli",
+    "centroid_lat": 13.029200144352153,
+    "centroid_lon": 77.508216963017,
+    "has_geometry": true
+  },
+  "19884533": {
+    "ward_name": "Kottegepalya",
+    "centroid_lat": 12.986609832999324,
+    "centroid_lon": 77.51616563107922,
+    "has_geometry": true
+  },
+  "19884534": {
+    "ward_name": "Goraguntepalya",
+    "centroid_lat": 13.026570564197225,
+    "centroid_lon": 77.54112803199772,
+    "has_geometry": true
+  },
+  "19884535": {
+    "ward_name": "Subramanyapura",
+    "centroid_lat": 12.898237343195838,
+    "centroid_lon": 77.5330445757643,
+    "has_geometry": true
+  },
+  "19884536": {
+    "ward_name": "Subedarpalya",
+    "centroid_lat": 13.020987994138663,
+    "centroid_lon": 77.55850366582077,
+    "has_geometry": true
+  },
+  "19884537": {
+    "ward_name": "Viswamanava Kuvempu Ward",
+    "centroid_lat": 12.913658831337745,
+    "centroid_lon": 77.61019699392223,
+    "has_geometry": true
+  },
+  "19884538": {
+    "ward_name": "Chikka Adugodi",
+    "centroid_lat": 12.928423197745197,
+    "centroid_lon": 77.61183286485011,
+    "has_geometry": true
+  },
+  "19884539": {
+    "ward_name": "Kammanahalli",
+    "centroid_lat": 13.007875368982875,
+    "centroid_lon": 77.6327262320757,
+    "has_geometry": true
+  },
+  "19884540": {
+    "ward_name": "Sri Lakshmi Devi Ward",
+    "centroid_lat": 12.940029977122347,
+    "centroid_lon": 77.62555460408852,
+    "has_geometry": true
+  },
+  "19884541": {
+    "ward_name": "Anjanapura",
+    "centroid_lat": 12.861797229098613,
+    "centroid_lon": 77.55977068120103,
+    "has_geometry": true
+  },
+  "19884542": {
+    "ward_name": "Vijaya Bank Layout",
+    "centroid_lat": 12.881826148309953,
+    "centroid_lon": 77.60890172090767,
+    "has_geometry": true
+  },
+  "19884543": {
+    "ward_name": "L.B Shastri Nagar",
+    "centroid_lat": 12.965874970097452,
+    "centroid_lon": 77.6713244887105,
+    "has_geometry": true
+  },
+  "19884544": {
+    "ward_name": "Periyar Nagar",
+    "centroid_lat": 13.012880217923541,
+    "centroid_lon": 77.61229385579422,
+    "has_geometry": true
+  },
+  "19884545": {
+    "ward_name": "Hanumanthanagar",
+    "centroid_lat": 12.942624003428287,
+    "centroid_lon": 77.55896286462496,
+    "has_geometry": true
+  },
+  "19884546": {
+    "ward_name": "Harinagar",
+    "centroid_lat": 12.875057747223057,
+    "centroid_lon": 77.57240873843884,
+    "has_geometry": true
+  },
+  "19884547": {
+    "ward_name": "Marenahalli South",
+    "centroid_lat": 12.914312896120755,
+    "centroid_lon": 77.58960172152558,
+    "has_geometry": true
+  },
+  "19884548": {
+    "ward_name": "Srigandhanagar",
+    "centroid_lat": 13.00119679011034,
+    "centroid_lon": 77.50397121186634,
+    "has_geometry": true
+  },
+  "19884549": {
+    "ward_name": "S.M Krishna Ward",
+    "centroid_lat": 12.978593896550246,
+    "centroid_lon": 77.74024806949089,
+    "has_geometry": true
+  },
+  "19884550": {
+    "ward_name": "Marathahalli",
+    "centroid_lat": 12.952810884329383,
+    "centroid_lon": 77.69647810471646,
+    "has_geometry": true
+  },
+  "19884551": {
+    "ward_name": "N.A.L Layout",
+    "centroid_lat": 12.925024347004557,
+    "centroid_lon": 77.60113789910896,
+    "has_geometry": true
+  },
+  "19884552": {
+    "ward_name": "Talagattapura",
+    "centroid_lat": 12.867516998084398,
+    "centroid_lon": 77.52752977462444,
+    "has_geometry": true
+  },
+  "19884553": {
+    "ward_name": "Aruna Asif Ali Ward",
+    "centroid_lat": 13.015423423224094,
+    "centroid_lon": 77.60970346421902,
+    "has_geometry": true
+  },
+  "19884554": {
+    "ward_name": "Hoysala Nagara Central",
+    "centroid_lat": 12.98236863152653,
+    "centroid_lon": 77.63117940487878,
+    "has_geometry": true
+  },
+  "19884555": {
+    "ward_name": "Nagashettyhalli",
+    "centroid_lat": 13.039948858239208,
+    "centroid_lon": 77.57344944288448,
+    "has_geometry": true
+  },
+  "19884556": {
+    "ward_name": "Kane Muneshwara Ward",
+    "centroid_lat": 12.903581794429776,
+    "centroid_lon": 77.56148261297687,
+    "has_geometry": true
+  },
+  "19884557": {
+    "ward_name": "Konanakunte",
+    "centroid_lat": 12.881091707338568,
+    "centroid_lon": 77.56536701349683,
+    "has_geometry": true
+  },
+  "19884558": {
+    "ward_name": "Kaval Byrasandra",
+    "centroid_lat": 13.021433114072796,
+    "centroid_lon": 77.60803960701779,
+    "has_geometry": true
+  },
+  "19884559": {
+    "ward_name": "Okalipuram",
+    "centroid_lat": 12.985046687050554,
+    "centroid_lon": 77.56440123430156,
+    "has_geometry": true
+  },
+  "19884560": {
+    "ward_name": "Krishnaiahnapalya",
+    "centroid_lat": 12.993468151056458,
+    "centroid_lon": 77.65538841519863,
+    "has_geometry": true
+  },
+  "19884561": {
+    "ward_name": "Hagaduru",
+    "centroid_lat": null,
+    "centroid_lon": null,
+    "has_geometry": false
+  },
+  "19884562": {
+    "ward_name": "Madiwala",
+    "centroid_lat": 12.920279588462252,
+    "centroid_lon": 77.61728851415371,
+    "has_geometry": true
+  },
+  "19884563": {
+    "ward_name": "Banashankari Temple Ward",
+    "centroid_lat": 12.91192350224482,
+    "centroid_lon": 77.57141749337292,
+    "has_geometry": true
+  },
+  "19884564": {
+    "ward_name": "K.P Agrahara",
+    "centroid_lat": 12.973757582571531,
+    "centroid_lon": 77.5534601396801,
+    "has_geometry": true
+  },
+  "19884565": {
+    "ward_name": "Sangolli Rayanna Ward",
+    "centroid_lat": 12.970870744934993,
+    "centroid_lon": 77.55502412934014,
+    "has_geometry": true
+  },
+  "19884566": {
+    "ward_name": "K Narayanapura",
+    "centroid_lat": 13.063970922433107,
+    "centroid_lon": 77.64436665916985,
+    "has_geometry": true
+  },
+  "19884567": {
+    "ward_name": "Bhuvaneshwari Nagar",
+    "centroid_lat": 12.971624597913957,
+    "centroid_lon": 77.55966839051378,
+    "has_geometry": true
+  },
+  "19884568": {
+    "ward_name": "Jeevanahalli",
+    "centroid_lat": 12.997961545437276,
+    "centroid_lon": 77.63318500091601,
+    "has_geometry": true
+  },
+  "19884569": {
+    "ward_name": "Yelahanka Old Town",
+    "centroid_lat": 13.096785604328339,
+    "centroid_lon": 77.59601180317333,
+    "has_geometry": true
+  },
+  "19884570": {
+    "ward_name": "Shakthi Nagar",
+    "centroid_lat": 13.018033406690577,
+    "centroid_lon": 77.61593897687811,
+    "has_geometry": true
+  },
+  "19884571": {
+    "ward_name": "Kengal Hanumanthaiah South",
+    "centroid_lat": 12.902360807773185,
+    "centroid_lon": 77.58302909262295,
+    "has_geometry": true
+  },
+  "19884572": {
+    "ward_name": "Gottigere",
+    "centroid_lat": 12.848393371005365,
+    "centroid_lon": 77.58161373415682,
+    "has_geometry": true
+  },
+  "19884573": {
+    "ward_name": "Vibhootipura",
+    "centroid_lat": 12.953834717339682,
+    "centroid_lon": 77.6712133741625,
+    "has_geometry": true
+  },
+  "19884574": {
+    "ward_name": "A Narayanapura",
+    "centroid_lat": 12.996979079981108,
+    "centroid_lon": 77.680615373804,
+    "has_geometry": true
+  },
+  "19884575": {
+    "ward_name": "Babusab Palya",
+    "centroid_lat": 13.024640634259343,
+    "centroid_lon": 77.65448101478783,
+    "has_geometry": true
+  },
+  "19884576": {
+    "ward_name": "Horamavu",
+    "centroid_lat": 13.045677513073128,
+    "centroid_lon": 77.65930227690585,
+    "has_geometry": true
+  },
+  "19884577": {
+    "ward_name": "Avalahalli",
+    "centroid_lat": 12.9455935487351,
+    "centroid_lon": 77.54306303626383,
+    "has_geometry": true
+  },
+  "19884578": {
+    "ward_name": "Rajagopala Nagara",
+    "centroid_lat": 13.008529326280977,
+    "centroid_lon": 77.51130854901686,
+    "has_geometry": true
+  },
+  "19884579": {
+    "ward_name": "Peenya",
+    "centroid_lat": 13.032796717121599,
+    "centroid_lon": 77.52765446034913,
+    "has_geometry": true
+  },
+  "19884580": {
+    "ward_name": "Nele Maheshwaramma Temple Ward",
+    "centroid_lat": 13.048105410231576,
+    "centroid_lon": 77.51079304797659,
+    "has_geometry": true
+  },
+  "19884581": {
+    "ward_name": "Kodihalli",
+    "centroid_lat": 12.964127448168748,
+    "centroid_lon": 77.64605450349248,
+    "has_geometry": true
+  },
+  "19884582": {
+    "ward_name": "Mathikere",
+    "centroid_lat": 13.035658688390539,
+    "centroid_lon": 77.5611492426096,
+    "has_geometry": true
+  },
+  "19884583": {
+    "ward_name": "Kadirenahalli",
+    "centroid_lat": 12.917019174779002,
+    "centroid_lon": 77.56119646158561,
+    "has_geometry": true
+  },
+  "19884584": {
+    "ward_name": "Thimmenahalli",
+    "centroid_lat": 12.977089323059053,
+    "centroid_lon": 77.54019621962432,
+    "has_geometry": true
+  },
+  "19884585": {
+    "ward_name": "Bellandur",
+    "centroid_lat": 12.931358693423409,
+    "centroid_lon": 77.6791231613335,
+    "has_geometry": true
+  },
+  "19884586": {
+    "ward_name": "T.C Palya",
+    "centroid_lat": 13.015708061017198,
+    "centroid_lon": 77.69056242708075,
+    "has_geometry": true
+  },
+  "19884587": {
+    "ward_name": "Hemmigepura",
+    "centroid_lat": 12.895796289497605,
+    "centroid_lon": 77.48724570895257,
+    "has_geometry": true
+  },
+  "19884588": {
+    "ward_name": "Subbayanapalya",
+    "centroid_lat": 13.00824243064384,
+    "centroid_lon": 77.63907353617591,
+    "has_geometry": true
+  },
+  "19884589": {
+    "ward_name": "Maruthi Mandira Ward",
+    "centroid_lat": 12.967210963933436,
+    "centroid_lon": 77.52973532434298,
+    "has_geometry": true
+  },
+  "19884590": {
+    "ward_name": "Sane Guruvana Halli",
+    "centroid_lat": 12.991476455447792,
+    "centroid_lon": 77.54378135755368,
+    "has_geometry": true
+  },
+  "19884591": {
+    "ward_name": "Manjunath Nagara",
+    "centroid_lat": 12.995547256680824,
+    "centroid_lon": 77.5477752098512,
+    "has_geometry": true
+  },
+  "19884592": {
+    "ward_name": "Jogpalya",
+    "centroid_lat": 12.9718918164968,
+    "centroid_lon": 77.63419904191464,
+    "has_geometry": true
+  },
+  "19884593": {
+    "ward_name": "Tilak Nagara",
+    "centroid_lat": 12.927736739875831,
+    "centroid_lon": 77.59103594496422,
+    "has_geometry": true
+  },
+  "19884594": {
+    "ward_name": "V.V Puram",
+    "centroid_lat": 12.950458434529624,
+    "centroid_lon": 77.57734362773313,
+    "has_geometry": true
+  },
+  "19884595": {
+    "ward_name": "Kormangala West",
+    "centroid_lat": 12.929175177045513,
+    "centroid_lon": 77.6202363405309,
+    "has_geometry": true
+  },
+  "19884596": {
+    "ward_name": "Shivajinagar",
+    "centroid_lat": 12.982994469652924,
+    "centroid_lon": 77.60548361728132,
+    "has_geometry": true
+  },
+  "19884597": {
+    "ward_name": "Ramamurthy Nagara",
+    "centroid_lat": 13.01406412852769,
+    "centroid_lon": 77.67902728048982,
+    "has_geometry": true
+  },
+  "19884598": {
+    "ward_name": "Byrasandra",
+    "centroid_lat": 12.929459821493763,
+    "centroid_lon": 77.58541247334631,
+    "has_geometry": true
+  },
+  "19884599": {
+    "ward_name": "Hoysala Nagara East",
+    "centroid_lat": 13.019979865117511,
+    "centroid_lon": 77.66736578989385,
+    "has_geometry": true
+  },
+  "19884600": {
+    "ward_name": "Beguru",
+    "centroid_lat": 12.874440669691785,
+    "centroid_lon": 77.62449995030346,
+    "has_geometry": true
+  },
+  "19884601": {
+    "ward_name": "Shivanagara",
+    "centroid_lat": 12.990519864456216,
+    "centroid_lon": 77.54823469319545,
+    "has_geometry": true
+  },
+  "19884602": {
+    "ward_name": "K.R Pura",
+    "centroid_lat": 13.01073947704459,
+    "centroid_lon": 77.69691275799647,
+    "has_geometry": true
+  },
+  "19884603": {
+    "ward_name": "Kotthur",
+    "centroid_lat": 13.006980149600825,
+    "centroid_lon": 77.67780076038795,
+    "has_geometry": true
+  },
+  "19884604": {
+    "ward_name": "Kodigehalli",
+    "centroid_lat": 13.053627612759094,
+    "centroid_lon": 77.5727154321355,
+    "has_geometry": true
+  },
+  "19884605": {
+    "ward_name": "Devaraj Urs Ward",
+    "centroid_lat": 12.952116622724333,
+    "centroid_lon": 77.56502407476887,
+    "has_geometry": true
+  },
+  "19884606": {
+    "ward_name": "Cheluvadi Palya",
+    "centroid_lat": 12.965598124203447,
+    "centroid_lon": 77.56789336382293,
+    "has_geometry": true
+  },
+  "19884607": {
+    "ward_name": "Jnana Bharathi Ward",
+    "centroid_lat": 12.946958815116906,
+    "centroid_lon": 77.50148517121373,
+    "has_geometry": true
+  },
+  "19884608": {
+    "ward_name": "Ullal",
+    "centroid_lat": 12.957183437169022,
+    "centroid_lon": 77.48183094639765,
+    "has_geometry": true
+  },
+  "19884609": {
+    "ward_name": "Vinayaka Layout",
+    "centroid_lat": 12.966615965537812,
+    "centroid_lon": 77.51112789006511,
+    "has_geometry": true
+  },
+  "19884610": {
+    "ward_name": "Kogilu",
+    "centroid_lat": 13.107922115862708,
+    "centroid_lon": 77.62800895255677,
+    "has_geometry": true
+  },
+  "19884611": {
+    "ward_name": "Akash Ward",
+    "centroid_lat": 13.116629540834987,
+    "centroid_lon": 77.6018792640773,
+    "has_geometry": true
+  },
+  "19884612": {
+    "ward_name": "Yamalur",
+    "centroid_lat": 12.941119366573027,
+    "centroid_lon": 77.66974013364799,
+    "has_geometry": true
+  },
+  "19884613": {
+    "ward_name": "Agaram",
+    "centroid_lat": 12.945102143416511,
+    "centroid_lon": 77.63956517162937,
+    "has_geometry": true
+  }
+}

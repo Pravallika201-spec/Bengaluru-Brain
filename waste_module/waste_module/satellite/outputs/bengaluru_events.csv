@@ -1,0 +1,2 @@
+event_id,event_name,event_type,description,start_datetime,end_datetime,latitude,longitude,location,city,expected_attendance,event_intensity,source,last_updated
+KT_00001,Ganesha Utsava 2026,Festival,14 Sept – 14 Sept Ganesha Utsava 2026 Bengaluru,2026-09-14,2026-09-14,,,Bengaluru,Bengaluru,,3,Karnataka Tourism,2026-08-23 21:13:00.758290

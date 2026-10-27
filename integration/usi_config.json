@@ -1,0 +1,17 @@
+{
+  "_comment": "Weights must sum to 1.0. Edit and rerun — no code changes needed.",
+  "traffic_weight": 0.5,
+  "waste_weight": 0.5,
+  "bands": {
+    "_comment": "USI score cutoffs (inclusive upper bound of each band)",
+    "green_max": 40,
+    "yellow_max": 60,
+    "orange_max": 80
+  },
+  "severity_levels": {
+    "_comment": "Cutoffs used to describe a component score in the 'reason' text",
+    "low_max": 30,
+    "medium_max": 60,
+    "high_max": 80
+  }
+}

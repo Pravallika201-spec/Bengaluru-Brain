@@ -1,0 +1,370 @@
+sl_no,ward_name,ward_number,assembly_constituency,city_corporation
+1,Kudlu,32,Anekal,Bengaluru South City Corporation
+2,Naganathapura,33,Bangalore South,Bengaluru South City Corporation
+3,Chikkathoguru,34,Bangalore South,Bengaluru South City Corporation
+4,Vishwapriya Nagara,35,Bangalore South,Bengaluru South City Corporation
+5,Beguru,36,Bangalore South,Bengaluru South City Corporation
+6,Yelenahalli,37,Bangalore South,Bengaluru South City Corporation
+7,Doddakammana Halli,38,Bangalore South,Bengaluru South City Corporation
+8,Gottigere,39,Bangalore South,Bengaluru South City Corporation
+9,Anjanapura,40,Bangalore South,Bengaluru South City Corporation
+10,Kothanur,41,Bangalore South,Bengaluru South City Corporation
+11,RBI Layout,42,Bangalore South,Bengaluru South City Corporation
+12,Bilekahalli,43,Bangalore South,Bengaluru South City Corporation
+13,Harinagar,44,Bangalore South,Bengaluru South City Corporation
+14,Konanakunte,45,Bangalore South,Bengaluru South City Corporation
+15,Yelachenahalli,46,Bangalore South,Bengaluru South City Corporation
+16,Chandranagara,47,Bangalore South,Bengaluru South City Corporation
+17,Vasanthapura,48,Bangalore South,Bengaluru South City Corporation
+18,Uttarahalli,49,Bangalore South,Bengaluru South City Corporation
+19,Sarvabhouma Nagar,50,Bangalore South,Bengaluru South City Corporation
+20,Subramanyapura,51,Bangalore South,Bengaluru South City Corporation
+21,Srinagar,100,Basavanagudi,Bengaluru West City Corporation
+22,Kempambudhi Ward,101,Basavanagudi,Bengaluru West City Corporation
+23,Hanumanthnagar,102,Basavanagudi,Bengaluru West City Corporation
+24,N R Colony,103,Basavanagudi,Bengaluru West City Corporation
+25,Thyagarajnagar,104,Basavanagudi,Bengaluru West City Corporation
+26,Swamy Vivekananda Ward,95,Basavanagudi,Bengaluru West City Corporation
+27,Kathriguppe,96,Basavanagudi,Bengaluru West City Corporation
+28,Srinivasa Nagara,97,Basavanagudi,Bengaluru West City Corporation
+29,Ashoka Nagara,98,Basavanagudi,Bengaluru West City Corporation
+30,T R Shamnna Nagar,99,Basavanagudi,Bengaluru West City Corporation
+31,Jaraganahalli,53,Bommanahalli,Bengaluru South City Corporation
+32,Koramangala Hanumantha South,54,Bommanahalli,Bengaluru South City Corporation
+33,Puttenahalli,55,Bommanahalli,Bengaluru South City Corporation
+34,Doresanipalya,56,Bommanahalli,Bengaluru South City Corporation
+35,Hulimavu,57,Bommanahalli,Bengaluru South City Corporation
+36,Arakere,58,Bommanahalli,Bengaluru South City Corporation
+37,Vijaya Bank Layout,59,Bommanahalli,Bengaluru South City Corporation
+38,Bilekahalli,60,Bommanahalli,Bengaluru South City Corporation
+39,Kodichikkanahalli,61,Bommanahalli,Bengaluru South City Corporation
+40,Devarachikkanahalli,62,Bommanahalli,Bengaluru South City Corporation
+41,Bommanahalli,63,Bommanahalli,Bengaluru South City Corporation
+42,Hongasandra,64,Bommanahalli,Bengaluru South City Corporation
+43,Garebhavi Palya,65,Bommanahalli,Bengaluru South City Corporation
+44,Singasandra,66,Bommanahalli,Bengaluru South City Corporation
+45,Bandepalya,67,Bommanahalli,Bengaluru South City Corporation
+46,Mangammanapalya,68,Bommanahalli,Bengaluru South City Corporation
+47,Hosapalya,69,Bommanahalli,Bengaluru South City Corporation
+48,Iblur,70,Bommanahalli,Bengaluru South City Corporation
+49,Agara,71,Bommanahalli,Bengaluru South City Corporation
+50,HSR Layout,72,Bommanahalli,Bengaluru South City Corporation
+51,N S Palya,17,B.T.M Layout,Bengaluru South City Corporation
+52,Viswamanava Kuvempu Ward,18,B.T.M Layout,Bengaluru South City Corporation
+53,New Tavarekere,19,B.T.M Layout,Bengaluru South City Corporation
+54,Madiwala,20,B.T.M Layout,Bengaluru South City Corporation
+55,Chikka Adugodi,21,B.T.M Layout,Bengaluru South City Corporation
+56,S G Palya,22,B.T.M Layout,Bengaluru South City Corporation
+57,Lakkasandra,23,B.T.M Layout,Bengaluru South City Corporation
+58,A Adugodi,24,B.T.M Layout,Bengaluru South City Corporation
+59,National Games Village,25,B.T.M Layout,Bengaluru South City Corporation
+60,Ejipura,26,B.T.M Layout,Bengaluru South City Corporation
+61,Sri Lakshmi Devi Ward,27,B.T.M Layout,Bengaluru South City Corporation
+62,Koramangala East,28,B.T.M Layout,Bengaluru South City Corporation
+63,Koramangala West,29,B.T.M Layout,Bengaluru South City Corporation
+64,Jakkasandra,30,B.T.M Layout,Bengaluru South City Corporation
+65,Singapura,8,Byatarayanapura,Bengaluru North City Corporation
+66,Kuvempunagara,9,Byatarayanapura,Bengaluru North City Corporation
+67,Vidyaranyapura,10,Byatarayanapura,Bengaluru North City Corporation
+68,Doddabommasandra,11,Byatarayanapura,Bengaluru North City Corporation
+69,Thindlu,12,Byatarayanapura,Bengaluru North City Corporation
+70,Kodigehalli,13,Byatarayanapura,Bengaluru North City Corporation
+71,Rajiv Gandhi Nagar,14,Byatarayanapura,Bengaluru North City Corporation
+72,Byatarayanapura,15,Byatarayanapura,Bengaluru North City Corporation
+73,Amruthahalli,16,Byatarayanapura,Bengaluru North City Corporation
+74,Jakkur,17,Byatarayanapura,Bengaluru North City Corporation
+75,Kempapura,18,Byatarayanapura,Bengaluru North City Corporation
+76,Thanisandra,19,Byatarayanapura,Bengaluru North City Corporation
+77,Sampigehalli,20,Byatarayanapura,Bengaluru North City Corporation
+78,Kogilu,21,Byatarayanapura,Bengaluru North City Corporation
+79,Chamarajpet,44,Chamrajapet,Bengaluru Central City Corporation
+80,K.R Market,45,Chamrajapet,Bengaluru Central City Corporation
+81,Cheluvadi Palya,46,Chamrajapet,Bengaluru Central City Corporation
+82,IPD Salappa Ward,47,Chamrajapet,Bengaluru Central City Corporation
+83,Azad Nagar,48,Chamrajapet,Bengaluru Central City Corporation
+84,Kasturbha Nagar,49,Chamrajapet,Bengaluru Central City Corporation
+85,JJR Nagara,50,Chamrajapet,Bengaluru Central City Corporation
+86,Old Guddadahalli,51,Chamrajapet,Bengaluru Central City Corporation
+87,Padarayanapura,52,Chamrajapet,Bengaluru Central City Corporation
+88,Rayapuram,53,Chamrajapet,Bengaluru Central City Corporation
+89,Silver Jubilee Park Ward,32,Chickpet,Bengaluru Central City Corporation
+90,Dharmaraya Swamy Temple Ward,33,Chickpet,Bengaluru Central City Corporation
+91,D.V Gundappa Ward,34,Chickpet,Bengaluru Central City Corporation
+92,Hombegowda Nagara,35,Chickpet,Bengaluru Central City Corporation
+93,Someshwara Nagara,36,Chickpet,Bengaluru Central City Corporation
+94,BHEL Ward,37,Chickpet,Bengaluru Central City Corporation
+95,Kanakanapalya,38,Chickpet,Bengaluru Central City Corporation
+96,Venkat Reddy Nagara,39,Chickpet,Bengaluru Central City Corporation
+97,Ashoka Pillar,40,Chickpet,Bengaluru Central City Corporation
+98,V.V Puram,41,Chickpet,Bengaluru Central City Corporation
+99,Sunkenahalli,42,Chickpet,Bengaluru Central City Corporation
+100,Devaraj Urs Ward,43,Chickpet,Bengaluru Central City Corporation
+101,Hoysala Nagara Central,9,C.V. Raman Nagar,Bengaluru Central City Corporation
+102,Cox Town,10,C.V. Raman Nagar,Bengaluru Central City Corporation
+103,Old Baiyappanahalli,11,C.V. Raman Nagar,Bengaluru Central City Corporation
+104,Kasturi Nagar,12,C.V. Raman Nagar,Bengaluru Central City Corporation
+105,Krishnaiyanapalya,13,C.V. Raman Nagar,Bengaluru Central City Corporation
+106,Nagavarapalya,14,C.V. Raman Nagar,Bengaluru Central City Corporation
+107,Indiranagar,15,C.V. Raman Nagar,Bengaluru Central City Corporation
+108,New Thippasandra,16,C.V. Raman Nagar,Bengaluru Central City Corporation
+109,Kaggadasapura,17,C.V. Raman Nagar,Bengaluru Central City Corporation
+110,G.M Palya,18,C.V. Raman Nagar,Bengaluru Central City Corporation
+111,Jeevan Bhimanagar,19,C.V. Raman Nagar,Bengaluru Central City Corporation
+112,Kodihalli,20,C.V. Raman Nagar,Bengaluru Central City Corporation
+113,Konena Agrahara,21,C.V. Raman Nagar,Bengaluru Central City Corporation
+114,Nagasandra,1,Dasarahalli,Bengaluru West City Corporation
+115,Chokkasandra,2,Dasarahalli,Bengaluru West City Corporation
+116,Nelagadarahalli,3,Dasarahalli,Bengaluru West City Corporation
+117,Parvathi Nagar,4,Dasarahalli,Bengaluru West City Corporation
+118,Rajeshwarinagar,5,Dasarahalli,Bengaluru West City Corporation
+119,Shivapura,6,Dasarahalli,Bengaluru West City Corporation
+120,Rajagopala Nagara,7,Dasarahalli,Bengaluru West City Corporation
+121,Heggana Halli,8,Dasarahalli,Bengaluru West City Corporation
+122,Srigandhanagar,9,Dasarahalli,Bengaluru West City Corporation
+123,Sunkadakatte,10,Dasarahalli,Bengaluru West City Corporation
+124,Abbigere,65,Dasarahalli,Bengaluru North City Corporation
+125,Kammagondanahalli,66,Dasarahalli,Bengaluru North City Corporation
+126,Shettihalli,67,Dasarahalli,Bengaluru North City Corporation
+127,Mallasandra,68,Dasarahalli,Bengaluru North City Corporation
+128,Bagalagunte,69,Dasarahalli,Bengaluru North City Corporation
+129,Manjunatha Nagar,70,Dasarahalli,Bengaluru North City Corporation
+130,Neela Maheshwaramma Temple Ward,71,Dasarahalli,Bengaluru North City Corporation
+131,Dasarahalli,72,Dasarahalli,Bengaluru North City Corporation
+132,Binnypete,54,Gandhinagara,Bengaluru Central City Corporation
+133,Bhuvaneshwari Nagar,55,Gandhinagara,Bengaluru Central City Corporation
+134,Gopalpura,56,Gandhinagara,Bengaluru Central City Corporation
+135,Cottonpete,57,Gandhinagara,Bengaluru Central City Corporation
+136,Chickpete,58,Gandhinagara,Bengaluru Central City Corporation
+137,Nehru Nagar,59,Gandhinagara,Bengaluru Central City Corporation
+138,Seshadripuram,60,Gandhinagara,Bengaluru Central City Corporation
+139,Dattatreya Ward,61,Gandhinagara,Bengaluru Central City Corporation
+140,Swatantra Palya Ward,62,Gandhinagara,Bengaluru Central City Corporation
+141,Okalipuram,63,Gandhinagara,Bengaluru Central City Corporation
+142,Agrahara Dasarahalli,69,Govindrajnagar,Bengaluru West City Corporation
+143,Dr Rajkumar Ward,70,Govindrajnagar,Bengaluru West City Corporation
+144,Thimmenahalli,71,Govindrajnagar,Bengaluru West City Corporation
+145,Kaveripura,72,Govindrajnagar,Bengaluru West City Corporation
+146,Dr Vishnuvardhan Ward,73,Govindrajnagar,Bengaluru West City Corporation
+147,Pattegar Palya,74,Govindrajnagar,Bengaluru West City Corporation
+148,Marenahalli West,75,Govindrajnagar,Bengaluru West City Corporation
+149,Moodalapalya,76,Govindrajnagar,Bengaluru West City Corporation
+150,Maruthi Mandira Ward,77,Govindrajnagar,Bengaluru West City Corporation
+151,Anubhava Nagara,78,Govindrajnagar,Bengaluru West City Corporation
+152,Nagarbhavi,79,Govindrajnagar,Bengaluru West City Corporation
+153,Chandra Layout,80,Govindrajnagar,Bengaluru West City Corporation
+154,Nayanda Halli,81,Govindrajnagar,Bengaluru West City Corporation
+155,Jaya Chamarajendra Nagara,49,Ganganagar,Bengaluru North City Corporation
+156,Dinnur,50,Ganganagar,Bengaluru North City Corporation
+157,Manorayanapalya,51,Ganganagar,Bengaluru North City Corporation
+158,Vishwanatha Nagenahalli,52,Ganganagar,Bengaluru North City Corporation
+159,R T Nagar,53,Ganganagar,Bengaluru North City Corporation
+160,Gangenahalli,54,Ganganagar,Bengaluru North City Corporation
+161,Ganganagar,55,Ganganagar,Bengaluru North City Corporation
+162,Hebbal,56,Ganganagar,Bengaluru North City Corporation
+163,Bhoopasandra,57,Ganganagar,Bengaluru North City Corporation
+164,Nagashettyhalli,58,Ganganagar,Bengaluru North City Corporation
+165,Geddalahalli,59,Ganganagar,Bengaluru North City Corporation
+166,Byrasandra,7,Jayanagar,Bengaluru South City Corporation
+167,Tilak Nagara,8,Jayanagar,Bengaluru South City Corporation
+168,N.A.L Layout,9,Jayanagar,Bengaluru South City Corporation
+169,Abdul Kalam Nagar,10,Jayanagar,Bengaluru South City Corporation
+170,Jayanagar East,11,Jayanagar,Bengaluru South City Corporation
+171,Pattabhirama Nagara,12,Jayanagar,Bengaluru South City Corporation
+172,Marenahalli South,13,Jayanagar,Bengaluru South City Corporation
+173,J.P Nagar,14,Jayanagar,Bengaluru South City Corporation
+174,Shakambarinagara,15,Jayanagar,Bengaluru South City Corporation
+175,Sarakki,16,Jayanagar,Bengaluru South City Corporation
+176,K Narayanapura,1,K.R. Pura,Bengaluru East City Corporation
+177,Horamavu,2,K.R. Pura,Bengaluru East City Corporation
+178,Chellakere,3,K.R. Pura,Bengaluru East City Corporation
+179,Babusab Palya,4,K.R. Pura,Bengaluru East City Corporation
+180,Hoysala Nagara East,5,K.R. Pura,Bengaluru East City Corporation
+181,Kalkere,6,K.R. Pura,Bengaluru East City Corporation
+182,K Chennasandra,7,K.R. Pura,Bengaluru East City Corporation
+183,T C Palya,8,K.R. Pura,Bengaluru East City Corporation
+184,Bhattarhalli,9,K.R. Pura,Bengaluru East City Corporation
+185,Medahalli,10,K.R. Pura,Bengaluru East City Corporation
+186,Basavanapura,11,K.R. Pura,Bengaluru East City Corporation
+187,Chikka Devasandra,12,K.R. Pura,Bengaluru East City Corporation
+188,Devasandra,13,K.R. Pura,Bengaluru East City Corporation
+189,K R Pura,14,K.R. Pura,Bengaluru East City Corporation
+190,Ramamurthy Nagara,15,K.R. Pura,Bengaluru East City Corporation
+191,Kotthur,16,K.R. Pura,Bengaluru East City Corporation
+192,Vijinapura,17,K.R. Pura,Bengaluru East City Corporation
+193,Dooravani Nagar,18,K.R. Pura,Bengaluru East City Corporation
+194,K.S. Nissar Ahmed Ward,19,K.R. Pura,Bengaluru East City Corporation
+195,A Narayanapura,20,K.R. Pura,Bengaluru East City Corporation
+196,Uday Nagar,21,K.R. Pura,Bengaluru East City Corporation
+197,Mahadevapura,22,K.R. Pura,Bengaluru East City Corporation
+198,Sangama Ward,23,K.R. Pura,Bengaluru East City Corporation
+199,Vignan Nagar,24,K.R. Pura,Bengaluru East City Corporation
+200,L B Shastri Nagar,25,K.R. Pura,Bengaluru East City Corporation
+201,Jagadish Nagar,26,K.R. Pura,Bengaluru East City Corporation
+202,Vibhuthipura,27,K.R. Pura,Bengaluru East City Corporation
+203,Byrathi,28,Mahadevapura,Bengaluru East City Corporation
+204,Hoodi,29,Mahadevapura,Bengaluru East City Corporation
+205,Belathur,30,Mahadevapura,Bengaluru East City Corporation
+206,Kadugodi,31,Mahadevapura,Bengaluru East City Corporation
+207,Channasandra,32,Mahadevapura,Bengaluru East City Corporation
+208,S.M Krishna Ward,33,Mahadevapura,Bengaluru East City Corporation
+209,Kaveri Nagara,34,Mahadevapura,Bengaluru East City Corporation
+210,Garudachar Palya,35,Mahadevapura,Bengaluru East City Corporation
+211,Bharath Aikya Ward,36,Mahadevapura,Bengaluru East City Corporation
+212,Kundalahalli,37,Mahadevapura,Bengaluru East City Corporation
+213,Whitefield,38,Mahadevapura,Bengaluru East City Corporation
+214,Hagadur,39,Mahadevapura,Bengaluru East City Corporation
+215,Varthur,40,Mahadevapura,Bengaluru East City Corporation
+216,Munnekollalu,41,Mahadevapura,Bengaluru East City Corporation
+217,Priyadarshini Ward,42,Mahadevapura,Bengaluru East City Corporation
+218,Dodda Nekkundi,43,Mahadevapura,Bengaluru East City Corporation
+219,Ashwath Nagar,44,Mahadevapura,Bengaluru East City Corporation
+220,Marathahalli,45,Mahadevapura,Bengaluru East City Corporation
+221,Yamalur,46,Mahadevapura,Bengaluru East City Corporation
+222,Bellandur,47,Mahadevapura,Bengaluru East City Corporation
+223,Panathur,48,Mahadevapura,Bengaluru East City Corporation
+224,Shivanasamudra Ward,49,Mahadevapura,Bengaluru East City Corporation
+225,Gunjur,50,Mahadevapura,Bengaluru East City Corporation
+226,Kasavanahalli,31,Mahadevapura,Bengaluru South City Corporation
+227,Nalwadi Krishnaraja Wadiyar Ward,36,Mahalakshmi Layout,Bengaluru West City Corporation
+228,Dr. Puneeth Rajkumar Ward,37,Mahalakshmi Layout,Bengaluru West City Corporation
+229,Nandini Layout,38,Mahalakshmi Layout,Bengaluru West City Corporation
+230,Jai Maruthi Nagar,39,Mahalakshmi Layout,Bengaluru West City Corporation
+231,Mahalakshmipuram,40,Mahalakshmi Layout,Bengaluru West City Corporation
+232,Nagapura,41,Mahalakshmi Layout,Bengaluru West City Corporation
+233,Raja Mayura Varma Ward,42,Mahalakshmi Layout,Bengaluru West City Corporation
+234,Kethamaranahalli,43,Mahalakshmi Layout,Bengaluru West City Corporation
+235,Shankar Mutt,44,Mahalakshmi Layout,Bengaluru West City Corporation
+236,Shakthi Ganapathi Nagara,45,Mahalakshmi Layout,Bengaluru West City Corporation
+237,Kamalanagara,46,Mahalakshmi Layout,Bengaluru West City Corporation
+238,Vrishabhavathi Nagar,47,Mahalakshmi Layout,Bengaluru West City Corporation
+239,Mathikere,48,Malleshwaram,Bengaluru West City Corporation
+240,Aramane Nagara,49,Malleshwaram,Bengaluru West City Corporation
+241,Sadashiva Nagara,50,Malleshwaram,Bengaluru West City Corporation
+242,Rajamahal,51,Malleshwaram,Bengaluru West City Corporation
+243,Kodandarampura,52,Malleshwaram,Bengaluru West City Corporation
+244,Malleshwaram,53,Malleshwaram,Bengaluru West City Corporation
+245,Subedarpalya,54,Malleshwaram,Bengaluru West City Corporation
+246,Subramanyanagara,55,Malleshwaram,Bengaluru West City Corporation
+247,Gayathri Nagara,56,Malleshwaram,Bengaluru West City Corporation
+248,Kuvempu Ward,57,Malleshwaram,Bengaluru West City Corporation
+249,Yediyuru,105,Padmanabanagar,Bengaluru West City Corporation
+250,Devagiri Temple Ward,106,Padmanabanagar,Bengaluru West City Corporation
+251,Dharmagiri Ward,107,Padmanabanagar,Bengaluru West City Corporation
+252,Ganesh Mandira Ward,108,Padmanabanagar,Bengaluru West City Corporation
+253,Kamakya Layout,109,Padmanabanagar,Bengaluru West City Corporation
+254,Chikkalasandra,110,Padmanabanagar,Bengaluru West City Corporation
+255,Ittamadu,111,Padmanabanagar,Bengaluru West City Corporation
+256,Hosakerehalli,112,Padmanabanagar,Bengaluru West City Corporation
+257,Padmanabhanagara,1,Padmanabanagar,Bengaluru South City Corporation
+258,Kadirenahalli,2,Padmanabanagar,Bengaluru South City Corporation
+259,Kumaraswamy Layout,3,Padmanabanagar,Bengaluru South City Corporation
+260,Banashankari Temple Ward,4,Padmanabanagar,Bengaluru South City Corporation
+261,Kane Muneshwara Ward,5,Padmanabanagar,Bengaluru South City Corporation
+262,Gowdanapalya,6,Padmanabanagar,Bengaluru South City Corporation
+263,Shampura,38,Pulakeshinagar,Bengaluru North City Corporation
+264,Kaval Byrasandra,39,Pulakeshinagar,Bengaluru North City Corporation
+265,Shakthi Nagar,40,Pulakeshinagar,Bengaluru North City Corporation
+266,Periyar Nagar,41,Pulakeshinagar,Bengaluru North City Corporation
+267,Aruna Asif Ali Ward,42,Pulakeshinagar,Bengaluru North City Corporation
+268,Varalakshmi Nagar,43,Pulakeshinagar,Bengaluru North City Corporation
+269,Doddanna Nagar,44,Pulakeshinagar,Bengaluru North City Corporation
+270,Kushal Nagar,45,Pulakeshinagar,Bengaluru North City Corporation
+271,Sagayapuram,46,Pulakeshinagar,Bengaluru North City Corporation
+272,Pulakeshi Nagar,47,Pulakeshinagar,Bengaluru North City Corporation
+273,S.K Garden,48,Pulakeshinagar,Bengaluru North City Corporation
+274,Dayanand Nagara,58,Rajajinagar,Bengaluru West City Corporation
+275,Bandi Reddy Circle Ward,59,Rajajinagar,Bengaluru West City Corporation
+276,Prakash Nagara,60,Rajajinagar,Bengaluru West City Corporation
+277,Da.Ra. Bendre Ward,61,Rajajinagar,Bengaluru West City Corporation
+278,Rama Mandira,62,Rajajinagar,Bengaluru West City Corporation
+279,Rajajinagara,63,Rajajinagar,Bengaluru West City Corporation
+280,Shivanagara,64,Rajajinagar,Bengaluru West City Corporation
+281,Manjunath Nagara,65,Rajajinagar,Bengaluru West City Corporation
+282,Sane Guruvana Halli,66,Rajajinagar,Bengaluru West City Corporation
+283,Basaveshwara Nagara,67,Rajajinagar,Bengaluru West City Corporation
+284,Kamakshipalya,68,Rajajinagar,Bengaluru West City Corporation
+285,Bangarappa Nagara,22,Rajarajeshwarinagar,Bengaluru West City Corporation
+286,Rajarajeshwari Nagara,23,Rajarajeshwarinagar,Bengaluru West City Corporation
+287,Jnana Bharathi Ward,24,Rajarajeshwarinagar,Bengaluru West City Corporation
+288,Vinayaka Layout,25,Rajarajeshwarinagar,Bengaluru West City Corporation
+289,Mallathahalli,26,Rajarajeshwarinagar,Bengaluru West City Corporation
+290,Srigandada Kaval,27,Rajarajeshwarinagar,Bengaluru West City Corporation
+291,Kottegepalya,28,Rajarajeshwarinagar,Bengaluru West City Corporation
+292,Chowdeshwari Nagar,29,Rajarajeshwarinagar,Bengaluru West City Corporation
+293,Kempegowda Layout,30,Rajarajeshwarinagar,Bengaluru West City Corporation
+294,Freedom Fighter Ward,31,Rajarajeshwarinagar,Bengaluru West City Corporation
+295,Laggere,32,Rajarajeshwarinagar,Bengaluru West City Corporation
+296,Lakshmi Devi Nagar,33,Rajarajeshwarinagar,Bengaluru West City Corporation
+297,Peenya,34,Rajarajeshwarinagar,Bengaluru West City Corporation
+298,Goraguntepalya,35,Rajarajeshwarinagar,Bengaluru West City Corporation
+299,Jalahalli,60,Rajarajeshwarinagar,Bengaluru North City Corporation
+300,HMT Ward,61,Rajarajeshwarinagar,Bengaluru North City Corporation
+301,Brundavana Nagara,62,Rajarajeshwarinagar,Bengaluru North City Corporation
+302,J.P Park,63,Rajarajeshwarinagar,Bengaluru North City Corporation
+303,Yeshwanthpura,64,Rajarajeshwarinagar,Bengaluru North City Corporation
+304,Nagavara,22,Sarvagnanagar,Bengaluru North City Corporation
+305,Hennur,23,Sarvagnanagar,Bengaluru North City Corporation
+306,HBR Layout,24,Sarvagnanagar,Bengaluru North City Corporation
+307,Govindapura,25,Sarvagnanagar,Bengaluru North City Corporation
+308,Samadhana Nagar,26,Sarvagnanagar,Bengaluru North City Corporation
+309,K.G. Halli,27,Sarvagnanagar,Bengaluru North City Corporation
+310,Venkateshpuram,28,Sarvagnanagar,Bengaluru North City Corporation
+311,Lingarajapura,29,Sarvagnanagar,Bengaluru North City Corporation
+312,Kacharkanahalli,30,Sarvagnanagar,Bengaluru North City Corporation
+313,Kalyanagar,31,Sarvagnanagar,Bengaluru North City Corporation
+314,Banaswadi,32,Sarvagnanagar,Bengaluru North City Corporation
+315,HRBR Layout,33,Sarvagnanagar,Bengaluru North City Corporation
+316,Subbayanapalya,34,Sarvagnanagar,Bengaluru North City Corporation
+317,Kammanahalli,35,Sarvagnanagar,Bengaluru North City Corporation
+318,Maruthi Seva Nagara,36,Sarvagnanagar,Bengaluru North City Corporation
+319,Jeevanahalli,37,Sarvagnanagar,Bengaluru North City Corporation
+320,Domlur,22,Shanthinagar,Bengaluru Central City Corporation
+321,Jogupalya,23,Shanthinagar,Bengaluru Central City Corporation
+322,Agaram,24,Shanthinagar,Bengaluru Central City Corporation
+323,Ashokanagar,25,Shanthinagar,Bengaluru Central City Corporation
+324,Vannarpet,26,Shanthinagar,Bengaluru Central City Corporation
+325,Ambedkarnagar,27,Shanthinagar,Bengaluru Central City Corporation
+326,Neelasandra,28,Shanthinagar,Bengaluru Central City Corporation
+327,Austin Town,29,Shanthinagar,Bengaluru Central City Corporation
+328,Vinayakanagar,30,Shanthinagar,Bengaluru Central City Corporation
+329,Shanthinagar,31,Shanthinagar,Bengaluru Central City Corporation
+330,Ramaswamy Palya,1,Shivajinagar,Bengaluru Central City Corporation
+331,Jayamahal,2,Shivajinagar,Bengaluru Central City Corporation
+332,Vasanth Nagar,3,Shivajinagar,Bengaluru Central City Corporation
+333,Sampangirama Nagar,4,Shivajinagar,Bengaluru Central City Corporation
+334,Shivajinagar,5,Shivajinagar,Bengaluru Central City Corporation
+335,Bharathi Nagar,6,Shivajinagar,Bengaluru Central City Corporation
+336,K Kamaraj Ward,7,Shivajinagar,Bengaluru Central City Corporation
+337,Halasuru,8,Shivajinagar,Bengaluru Central City Corporation
+338,Attiguppe,82,Vijayanagar,Bengaluru West City Corporation
+339,Hampi Nagar,83,Vijayanagar,Bengaluru West City Corporation
+340,Hosahalli,84,Vijayanagar,Bengaluru West City Corporation
+341,Adi Chunchanagiri Ward,85,Vijayanagar,Bengaluru West City Corporation
+342,Vidyaranyanagara,86,Vijayanagar,Bengaluru West City Corporation
+343,K.P Agrahara,87,Vijayanagar,Bengaluru West City Corporation
+344,Sangolli Rayanna Ward,88,Vijayanagar,Bengaluru West City Corporation
+345,Bapuji Nagara,89,Vijayanagar,Bengaluru West City Corporation
+346,Krishnadevaraya Ward,90,Vijayanagar,Bengaluru West City Corporation
+347,Gali Anjaneya Temple Ward,91,Vijayanagar,Bengaluru West City Corporation
+348,Muneshwara Block,92,Vijayanagar,Bengaluru West City Corporation
+349,Avalahalli,93,Vijayanagar,Bengaluru West City Corporation
+350,Deepanjali Nagara,94,Vijayanagar,Bengaluru West City Corporation
+351,Raja Kempegowda Ward,1,Yelahanka,Bengaluru North City Corporation
+352,Akash Ward,2,Yelahanka,Bengaluru North City Corporation
+353,Yelahanka Old Town,3,Yelahanka,Bengaluru North City Corporation
+354,Nayanga Badavane,4,Yelahanka,Bengaluru North City Corporation
+355,Yelahanka Satellite Town,5,Yelahanka,Bengaluru North City Corporation
+356,Doddabettahalli,6,Yelahanka,Bengaluru North City Corporation
+357,Attur,7,Yelahanka,Bengaluru North City Corporation
+358,Dodda Bidarakallu,11,Yeshwanthapura,Bengaluru West City Corporation
+359,Andrahalli,12,Yeshwanthapura,Bengaluru West City Corporation
+360,Nada Prabhu Kempegowda Nagara,13,Yeshwanthapura,Bengaluru West City Corporation
+361,Herohalli,14,Yeshwanthapura,Bengaluru West City Corporation
+362,Byadarahalli,15,Yeshwanthapura,Bengaluru West City Corporation
+363,Ullal,16,Yeshwanthapura,Bengaluru West City Corporation
+364,Nagadevanahalli,17,Yeshwanthapura,Bengaluru West City Corporation
+365,Kengal Hanumanthaiah West,18,Yeshwanthapura,Bengaluru West City Corporation
+366,Kengeri,19,Yeshwanthapura,Bengaluru West City Corporation
+367,Hemmigepura,20,Yeshwanthapura,Bengaluru West City Corporation
+368,Mylasandra,21,Yeshwanthapura,Bengaluru West City Corporation
+369,Talaghattapura,52,Yeshwanthapura,Bengaluru South City Corporation

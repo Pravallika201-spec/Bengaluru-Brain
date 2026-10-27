@@ -1,0 +1,780 @@
+/* ============================================================
+   Bengaluru Brain — Control Center Design System
+   Replaces the old purple-gradient card look with a dense,
+   professional civic-intelligence dashboard visual language.
+   Loaded LAST so it wins over App.css / components.css / dashboard.css
+   for anything it touches; those files are left in place for classes
+   this system doesn't redefine.
+   ============================================================ */
+
+:root {
+  --cc-bg: #060a14;
+  --cc-bg-elevated: #0b1120;
+  --cc-panel: #0e1526;
+  --cc-panel-alt: #111a2e;
+  --cc-border: #1c2740;
+  --cc-border-strong: #2a3855;
+  --cc-text: #e8edf7;
+  --cc-text-dim: #8b97b0;
+  --cc-text-faint: #5b6580;
+  --cc-accent: #2f8fff;
+  --cc-accent-soft: rgba(47, 143, 255, 0.14);
+  --cc-cyan: #22d3ee;
+  --cc-green: #22c55e;
+  --cc-yellow: #eab308;
+  --cc-orange: #f97316;
+  --cc-red: #ef4444;
+  --cc-purple: #a78bfa;
+  --cc-radius-sm: 6px;
+  --cc-radius-md: 10px;
+  --cc-radius-lg: 14px;
+  --cc-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -12px rgba(0,0,0,0.6);
+  --cc-font-display: 'Rajdhani', 'Inter', sans-serif;
+  --cc-font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+}
+
+body {
+  background: var(--cc-bg) !important;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(47,143,255,0.12), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 0%, rgba(34,211,238,0.07), transparent 55%),
+    radial-gradient(ellipse 800px 600px at 50% 100%, rgba(167,139,250,0.06), transparent 60%);
+  background-attachment: fixed;
+  font-family: var(--cc-font-body);
+}
+
+.app { background: transparent; }
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+/* Header + nav are one sticky unit (see .cc-header-group below) so the
+   nav never needs to guess the header's rendered height. */
+.cc-header-group {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.cc-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(180deg, rgba(11,17,32,0.94), rgba(6,10,20,0.94));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--cc-border);
+}
+
+.cc-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.cc-brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--cc-radius-md);
+  background: linear-gradient(135deg, var(--cc-accent), var(--cc-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 0 20px rgba(47,143,255,0.35);
+  flex-shrink: 0;
+}
+
+.cc-brand-text h1 {
+  font-family: var(--cc-font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--cc-text);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.cc-brand-text p {
+  font-size: 0.72rem;
+  color: var(--cc-text-dim);
+  margin: 0.1rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cc-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cc-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--cc-panel);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md);
+  font-size: 0.82rem;
+  color: var(--cc-text);
+  white-space: nowrap;
+}
+
+.cc-chip strong { font-family: var(--cc-font-display); font-weight: 700; }
+
+.cc-chip.live {
+  background: rgba(34,197,94,0.1);
+  border-color: rgba(34,197,94,0.35);
+  color: var(--cc-green);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+}
+
+.cc-chip.live .cc-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cc-green);
+  box-shadow: 0 0 8px var(--cc-green);
+  animation: cc-pulse 1.8s infinite;
+}
+
+@keyframes cc-pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.35; }
+}
+
+/* Narrow-viewport fix: .cc-topbar was a non-wrapping flex row with
+   justify-content:space-between — on phone-width screens the brand text
+   plus all three right-side chips together exceed the viewport width with
+   nothing able to shrink or wrap, which drags the whole document's
+   scrollWidth past its clientWidth (a real horizontal-overflow bug found
+   via live browser testing at 375px). Letting the row wrap, and trimming
+   the chips down, keeps every element on-screen with no page-level
+   horizontal scroll. */
+@media (max-width: 560px) {
+  .cc-topbar {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+  .cc-topbar-right {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .cc-chip {
+    padding: 0.35rem 0.55rem;
+    font-size: 0.74rem;
+  }
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.cc-nav {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.6rem 1.5rem;
+  background: var(--cc-bg-elevated);
+  border-bottom: 1px solid var(--cc-border);
+  overflow-x: auto;
+}
+
+.cc-navlink {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--cc-radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--cc-text-dim);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.cc-navlink:hover {
+  background: var(--cc-panel);
+  color: var(--cc-text);
+}
+
+.cc-navlink.active {
+  background: var(--cc-accent);
+  color: #fff;
+  box-shadow: 0 2px 12px -2px rgba(47,143,255,0.5);
+}
+
+/* ============================================================
+   PAGE / GRID SYSTEM
+   ============================================================ */
+.cc-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cc-overview-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 320px;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 1200px) {
+  .cc-overview-grid { grid-template-columns: 1fr; }
+}
+
+.cc-2col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Grid/flex children default to min-width:auto, which refuses to shrink
+   below their content's natural (min-content) width — the actual cause of
+   the Ward Stress Monitor filter-row overflow found via live browser
+   inspection (buttons pushed past their 340px column because the column's
+   CHILD never got permission to shrink, even though the track itself was
+   sized correctly). This is the real, general fix — not overflow:hidden. */
+.cc-2col > *, .cc-overview-grid > * {
+  min-width: 0;
+}
+
+@media (max-width: 1000px) {
+  .cc-2col { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   PANEL (replaces the old big-padding gradient card)
+   ============================================================ */
+.cc-panel {
+  background: linear-gradient(180deg, rgba(17,26,46,0.92), rgba(14,21,38,0.92));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  box-shadow: var(--cc-shadow);
+  padding: 1rem 1.1rem;
+  min-width: 0;
+}
+
+.cc-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cc-panel-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cc-text-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.cc-panel-title .cc-icon { color: var(--cc-accent); }
+
+.cc-panel-sub {
+  font-size: 0.78rem;
+  color: var(--cc-text-faint);
+}
+
+/* ============================================================
+   HERO / PAGE INTRO — compact banner, not a giant centered block
+   ============================================================ */
+.cc-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, var(--cc-panel), var(--cc-panel-alt));
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  padding: 0.85rem 1.2rem;
+}
+
+.cc-hero h2 {
+  font-family: var(--cc-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cc-text);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cc-hero p {
+  font-size: 0.8rem;
+  color: var(--cc-text-dim);
+  margin: 0.2rem 0 0;
+  max-width: 640px;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   GAUGE (semicircular USI meter)
+   ============================================================ */
+.cc-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.4rem 0 0.2rem;
+}
+
+.cc-gauge-value {
+  font-family: var(--cc-font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--cc-text);
+  margin-top: -3.2rem;
+  line-height: 1;
+}
+
+.cc-gauge-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+  text-transform: uppercase;
+}
+
+.cc-gauge-caption {
+  font-size: 0.72rem;
+  color: var(--cc-text-faint);
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   METRIC GRID (replaces paragraph-style result cards)
+   ============================================================ */
+.cc-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.6rem;
+}
+
+.cc-metric-tile {
+  background: var(--cc-panel-alt);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md);
+  padding: 0.65rem 0.75rem;
+}
+
+.cc-metric-tile .cc-mt-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cc-text-faint);
+  margin-bottom: 0.3rem;
+}
+
+.cc-metric-tile .cc-mt-value {
+  font-family: var(--cc-font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--cc-text);
+  line-height: 1.1;
+}
+
+.cc-metric-tile .cc-mt-value.sm { font-size: 1.05rem; }
+.cc-metric-tile .cc-mt-unit { font-size: 0.7rem; color: var(--cc-text-dim); font-weight: 500; margin-left: 2px; }
+
+/* 4-across "at a glance" row (Distance / ETA / Traffic Condition /
+   Confidence) — same tile system, just a fixed 4-column grid above the
+   auto-fit default so these four always sit in one row on desktop and
+   wrap 2-up on narrower screens instead of auto-fitting to odd widths. */
+.cc-metric-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 720px) {
+  .cc-metric-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.cc-metric-tile-icon .cc-mt-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.cc-metric-tile-icon .cc-mt-label svg { flex-shrink: 0; color: var(--cc-text-faint); }
+
+.cc-mt-caption {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  color: var(--cc-text-faint);
+  line-height: 1.3;
+}
+
+/* status color helpers on metric values */
+.cc-c-green { color: var(--cc-green) !important; }
+.cc-c-yellow { color: var(--cc-yellow) !important; }
+.cc-c-orange { color: var(--cc-orange) !important; }
+.cc-c-red { color: var(--cc-red) !important; }
+.cc-c-cyan { color: var(--cc-cyan) !important; }
+.cc-c-purple { color: var(--cc-purple) !important; }
+
+/* ============================================================
+   ROUTE INPUT BAR (Traffic tab)
+   ============================================================ */
+.cc-route-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 160px auto;
+  gap: 0.6rem;
+  align-items: end;
+}
+
+@media (max-width: 900px) {
+  .cc-route-bar { grid-template-columns: 1fr; }
+}
+
+.cc-field label {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cc-text-faint);
+  margin-bottom: 0.3rem;
+}
+
+.cc-field input,
+.cc-field select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  background: var(--cc-bg-elevated);
+  border: 1px solid var(--cc-border-strong);
+  border-radius: var(--cc-radius-sm);
+  color: var(--cc-text);
+  font-size: 0.88rem;
+}
+
+.cc-field input:focus, .cc-field select:focus {
+  outline: none;
+  border-color: var(--cc-accent);
+  box-shadow: 0 0 0 3px var(--cc-accent-soft);
+}
+
+.cc-btn-primary {
+  padding: 0.62rem 1.3rem;
+  background: linear-gradient(135deg, var(--cc-accent), var(--cc-cyan));
+  border: none;
+  border-radius: var(--cc-radius-sm);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px -4px rgba(47,143,255,0.6);
+}
+.cc-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ============================================================
+   MODE TOGGLE (e.g. Predict Now / Predict After 2 Hours)
+   ============================================================ */
+.cc-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.cc-mode-btn {
+  padding: 0.55rem 1.1rem;
+  background: var(--cc-panel-alt);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-sm);
+  color: var(--cc-text-dim);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.cc-mode-btn:hover { border-color: var(--cc-border-strong); color: var(--cc-text); }
+.cc-mode-btn.active {
+  background: var(--cc-accent-soft);
+  border-color: var(--cc-accent);
+  color: var(--cc-accent);
+}
+
+/* ============================================================
+   SEVERITY / STATUS PILLS
+   ============================================================ */
+.cc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border: 1px solid transparent;
+}
+
+.cc-pill.low, .cc-pill.green, .cc-pill.moderate-low { background: rgba(34,197,94,0.14); color: var(--cc-green); border-color: rgba(34,197,94,0.35); box-shadow: 0 0 10px -3px rgba(34,197,94,0.5); }
+.cc-pill.medium, .cc-pill.yellow, .cc-pill.moderate { background: rgba(234,179,8,0.14); color: var(--cc-yellow); border-color: rgba(234,179,8,0.35); box-shadow: 0 0 10px -3px rgba(234,179,8,0.5); }
+.cc-pill.high, .cc-pill.orange { background: rgba(249,115,22,0.14); color: var(--cc-orange); border-color: rgba(249,115,22,0.35); box-shadow: 0 0 10px -3px rgba(249,115,22,0.5); }
+.cc-pill.critical, .cc-pill.severe, .cc-pill.red { background: rgba(239,68,68,0.14); color: var(--cc-red); border-color: rgba(239,68,68,0.35); box-shadow: 0 0 10px -3px rgba(239,68,68,0.5); }
+.cc-pill.info, .cc-pill.blue { background: var(--cc-accent-soft); color: var(--cc-accent); border-color: rgba(47,143,255,0.3); }
+.cc-pill.neutral { background: rgba(139,151,176,0.12); color: var(--cc-text-dim); border-color: var(--cc-border-strong); }
+
+/* ============================================================
+   RANKED LIST (Top Stressed Zones style)
+   ============================================================ */
+.cc-rank-row {
+  display: grid;
+  grid-template-columns: 1.4rem 1fr 90px 2.6rem;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--cc-border);
+  font-size: 0.82rem;
+}
+.cc-rank-row:last-child { border-bottom: none; }
+
+.cc-rank-idx {
+  color: var(--cc-text-faint);
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.cc-rank-bar-track {
+  height: 5px;
+  background: var(--cc-bg-elevated);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.cc-rank-bar-fill { height: 100%; border-radius: 3px; }
+
+.cc-rank-value { text-align: right; font-weight: 700; font-family: var(--cc-font-display); }
+
+/* ============================================================
+   ALERT / LIST ROW
+   ============================================================ */
+.cc-alert-row {
+  display: flex;
+  gap: 0.65rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--cc-border);
+}
+.cc-alert-row:last-child { border-bottom: none; }
+
+.cc-alert-icon {
+  width: 30px; height: 30px;
+  border-radius: var(--cc-radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+}
+
+.cc-alert-row .cc-alert-title { font-size: 0.84rem; font-weight: 600; color: var(--cc-text); }
+.cc-alert-row .cc-alert-meta { font-size: 0.72rem; color: var(--cc-text-faint); margin-top: 0.1rem; }
+
+/* ============================================================
+   DOMAIN SUMMARY TILES (Overview bottom row)
+   ============================================================ */
+.cc-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.cc-domain-tile {
+  background: var(--cc-panel);
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-lg);
+  padding: 0.9rem;
+  text-align: center;
+}
+
+.cc-domain-tile .cc-dt-icon { font-size: 1.4rem; margin-bottom: 0.3rem; }
+.cc-domain-tile .cc-dt-value { font-family: var(--cc-font-display); font-size: 1.7rem; font-weight: 700; }
+.cc-domain-tile .cc-dt-label { font-size: 0.7rem; color: var(--cc-text-faint); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.15rem; }
+
+/* ============================================================
+   MAP CONTAINER — bigger, framed like the reference
+   ============================================================ */
+.cc-map-frame {
+  border-radius: var(--cc-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--cc-border-strong);
+}
+
+.cc-map-legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  color: var(--cc-text-dim);
+  margin-top: 0.6rem;
+}
+.cc-map-legend span { display: flex; align-items: center; gap: 0.3rem; }
+.cc-map-legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+.cc-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.cc-table th {
+  text-align: left;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cc-text-faint);
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--cc-border-strong);
+}
+.cc-table td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--cc-border);
+  color: var(--cc-text);
+}
+.cc-table tr:last-child td { border-bottom: none; }
+.cc-table tbody tr:hover { background: var(--cc-panel-alt); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.cc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border-top: 1px solid var(--cc-border);
+  font-size: 0.72rem;
+  color: var(--cc-text-faint);
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.cc-empty {
+  font-size: 0.82rem;
+  color: var(--cc-text-faint);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.cc-source-tag {
+  font-size: 0.62rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.cc-source-tag.real { background: rgba(34,197,94,0.14); color: var(--cc-green); }
+.cc-source-tag.extrapolated { background: rgba(34,211,238,0.14); color: var(--cc-cyan); }
+.cc-source-tag.heuristic { background: rgba(47,143,255,0.14); color: var(--cc-accent); }
+.cc-source-tag.simulated { background: rgba(139,151,176,0.16); color: var(--cc-text-dim); }
+.cc-source-tag.planned { background: rgba(139,151,176,0.1); color: var(--cc-text-faint); }
+
+.cc-details {
+  border-top: 1px solid var(--cc-border);
+  padding-top: 0.7rem;
+}
+.cc-details summary { list-style: none; user-select: none; }
+.cc-details summary::-webkit-details-marker { display: none; }
+.cc-details summary::before { content: '▸ '; }
+.cc-details[open] summary::before { content: '▾ '; }
+
+.cc-spin { animation: cc-spin-rotate 0.9s linear infinite; }
+@keyframes cc-spin-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--cc-bg); }
+::-webkit-scrollbar-thumb { background: var(--cc-border-strong); border-radius: 4px; }
+
+/* ============================================================
+   TRAFFIC PAGE — WORKFLOW SECTION HEADINGS
+   Added for the Traffic-tab redesign: groups the page into three
+   clear workflows (Predict a Route / City Traffic Conditions /
+   Incidents & Patterns) instead of one long stack of equal-weight
+   panels. Purely additive -- does not change any existing rule.
+   ============================================================ */
+.cc-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.4rem 0 -0.2rem;
+}
+.cc-section-heading span {
+  font-family: var(--cc-font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--cc-text-dim);
+  white-space: nowrap;
+}
+.cc-section-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cc-border-strong), transparent);
+}
+
+/* ============================================================
+   WARD TRAFFIC STRESS MONITOR
+   ============================================================ */
+.cc-ward-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.76rem;
+  color: var(--cc-text-dim);
+}
+.cc-ward-legend span { display: flex; align-items: center; gap: 0.35rem; }
+.cc-ward-legend i {
+  width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex-shrink: 0;
+}
+
+.cc-ward-toolbar {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.cc-ward-search { flex: 1 1 220px; min-width: 0; }
+.cc-ward-filters {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.cc-ward-table-wrap {
+  max-height: 420px;
+  overflow-y: auto;
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-md);
+}
+.cc-ward-table { font-size: 0.8rem; }
+.cc-ward-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--cc-panel);
+  z-index: 1;
+}
+.cc-ward-table tbody tr:nth-child(odd) {
+  background: rgba(255,255,255,0.015);
+}
+
+@media (max-width: 700px) {
+  .cc-ward-toolbar { flex-direction: column; align-items: stretch; }
+}

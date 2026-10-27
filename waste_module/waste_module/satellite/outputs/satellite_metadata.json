@@ -1,0 +1,30 @@
+{
+    "latest_image_id": "20260810T050649_20260810T052431_T43PHQ",
+    "latest_image_date": "2026-08-10",
+    "oldest_image_date": "2026-06-16",
+    "latest_cloud_percentage": 32.9191,
+    "images_in_collection": 581,
+    "images_used_in_composite": 5,
+    "composite_period_days": 60,
+    "maximum_scene_cloud_percentage": 50,
+    "composite_method": "pixel_median",
+    "pixel_mask": "SCL classes 4,5,6,7",
+    "sentinel_collection": "COPERNICUS/S2_SR_HARMONIZED",
+    "resolution_meters": 10,
+    "image_indices_used": [
+        "20260616T050651_20260616T051534_T43PGQ",
+        "20260616T050651_20260616T051534_T43PHQ",
+        "20260628T051241_20260628T051804_T43PHQ",
+        "20260711T050649_20260711T052206_T43PHQ",
+        "20260810T050649_20260810T052431_T43PHQ"
+    ],
+    "extraction_timestamp": "2026-08-24T18:34:11.580788",
+    "output_rows": 3053,
+    "valid_satellite_rows": 2544,
+    "missing_satellite_rows": 509,
+    "zero_pixel_rows": 490,
+    "satellite_coverage_percent": 83.33,
+    "minimum_valid_pixels": 5,
+    "valid_pixel_count_mean": 1582.3,
+    "valid_pixel_count_median": 2132.0
+}

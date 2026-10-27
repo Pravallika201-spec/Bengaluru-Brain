@@ -3,7 +3,7 @@ IT Park Shift Logic for Bengaluru Traffic Prediction
 Handles shift change multipliers for major IT parks
 """
 
-from datetime import datetime, time
+from datetime import datetime, time, timedelta
 
 # IT park shift schedules
 IT_PARK_SHIFTS = {
@@ -55,8 +55,11 @@ def get_it_shift_multiplier(hour, location):
         return 1.8  # Shift change multiplier
     
     # Check if it's 30 minutes before shift change
-    morning_before = time(shift_info["morning_start"].hour - 1, shift_info["morning_start"].minute)
-    evening_before = time(shift_info["evening_start"].hour - 1, shift_info["evening_start"].minute)
+    today = datetime.now().date()
+    morning_before_dt = datetime.combine(today, shift_info["morning_start"]) - timedelta(hours=1)
+    evening_before_dt = datetime.combine(today, shift_info["evening_start"]) - timedelta(hours=1)
+    morning_before = morning_before_dt.time()
+    evening_before = evening_before_dt.time()
     
     if (morning_before <= current_time < shift_info["morning_start"]) or \
        (evening_before <= current_time < shift_info["evening_start"]):
@@ -82,7 +85,7 @@ def get_next_shift_change():
                                    minute=shift_info["morning_start"].minute,
                                    second=0, microsecond=0)
         if morning_start < now:
-            morning_start = morning_start.replace(day=morning_start.day + 1)
+            morning_start = morning_start + timedelta(days=1)
         
         morning_diff = (morning_start - now).total_seconds() / 60
         if morning_diff < min_diff:
@@ -95,7 +98,7 @@ def get_next_shift_change():
                                    minute=shift_info["evening_start"].minute,
                                    second=0, microsecond=0)
         if evening_start < now:
-            evening_start = evening_start.replace(day=evening_start.day + 1)
+            evening_start = evening_start + timedelta(days=1)
         
         evening_diff = (evening_start - now).total_seconds() / 60
         if evening_diff < min_diff:
@@ -123,7 +126,7 @@ def get_all_shift_timers():
                                    minute=shift_info["morning_start"].minute,
                                    second=0, microsecond=0)
         if morning_start < now:
-            morning_start = morning_start.replace(day=morning_start.day + 1)
+            morning_start = morning_start + timedelta(days=1)
         
         morning_diff = (morning_start - now).total_seconds() / 60
         if morning_diff <= 120:  # Within 2 hours
@@ -135,7 +138,7 @@ def get_all_shift_timers():
                                    minute=shift_info["evening_start"].minute,
                                    second=0, microsecond=0)
         if evening_start < now:
-            evening_start = evening_start.replace(day=evening_start.day + 1)
+            evening_start = evening_start + timedelta(days=1)
         
         evening_diff = (evening_start - now).total_seconds() / 60
         if evening_diff <= 120:  # Within 2 hours

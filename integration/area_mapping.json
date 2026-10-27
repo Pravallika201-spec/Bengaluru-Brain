@@ -1,0 +1,128 @@
+{
+  "max_match_km": 3.0,
+  "traffic_locations_total": 25,
+  "waste_areas_total": 366,
+  "mapped_count": 24,
+  "mapping": {
+    "Hebbal": {
+      "waste_area_name": "Hebbal",
+      "match_type": "exact_name",
+      "distance_km": 0.0
+    },
+    "Silk Board": {
+      "waste_area_name": "Madiwala",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.718
+    },
+    "Manyata Tech Park": {
+      "waste_area_name": "Nagavara",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.724
+    },
+    "Whitefield": {
+      "waste_area_name": "Whitefield",
+      "match_type": "exact_name",
+      "distance_km": 0.0
+    },
+    "Koramangala": {
+      "waste_area_name": "Sri Lakshmi Devi Ward",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.581
+    },
+    "Indiranagar": {
+      "waste_area_name": "Indiranagar",
+      "match_type": "exact_name",
+      "distance_km": 0.0
+    },
+    "Marathahalli": {
+      "waste_area_name": "Marathahalli",
+      "match_type": "exact_name",
+      "distance_km": 0.0
+    },
+    "HSR Layout": {
+      "waste_area_name": "HSR Layout",
+      "match_type": "exact_name",
+      "distance_km": 0.0
+    },
+    "BTM Layout": {
+      "waste_area_name": "Viswamanava Kuvempu Ward",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.261
+    },
+    "Jayanagar": {
+      "waste_area_name": "Byrasandra",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.313
+    },
+    "JP Nagar": {
+      "waste_area_name": "Kengal Hanumanthaiah South",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.262
+    },
+    "Banashankari": {
+      "waste_area_name": "Kamakya Layout",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.175
+    },
+    "Rajajinagar": {
+      "waste_area_name": "Rajajinagara",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.114
+    },
+    "Yeshwanthpur": {
+      "waste_area_name": "Nalwadi Krishnaraja Wadiyar Ward",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.437
+    },
+    "Yelahanka": {
+      "waste_area_name": "Yelahanka Old Town",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.357
+    },
+    "KR Puram": {
+      "waste_area_name": "K.R Pura",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.32
+    },
+    "Bannerghatta Road": {
+      "waste_area_name": "Hulimavu",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.77
+    },
+    "MG Road": {
+      "waste_area_name": "Ashokanagar",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.617
+    },
+    "Shivajinagar": {
+      "waste_area_name": "Shivajinagar",
+      "match_type": "exact_name",
+      "distance_km": 0.0
+    },
+    "Malleswaram": {
+      "waste_area_name": "Malleshwaram",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.594
+    },
+    "Sarjapur Road": {
+      "waste_area_name": "Kasavanahalli",
+      "match_type": "spatial_nearest",
+      "distance_km": 1.475
+    },
+    "Outer Ring Road": {
+      "waste_area_name": "Marathahalli",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.358
+    },
+    "Tumkur Road": {
+      "waste_area_name": "Peenya",
+      "match_type": "spatial_nearest",
+      "distance_km": 0.886
+    },
+    "Bellary Road": {
+      "waste_area_name": "Rajiv Gandhi Nagar",
+      "match_type": "spatial_nearest",
+      "distance_km": 1.092
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "Hebbal": {
+    "canonical_ward_id": 19883374,
+    "canonical_ward_name": "Bhoopasandra"
+  },
+  "Silk Board": {
+    "canonical_ward_id": 19883285,
+    "canonical_ward_name": "HSR Layout"
+  },
+  "Manyata Tech Park": {
+    "canonical_ward_id": 19883333,
+    "canonical_ward_name": "Kempapura"
+  },
+  "Electronic City": {
+    "canonical_ward_id": 19883283,
+    "canonical_ward_name": "Chikkathoguru"
+  },
+  "Whitefield": {
+    "canonical_ward_id": 19883364,
+    "canonical_ward_name": "Whitefield"
+  },
+  "Koramangala": {
+    "canonical_ward_id": 19883351,
+    "canonical_ward_name": "Kormangala East"
+  },
+  "Indiranagar": {
+    "canonical_ward_id": 19884554,
+    "canonical_ward_name": "Hoysala Nagara Central"
+  },
+  "Marathahalli": {
+    "canonical_ward_id": 19884550,
+    "canonical_ward_name": "Marathahalli"
+  },
+  "HSR Layout": {
+    "canonical_ward_id": 19883285,
+    "canonical_ward_name": "HSR Layout"
+  },
+  "BTM Layout": {
+    "canonical_ward_id": 19884537,
+    "canonical_ward_name": "Viswamanava Kuvempu Ward"
+  },
+  "Jayanagar": {
+    "canonical_ward_id": 19884598,
+    "canonical_ward_name": "Byrasandra"
+  },
+  "JP Nagar": {
+    "canonical_ward_id": 19884571,
+    "canonical_ward_name": "Kengal Hanumanthaiah South"
+  },
+  "Banashankari": {
+    "canonical_ward_id": 19883380,
+    "canonical_ward_name": "Kamakya Layout"
+  },
+  "Rajajinagar": {
+    "canonical_ward_id": 19883466,
+    "canonical_ward_name": "Rajajinagara"
+  },
+  "Yeshwanthpur": {
+    "canonical_ward_id": 19883308,
+    "canonical_ward_name": "Nalwadi Krishnaraja Wadiyar Ward"
+  },
+  "Yelahanka": {
+    "canonical_ward_id": 19884569,
+    "canonical_ward_name": "Yelahanka Old Town"
+  },
+  "KR Puram": {
+    "canonical_ward_id": 19884602,
+    "canonical_ward_name": "K.R Pura"
+  },
+  "Bannerghatta Road": {
+    "canonical_ward_id": 19883357,
+    "canonical_ward_name": "Hulimavu"
+  },
+  "MG Road": {
+    "canonical_ward_id": 19883384,
+    "canonical_ward_name": "Ashokanagar"
+  },
+  "Shivajinagar": {
+    "canonical_ward_id": 19883309,
+    "canonical_ward_name": "Vasanth Nagar"
+  },
+  "Malleswaram": {
+    "canonical_ward_id": 19883296,
+    "canonical_ward_name": "Malleshwaram"
+  },
+  "Sarjapur Road": {
+    "canonical_ward_id": 19883435,
+    "canonical_ward_name": "Kasavanahalli"
+  },
+  "Outer Ring Road": {
+    "canonical_ward_id": 19884550,
+    "canonical_ward_name": "Marathahalli"
+  },
+  "Tumkur Road": {
+    "canonical_ward_id": 19884579,
+    "canonical_ward_name": "Peenya"
+  },
+  "Bellary Road": {
+    "canonical_ward_id": 19883438,
+    "canonical_ward_name": "Byatarayanapura"
+  }
+}
