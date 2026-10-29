@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "traffic-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "traffic_module/frontend", "start"],
+      "port": 3000
+    }
+  ]
+}
