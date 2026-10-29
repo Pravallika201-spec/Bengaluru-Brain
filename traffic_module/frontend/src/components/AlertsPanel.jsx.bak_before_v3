@@ -1,0 +1,175 @@
+import React, { useEffect, useState } from 'react';
+import { MessageSquare, ShieldAlert, Bell } from 'lucide-react';
+
+const BAND_PILL = { Red: 'critical', Orange: 'high', Yellow: 'medium', Green: 'low', Unknown: 'neutral' };
+const BAND_COLOR = { Red: 'var(--cc-red)', Orange: 'var(--cc-orange)', Yellow: 'var(--cc-yellow)', Green: 'var(--cc-green)', Unknown: 'var(--cc-text-faint)' };
+
+// Traffic-incident alerts (separate real detector, traffic_incident_service.py)
+// received here exactly as the Traffic module already determined them
+// eligible -- this panel only DISPLAYS the simple citizen message, never
+// re-runs detection/eligibility itself. Never says "accident" unless the
+// underlying state is PROVIDER_CONFIRMED_INCIDENT (and even then, this
+// project's TomTom integration has no live incident-confirmation feed
+// wired up, so that tier is dormant by construction).
+const TRAFFIC_TYPE_PILL = { TRAFFIC_ANOMALY: 'medium', POSSIBLE_TRAFFIC_BLOCKAGE: 'high', PROVIDER_CONFIRMED_INCIDENT: 'critical' };
+const TRAFFIC_TYPE_COLOR = { TRAFFIC_ANOMALY: 'var(--cc-yellow)', POSSIBLE_TRAFFIC_BLOCKAGE: 'var(--cc-orange)', PROVIDER_CONFIRMED_INCIDENT: 'var(--cc-red)' };
+
+// Bilingual (English + natural Kannada) citizen alert preview, driven by
+// integration/alerts.py through /api/alerts/{area}. SMS is SIMULATED ONLY —
+// no provider is connected.
+const AlertsPanel = ({ selectedArea }) => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [activeAlerts, setActiveAlerts] = useState(null);
+
+  useEffect(() => {
+    const loadActive = () => fetch('/api/alerts/active')
+      .then((r) => (r.ok ? r.json() : null))
+      .then(setActiveAlerts)
+      .catch(() => {});
+    loadActive();
+    const interval = setInterval(loadActive, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (!selectedArea) return;
+    setLoading(true);
+    setError(null);
+    fetch(`/api/alerts/${encodeURIComponent(selectedArea)}`)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then(setData)
+      .catch((e) => setError(String(e)))
+      .finally(() => setLoading(false));
+  }, [selectedArea]);
+
+  return (
+    <>
+      <div className="cc-hero">
+        <div>
+          <h2><MessageSquare size={19} /> Bilingual Citizen Alerts</h2>
+          <p>Event-driven English + Kannada alerts generated from real USI bands, with real per-area cooldown/deduplication — never fabricated to fill the dashboard.</p>
+        </div>
+      </div>
+
+      <div className="cc-2col">
+        <div className="cc-panel">
+          <div className="cc-panel-head">
+            <p className="cc-panel-title">Citizen Alert Preview</p>
+            <span className="cc-pill neutral"><ShieldAlert size={11} style={{ verticalAlign: 'middle', marginRight: 3 }} />SMS Preview — delivery not configured</span>
+          </div>
+
+          {loading && <div className="cc-empty">Loading alert…</div>}
+          {error && <div className="cc-empty">Could not load alert: {error}</div>}
+
+          {data && data.available && (
+            <>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
+                <span className={`cc-pill ${BAND_PILL[data.usi.band]}`}>{data.usi.band}</span>
+                <span style={{ color: 'var(--cc-text-dim)', fontSize: '0.82rem' }}>USI {data.usi.usi ?? '—'} for {data.usi.area_name}</span>
+              </div>
+
+              <div className="cc-metric-tile" style={{ borderLeft: `3px solid ${BAND_COLOR[data.usi.band]}`, marginBottom: '0.6rem' }}>
+                <div className="cc-mt-label">English</div>
+                <div style={{ color: 'var(--cc-text)', fontSize: '0.86rem', marginTop: '0.2rem' }}>{data.alert.english}</div>
+              </div>
+              <div className="cc-metric-tile" style={{ borderLeft: `3px solid ${BAND_COLOR[data.usi.band]}` }}>
+                <div className="cc-mt-label">ಕನ್ನಡ (Kannada)</div>
+                <div lang="kn" style={{ color: 'var(--cc-text)', fontSize: '0.86rem', marginTop: '0.2rem' }}>{data.alert.kannada}</div>
+              </div>
+
+              {data.sms_simulated ? (
+                <div style={{ marginTop: '0.9rem', fontSize: '0.78rem', color: 'var(--cc-text-dim)' }}>
+                  {data.sms_simulated.alert_type && (
+                    <div style={{ marginBottom: '0.3rem' }}>
+                      Alert type: <strong style={{ color: 'var(--cc-text)' }}>{data.sms_simulated.alert_type.replace('_', ' ')}</strong>
+                      {data.sms_simulated.alert_type === 'ESCALATION' && ' — USI rose sharply since the last check'}
+                    </div>
+                  )}
+                  {data.sms_simulated.status === 'SUPPRESSED_DEDUP' ? (
+                    <div>Suppressed (cooldown): {data.sms_simulated.dedup_reason} — not re-sent within 30 min unless severity escalates rapidly.</div>
+                  ) : (
+                    <div>Simulated send log: to {data.sms_simulated.to}, band {data.sms_simulated.band}, at{' '}
+                      {new Date(data.sms_simulated.timestamp).toLocaleTimeString()} — status {data.sms_simulated.status}.</div>
+                  )}
+                </div>
+              ) : (
+                <div style={{ marginTop: '0.9rem', fontSize: '0.78rem', color: 'var(--cc-text-faint)' }}>
+                  {data.usi.band === 'Green' ? 'Green band is informational only — no alert is triggered for it.' : 'No alert threshold reached.'}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+
+        <div className="cc-panel">
+          <div className="cc-panel-head">
+            <p className="cc-panel-title"><Bell size={12} className="cc-icon" /> Live Active Alerts</p>
+            {activeAlerts?.available && <span className="cc-pill neutral">{activeAlerts.alerts.length}</span>}
+          </div>
+          {activeAlerts && activeAlerts.available ? (
+            activeAlerts.alerts.length > 0 ? (
+              activeAlerts.alerts.map((a) => (
+                <div className="cc-alert-row" key={a.area_name}>
+                  <div className="cc-alert-icon" style={{ background: `${BAND_COLOR[a.band]}22`, color: BAND_COLOR[a.band] }}>⚠</div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div className="cc-alert-title">{a.area_name}</div>
+                    <div className="cc-alert-meta">USI {a.usi ?? '—'} · last alerted {a.last_alert_time ? new Date(a.last_alert_time).toLocaleTimeString() : '—'}</div>
+                    {a.reason && <div className="cc-alert-meta" style={{ marginTop: '0.15rem' }}>{a.reason}</div>}
+                  </div>
+                  <span className={`cc-pill ${BAND_PILL[a.band]}`}>{a.band}</span>
+                </div>
+              ))
+            ) : (
+              <div className="cc-empty">NO ACTIVE ALERTS — nothing has crossed the Yellow/Orange/Red threshold since the last cooldown reset.</div>
+            )
+          ) : (
+            <div className="cc-empty">Loading active alerts…</div>
+          )}
+        </div>
+      </div>
+
+      {/* Traffic incident alerts — received here exactly as the Traffic
+          module already determined them alert-eligible (real speed/delay
+          anomaly detection, traffic_incident_service.py). This panel
+          shows only the simple citizen-facing message, matching every
+          other alert on this page; technical detail (observed/expected
+          speed, evidence, route impact, alternate-route recommendation)
+          lives on the Traffic page instead. */}
+      <div className="cc-panel">
+        <div className="cc-panel-head">
+          <p className="cc-panel-title">🚨 Traffic Alerts</p>
+          {activeAlerts?.traffic_incident_alerts && <span className="cc-pill neutral">{activeAlerts.traffic_incident_alerts.length}</span>}
+        </div>
+        {activeAlerts ? (
+          activeAlerts.traffic_incident_alerts?.length > 0 ? (
+            activeAlerts.traffic_incident_alerts.map((a) => (
+              <div className="cc-alert-row" key={a.segment_id}>
+                <div className="cc-alert-icon" style={{ background: `${TRAFFIC_TYPE_COLOR[a.type]}22`, color: TRAFFIC_TYPE_COLOR[a.type] }}>🚨</div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div className="cc-alert-title">Traffic Alert — {a.road_name}</div>
+                  <div className="cc-alert-meta" style={{ marginTop: '0.15rem' }}>{a.english}</div>
+                  <div className="cc-alert-meta" lang="kn" style={{ marginTop: '0.15rem' }}>{a.kannada}</div>
+                  <div className="cc-alert-meta" style={{ marginTop: '0.15rem' }}>
+                    last alerted {a.last_alert_time ? new Date(a.last_alert_time).toLocaleTimeString() : '—'}
+                  </div>
+                </div>
+                <span className={`cc-pill ${TRAFFIC_TYPE_PILL[a.type] || 'neutral'}`}>{a.type.replace(/_/g, ' ')}</span>
+              </div>
+            ))
+          ) : (
+            <div className="cc-empty">No unexpected traffic incidents are currently alert-eligible.</div>
+          )
+        ) : (
+          <div className="cc-empty">Loading traffic alerts…</div>
+        )}
+      </div>
+    </>
+  );
+};
+
+export default AlertsPanel;
