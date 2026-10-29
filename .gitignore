@@ -124,3 +124,15 @@ Thumbs.db
 integration/alert_state.json
 _locator.b64
 
+
+# Runtime state files
+/bengaluru_collector_rotation_state.json
+/traffic_module/backend/bengaluru_collector_rotation_state.json
+/traffic_module/backend/forecasting/data/forecast_collector_quota_state.json
+/traffic_module/backend/forecasting/data/forecast_expanded_collector_quota_state.json
+
+# Generated integration output
+/integration/usi_demo_output.json
+
+# Broken database artifacts
+/traffic_module/backend/_to_delete/
